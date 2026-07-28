@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meu Perfil — Séries Loner</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="profile">
+  <header class="site-header"><a class="brand" href="index.html"><span>S</span>Séries Loner</a><nav><a href="index.html">HOME</a><a href="series.html">SÉRIES</a><div class="nav-dropdown"><button type="button" aria-haspopup="true">RANKING <span aria-hidden="true">⌄</span></button><div class="nav-dropdown-menu"><a href="ranking-series.html">Ranking de Séries</a><a href="ranking-usuarios.html">Ranking de Usuários</a></div></div></nav><a class="header-xp" href="perfil.html" aria-current="page"><span class="header-level"><small>NÍVEL</small><b data-header-level>1</b></span><span class="header-xp-details"><span><b data-header-xp>0 XP</b><small data-header-next>100 XP para o nível 2</small></span><i><em data-header-xp-bar></em></i></span></a></header>
+  <main class="profile-page">
+    <section class="profile-head">
+      <div class="avatar"><span>L</span><i id="avatar-level">1</i></div>
+      <div><p class="eyebrow">AVENTUREIRO SOLITÁRIO</p><h1>Meu perfil</h1><p>Cada episódio é um passo na sua próxima jornada.</p></div>
+    </section>
+
+    <section class="level-card">
+      <div class="level-main"><span>NÍVEL</span><strong id="level-number">1</strong></div>
+      <div class="level-details">
+        <div><div><span id="xp-current">0 XP</span><span id="xp-next">100 XP para o nível 2</span></div><div class="progress-track level-track"><div id="xp-progress" class="progress-fill"></div></div></div>
+        <p>Você ganha <strong>22 XP</strong> por episódio assistido.</p>
+      </div>
+    </section>
+
+    <section class="stats-grid">
+      <div><span>Episódios assistidos</span><strong id="stat-episodes">0</strong></div>
+      <div><span>XP total</span><strong id="stat-xp">0</strong></div>
+      <div><span>Séries finalizadas</span><strong id="stat-series">0</strong></div>
+      <div><span>Progresso no acervo</span><strong id="stat-progress">0%</strong></div>
+    </section>
+
+    <section class="watching-section">
+      <div class="section-heading"><div><p class="eyebrow">CONTINUE ASSISTINDO</p><h2>Suas séries</h2></div></div>
+      <div id="profile-empty" class="profile-empty"><strong>Nenhuma série na sua lista</strong><p>Visite o acervo e adicione uma série para assistir.</p><a class="button button-primary" href="series.html">Ver séries</a></div>
+      <a id="profile-series-card" class="profile-series" href="Séries/American Gods/index.html" hidden>
+        <img src="Séries/American Gods/Capa.png" alt="Capa de American Gods">
+        <div><span class="status-dot"></span><small id="watch-status">Ainda não iniciada</small><h3>American Gods</h3><p id="last-watched">Marque um episódio para iniciar sua jornada.</p><div class="progress-track"><div id="profile-progress" class="progress-fill"></div></div><span id="profile-progress-label">0 de 26 episódios</span></div>
+        <b aria-hidden="true">→</b>
+      </a>
+      <a id="hotd-profile-card" class="profile-series" href="Séries/House of the Dragon/index.html" hidden>
+        <img src="Séries/House of the Dragon/Capa.png" alt="Capa de House of the Dragon">
+        <div><span class="status-dot"></span><small id="hotd-watch-status">Em andamento</small><h3>House of the Dragon</h3><p id="hotd-last-watched">Comece sua jornada por Westeros.</p><div class="progress-track"><div id="hotd-profile-progress" class="progress-fill"></div></div><span id="hotd-profile-progress-label">0 de 26 episódios</span></div>
+        <b aria-hidden="true">→</b>
+      </a>
+      <a id="big-bang-profile-card" class="profile-series" href="Séries/The Big Bang Theory/index.html" hidden><img src="Séries/The Big Bang Theory/Capa.png" alt="Capa de The Big Bang Theory"><div><span class="status-dot"></span><small id="big-bang-watch-status">Em andamento</small><h3>The Big Bang Theory</h3><p id="big-bang-last-watched">Comece pela experiência piloto.</p><div class="progress-track"><div id="big-bang-profile-progress" class="progress-fill"></div></div><span id="big-bang-profile-progress-label">0 de 279 episódios</span></div><b aria-hidden="true">→</b></a>
+      <a id="acolyte-profile-card" class="profile-series" href="Séries/The Acolyte/index.html" hidden><img src="Séries/The Acolyte/Capa.png" alt="Capa de The Acolyte"><div><span class="status-dot"></span><small id="acolyte-watch-status">Em andamento</small><h3>The Acolyte</h3><p id="acolyte-last-watched">Comece sua investigação na Alta República.</p><div class="progress-track"><div id="acolyte-profile-progress" class="progress-fill"></div></div><span id="acolyte-profile-progress-label">0 de 8 episódios</span></div><b aria-hidden="true">→</b></a>
+      <a id="silo-profile-card" class="profile-series" href="Séries/Silo/index.html" hidden><img src="Séries/Silo/Capa.png" alt="Capa de Silo"><div><span class="status-dot"></span><small id="silo-watch-status">Em andamento</small><h3>Silo</h3><p id="silo-last-watched">Comece a desvendar os segredos do silo.</p><div class="progress-track"><div id="silo-profile-progress" class="progress-fill"></div></div><span id="silo-profile-progress-label">0 de 30 episódios</span></div><b aria-hidden="true">→</b></a>
+    </section>
+  </main>
+  <footer><a class="brand footer-brand" href="index.html"><span>S</span>Séries Loner</a><p>Para quem aprecia uma boa história.</p></footer>
+  <script src="app.js"></script>
+</body>
+</html>
