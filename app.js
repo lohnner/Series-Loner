@@ -226,3 +226,4 @@ if (page === 'profile') initProfile();
 if (page === 'catalog') initCatalog();
 if (page === 'ranking-series') initSeriesRanking();
 if (page === 'ranking-users') initUserRanking();
+import('./auth-shell.js');
