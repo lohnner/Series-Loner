@@ -217,6 +217,8 @@ function initUserRanking() {
 }
 
 const page = document.body.dataset.page;
+const authEntry = document.querySelector('.header-xp');
+if (authEntry && !document.querySelector('.auth-link')) authEntry.insertAdjacentHTML('beforebegin', '<a class="auth-link" href="login.html">ENTRAR</a>');
 updateHeaderXp();
 if (page === 'home') updateGlobalProgress();
 if (page === 'series') initSeriesPage();

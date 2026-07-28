@@ -1,0 +1,17 @@
+import { initializeApp } from 'https://www.gstatic.com/firebasejs/12.1.0/firebase-app.js';
+import { getAuth, GoogleAuthProvider, createUserWithEmailAndPassword, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile, onAuthStateChanged } from 'https://www.gstatic.com/firebasejs/12.1.0/firebase-auth.js';
+
+const firebaseConfig={apiKey:'AIzaSyCgZgwPUo5Ehp5JIdprYfjhIb5VlyJ2RcM',authDomain:'games-loner.firebaseapp.com',projectId:'games-loner',storageBucket:'games-loner.firebasestorage.app',messagingSenderId:'243629336740',appId:'1:243629336740:web:841224ffe9661397781e31',measurementId:'G-37QVBMC7PP'};
+const auth=getAuth(initializeApp(firebaseConfig));
+const provider=new GoogleAuthProvider();
+const form=document.getElementById('auth-form'),modeButton=document.getElementById('auth-mode'),message=document.getElementById('auth-message'),nameField=document.getElementById('name-field'),title=document.getElementById('auth-title'),submit=document.getElementById('email-submit');
+let creating=false;
+
+function showMessage(text,error=false){message.textContent=text;message.classList.toggle('error',error)}
+function friendlyError(error){const messages={'auth/invalid-credential':'E-mail ou senha incorretos.','auth/email-already-in-use':'Este e-mail já possui uma conta.','auth/weak-password':'Use uma senha com pelo menos 6 caracteres.','auth/popup-closed-by-user':'A janela do Google foi fechada antes de concluir.','auth/popup-blocked':'O navegador bloqueou a janela de login.'};return messages[error.code]||'Não foi possível concluir. Tente novamente.'}
+function setMode(){creating=!creating;title.textContent=creating?'Criar sua conta':'Entrar no Series Loner';submit.textContent=creating?'Criar Conta':'Entrar';modeButton.textContent=creating?'Já possui conta? Entrar':'Não possui conta? Criar conta';nameField.hidden=!creating;document.getElementById('auth-password').autocomplete=creating?'new-password':'current-password';showMessage('')}
+modeButton.addEventListener('click',setMode);
+form.addEventListener('submit',async event=>{event.preventDefault();showMessage('Aguarde...');const email=form.email.value.trim(),password=form.password.value;try{if(creating){const result=await createUserWithEmailAndPassword(auth,email,password);const name=form.name.value.trim();if(name)await updateProfile(result.user,{displayName:name});}else await signInWithEmailAndPassword(auth,email,password);showMessage('Login realizado com sucesso.');}catch(error){showMessage(friendlyError(error),true)}});
+document.getElementById('google-login').addEventListener('click',async()=>{showMessage('Abrindo o Google...');try{await signInWithPopup(auth,provider);showMessage('Login realizado com sucesso.')}catch(error){showMessage(friendlyError(error),true)}});
+document.getElementById('logout-button').addEventListener('click',()=>signOut(auth));
+onAuthStateChanged(auth,user=>{form.hidden=!!user;document.getElementById('google-login').hidden=!!user;document.querySelector('.auth-divider').hidden=!!user;modeButton.hidden=!!user;document.querySelector('.auth-intro').textContent=user?'Sua conta está conectada.':'Acesse seu perfil e continue acompanhando suas séries.';const card=document.getElementById('signed-user');card.hidden=!user;if(user){title.textContent='Olá, seja bem-vindo!';document.getElementById('signed-name').textContent=user.displayName||'Usuário Series Loner';document.getElementById('signed-email').textContent=user.email||'';showMessage('')}else{title.textContent=creating?'Criar sua conta':'Entrar no Series Loner'}});

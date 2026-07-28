@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Entrar — Series Loner</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="auth-page">
+  <header class="site-header"><a class="brand" href="index.html"><span>S</span>Séries Loner</a><nav><a href="index.html">HOME</a><a href="series.html">SÉRIES</a><div class="nav-dropdown"><button type="button" aria-haspopup="true">RANKING <span aria-hidden="true">⌄</span></button><div class="nav-dropdown-menu"><a href="ranking-series.html">Ranking de Séries</a><a href="ranking-usuarios.html">Ranking de Usuários</a></div></div></nav></header>
+  <main class="auth-main">
+    <section class="auth-card" aria-labelledby="auth-title">
+      <p class="eyebrow">SUA CONTA</p>
+      <h1 id="auth-title">Entrar no Series Loner</h1>
+      <p class="auth-intro">Acesse seu perfil e continue acompanhando suas séries.</p>
+      <button id="google-login" class="google-login" type="button"><span>G</span>Continuar com Google</button>
+      <div class="auth-divider"><span>ou use seu e-mail</span></div>
+      <form id="auth-form">
+        <label for="auth-name" id="name-field" hidden>Nome<input id="auth-name" name="name" type="text" autocomplete="name" placeholder="Como quer ser chamado?"></label>
+        <label for="auth-email">E-mail<input id="auth-email" name="email" type="email" autocomplete="email" placeholder="seu@email.com" required></label>
+        <label for="auth-password">Senha<input id="auth-password" name="password" type="password" autocomplete="current-password" minlength="6" placeholder="Mínimo de 6 caracteres" required></label>
+        <button id="email-submit" class="button button-primary auth-submit" type="submit">Entrar</button>
+      </form>
+      <p id="auth-message" class="auth-message" role="status" aria-live="polite"></p>
+      <button id="auth-mode" class="auth-mode" type="button">Não possui conta? Criar conta</button>
+      <div id="signed-user" class="signed-user" hidden><strong id="signed-name"></strong><span id="signed-email"></span><a class="button button-primary" href="perfil.html">Ir Para o Perfil</a><button id="logout-button" type="button">Sair da conta</button></div>
+    </section>
+  </main>
+  <script type="module" src="auth.js"></script>
+</body>
+</html>
