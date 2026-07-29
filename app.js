@@ -9,6 +9,9 @@ const ARK_STORAGE_KEY = 'series-loner-the-ark-v1';
 const DUNE_STORAGE_KEY = 'series-loner-dune-prophecy-v1';
 const DEXTER_STORAGE_KEY = 'series-loner-dexter-v1';
 const WALKING_DEAD_STORAGE_KEY = 'series-loner-walking-dead-v1';
+const SANDMAN_STORAGE_KEY = 'series-loner-sandman-v1';
+const WITCHER_STORAGE_KEY = 'series-loner-witcher-v1';
+const STRANGER_THINGS_STORAGE_KEY = 'series-loner-stranger-things-v1';
 const seasons = {
   1: ['The Bone Orchard','The Secret of Spoons','Head Full of Snow','Git Gone','Lemon Scented You','A Murder of Gods','A Prayer for Mad Sweeney','Come to Jesus'],
   2: ['House on the Rock','The Beguiling Man','Muninn','The Greatest Story Ever Told','The Ways of the Dead','Donar the Great','Treasure of the Sun','Moon Shadow'],
@@ -72,7 +75,7 @@ function getLevelInfo(xp) {
 function setWidth(id, percent) { const el = document.getElementById(id); if (el) el.style.width = `${percent}%`; }
 
 function updateHeaderXp() {
-  const xp = (getState().watched.length + getHotdState().watched.length + getBigBangState().watched.length + getAcolyteState().watched.length + getSiloState().watched.length + getStuartState().watched.length + getArkState().watched.length + getExtraState(DUNE_STORAGE_KEY).watched.length + getExtraState(DEXTER_STORAGE_KEY).watched.length + getExtraState(WALKING_DEAD_STORAGE_KEY).watched.length) * 22;
+  const xp = (getState().watched.length + getHotdState().watched.length + getBigBangState().watched.length + getAcolyteState().watched.length + getSiloState().watched.length + getStuartState().watched.length + getArkState().watched.length + [DUNE_STORAGE_KEY,DEXTER_STORAGE_KEY,WALKING_DEAD_STORAGE_KEY,SANDMAN_STORAGE_KEY,WITCHER_STORAGE_KEY,STRANGER_THINGS_STORAGE_KEY].reduce((sum,key)=>sum+getExtraState(key).watched.length,0)) * 22;
   const info = getLevelInfo(xp);
   document.querySelectorAll('[data-header-level]').forEach(el => el.textContent = info.level);
   document.querySelectorAll('[data-header-xp]').forEach(el => el.textContent = `${xp} XP`);
@@ -148,7 +151,7 @@ function initSeriesPage() {
   }));
 }
 function initProfile() {
-  const state = getState(), hotd = getHotdState(), bigBang = getBigBangState(), acolyte = getAcolyteState(), silo = getSiloState(), stuart = getStuartState(), ark = getArkState(), dune = getExtraState(DUNE_STORAGE_KEY), dexter = getExtraState(DEXTER_STORAGE_KEY), walkingDead = getExtraState(WALKING_DEAD_STORAGE_KEY), count = state.watched.length, hotdCount = hotd.watched.length, bigBangCount = bigBang.watched.length, acolyteCount = acolyte.watched.length, siloCount = silo.watched.length, stuartCount = stuart.watched.length, arkCount = ark.watched.length, duneCount = dune.watched.length, dexterCount = dexter.watched.length, walkingDeadCount = walkingDead.watched.length, allCount = count + hotdCount + bigBangCount + acolyteCount + siloCount + stuartCount + arkCount + duneCount + dexterCount + walkingDeadCount, xp = allCount * 22, info = getLevelInfo(xp), percent = Math.round((allCount / (totalEpisodes + 26 + 279 + 8 + 30 + 10 + 36 + 14 + 96 + 177)) * 100);
+  const state = getState(), hotd = getHotdState(), bigBang = getBigBangState(), acolyte = getAcolyteState(), silo = getSiloState(), stuart = getStuartState(), ark = getArkState(), dune = getExtraState(DUNE_STORAGE_KEY), dexter = getExtraState(DEXTER_STORAGE_KEY), walkingDead = getExtraState(WALKING_DEAD_STORAGE_KEY), sandman = getExtraState(SANDMAN_STORAGE_KEY), witcher = getExtraState(WITCHER_STORAGE_KEY), strangerThings = getExtraState(STRANGER_THINGS_STORAGE_KEY), count = state.watched.length, hotdCount = hotd.watched.length, bigBangCount = bigBang.watched.length, acolyteCount = acolyte.watched.length, siloCount = silo.watched.length, stuartCount = stuart.watched.length, arkCount = ark.watched.length, duneCount = dune.watched.length, dexterCount = dexter.watched.length, walkingDeadCount = walkingDead.watched.length, sandmanCount = sandman.watched.length, witcherCount = witcher.watched.length, strangerThingsCount = strangerThings.watched.length, allCount = count + hotdCount + bigBangCount + acolyteCount + siloCount + stuartCount + arkCount + duneCount + dexterCount + walkingDeadCount + sandmanCount + witcherCount + strangerThingsCount, xp = allCount * 22, info = getLevelInfo(xp), percent = Math.round((allCount / (totalEpisodes + 26 + 279 + 8 + 30 + 10 + 36 + 14 + 96 + 177 + 21 + 40 + 42)) * 100);
   document.getElementById('level-number').textContent = info.level;
   document.getElementById('avatar-level').textContent = info.level;
   document.getElementById('xp-current').textContent = `${xp} XP`;
@@ -156,7 +159,7 @@ function initProfile() {
   setWidth('xp-progress', info.percent);
   document.getElementById('stat-episodes').textContent = allCount;
   document.getElementById('stat-xp').textContent = xp;
-  document.getElementById('stat-series').textContent = Number(count === totalEpisodes) + Number(hotdCount === 26) + Number(bigBangCount === 279) + Number(acolyteCount === 8) + Number(siloCount === 30) + Number(stuartCount === 10) + Number(arkCount === 36) + Number(duneCount === 14) + Number(dexterCount === 96) + Number(walkingDeadCount === 177);
+  document.getElementById('stat-series').textContent = Number(count === totalEpisodes) + Number(hotdCount === 26) + Number(bigBangCount === 279) + Number(acolyteCount === 8) + Number(siloCount === 30) + Number(stuartCount === 10) + Number(arkCount === 36) + Number(duneCount === 14) + Number(dexterCount === 96) + Number(walkingDeadCount === 177) + Number(sandmanCount === 21) + Number(witcherCount === 40) + Number(strangerThingsCount === 42);
   document.getElementById('stat-progress').textContent = `${percent}%`;
   const americanPercent = Math.round((count / totalEpisodes) * 100);
   document.getElementById('profile-progress-label').textContent = `${americanPercent}% assistido`;
@@ -186,12 +189,12 @@ function initProfile() {
   document.getElementById('ark-profile-card').hidden = !ark.inWatchlist;
   document.getElementById('ark-profile-progress-label').textContent = `${arkPercent}% assistido`;
   setWidth('ark-profile-progress', arkPercent);
-  [[dune,duneCount,14,'dune'],[dexter,dexterCount,96,'dexter'],[walkingDead,walkingDeadCount,177,'walking-dead']].forEach(([series,watched,total,id])=>{const value=Math.round(watched/total*100);document.getElementById(`${id}-profile-card`).hidden=!series.inWatchlist;document.getElementById(`${id}-profile-progress-label`).textContent=`${value}% assistido`;setWidth(`${id}-profile-progress`,value)});
-  document.getElementById('profile-empty').hidden = state.inWatchlist || hotd.inWatchlist || bigBang.inWatchlist || acolyte.inWatchlist || silo.inWatchlist || stuart.inWatchlist || ark.inWatchlist || dune.inWatchlist || dexter.inWatchlist || walkingDead.inWatchlist;
+  [[dune,duneCount,14,'dune'],[dexter,dexterCount,96,'dexter'],[walkingDead,walkingDeadCount,177,'walking-dead'],[sandman,sandmanCount,21,'sandman'],[witcher,witcherCount,40,'witcher'],[strangerThings,strangerThingsCount,42,'stranger-things']].forEach(([series,watched,total,id])=>{const value=Math.round(watched/total*100);document.getElementById(`${id}-profile-card`).hidden=!series.inWatchlist;document.getElementById(`${id}-profile-progress-label`).textContent=`${value}% assistido`;setWidth(`${id}-profile-progress`,value)});
+  document.getElementById('profile-empty').hidden = state.inWatchlist || hotd.inWatchlist || bigBang.inWatchlist || acolyte.inWatchlist || silo.inWatchlist || stuart.inWatchlist || ark.inWatchlist || dune.inWatchlist || dexter.inWatchlist || walkingDead.inWatchlist || sandman.inWatchlist || witcher.inWatchlist || strangerThings.inWatchlist;
 }
 
 function initCatalog() {
-  const state = getState(), hotd = getHotdState(), bigBang = getBigBangState(), acolyte = getAcolyteState(), silo = getSiloState(), stuart = getStuartState(), ark = getArkState(), dune = getExtraState(DUNE_STORAGE_KEY), dexter = getExtraState(DEXTER_STORAGE_KEY), walkingDead = getExtraState(WALKING_DEAD_STORAGE_KEY), percent = Math.round((state.watched.length / totalEpisodes) * 100), hotdPercent = Math.round((hotd.watched.length / 26) * 100), bigBangPercent = Math.round((bigBang.watched.length / 279) * 100), acolytePercent = Math.round((acolyte.watched.length / 8) * 100), siloPercent = Math.round((silo.watched.length / 30) * 100), stuartPercent = Math.round((stuart.watched.length / 10) * 100), arkPercent = Math.round((ark.watched.length / 36) * 100);
+  const state = getState(), hotd = getHotdState(), bigBang = getBigBangState(), acolyte = getAcolyteState(), silo = getSiloState(), stuart = getStuartState(), ark = getArkState(), dune = getExtraState(DUNE_STORAGE_KEY), dexter = getExtraState(DEXTER_STORAGE_KEY), walkingDead = getExtraState(WALKING_DEAD_STORAGE_KEY), sandman = getExtraState(SANDMAN_STORAGE_KEY), witcher = getExtraState(WITCHER_STORAGE_KEY), strangerThings = getExtraState(STRANGER_THINGS_STORAGE_KEY), percent = Math.round((state.watched.length / totalEpisodes) * 100), hotdPercent = Math.round((hotd.watched.length / 26) * 100), bigBangPercent = Math.round((bigBang.watched.length / 279) * 100), acolytePercent = Math.round((acolyte.watched.length / 8) * 100), siloPercent = Math.round((silo.watched.length / 30) * 100), stuartPercent = Math.round((stuart.watched.length / 10) * 100), arkPercent = Math.round((ark.watched.length / 36) * 100);
   document.getElementById('catalog-progress-label').textContent = `${percent}% assistido`;
   setWidth('catalog-progress', percent);
   document.getElementById('hotd-catalog-progress-label').textContent = `${hotdPercent}% assistido`;
@@ -206,11 +209,11 @@ function initCatalog() {
   setWidth('stuart-catalog-progress', stuartPercent);
   document.getElementById('ark-catalog-progress-label').textContent = `${arkPercent}% assistido`;
   setWidth('ark-catalog-progress', arkPercent);
-  [[dune,14,'dune'],[dexter,96,'dexter'],[walkingDead,177,'walking-dead']].forEach(([series,total,id])=>{const value=Math.round(series.watched.length/total*100);document.getElementById(`${id}-catalog-progress-label`).textContent=`${value}% assistido`;setWidth(`${id}-catalog-progress`,value)});
+  [[dune,14,'dune'],[dexter,96,'dexter'],[walkingDead,177,'walking-dead'],[sandman,21,'sandman'],[witcher,40,'witcher'],[strangerThings,42,'stranger-things']].forEach(([series,total,id])=>{const value=Math.round(series.watched.length/total*100);document.getElementById(`${id}-catalog-progress-label`).textContent=`${value}% assistido`;setWidth(`${id}-catalog-progress`,value)});
 }
 
 function initSeriesRanking() {
-  const american = getState(), hotd = getHotdState(), bigBang = getBigBangState(), acolyte = getAcolyteState(), silo = getSiloState(), stuart = getStuartState(), ark = getArkState(), dune = getExtraState(DUNE_STORAGE_KEY), dexter = getExtraState(DEXTER_STORAGE_KEY), walkingDead = getExtraState(WALKING_DEAD_STORAGE_KEY);
+  const american = getState(), hotd = getHotdState(), bigBang = getBigBangState(), acolyte = getAcolyteState(), silo = getSiloState(), stuart = getStuartState(), ark = getArkState(), dune = getExtraState(DUNE_STORAGE_KEY), dexter = getExtraState(DEXTER_STORAGE_KEY), walkingDead = getExtraState(WALKING_DEAD_STORAGE_KEY), sandman = getExtraState(SANDMAN_STORAGE_KEY), witcher = getExtraState(WITCHER_STORAGE_KEY), strangerThings = getExtraState(STRANGER_THINGS_STORAGE_KEY);
   const entries = [
     { row: document.getElementById('american-rank-row'), score: Number(american.inWatchlist) },
     { row: document.getElementById('hotd-rank-row'), score: Number(hotd.inWatchlist) },
@@ -221,7 +224,10 @@ function initSeriesRanking() {
     { row: document.getElementById('ark-rank-row'), score: Number(ark.inWatchlist) },
     { row: document.getElementById('dune-rank-row'), score: Number(dune.inWatchlist) },
     { row: document.getElementById('dexter-rank-row'), score: Number(dexter.inWatchlist) },
-    { row: document.getElementById('walking-dead-rank-row'), score: Number(walkingDead.inWatchlist) }
+    { row: document.getElementById('walking-dead-rank-row'), score: Number(walkingDead.inWatchlist) },
+    { row: document.getElementById('sandman-rank-row'), score: Number(sandman.inWatchlist) },
+    { row: document.getElementById('witcher-rank-row'), score: Number(witcher.inWatchlist) },
+    { row: document.getElementById('stranger-things-rank-row'), score: Number(strangerThings.inWatchlist) }
   ].sort((a, b) => b.score - a.score);
   const board = document.querySelector('.ranking-board');
   entries.forEach((entry, index) => {
@@ -235,7 +241,7 @@ function initSeriesRanking() {
 }
 
 function initUserRanking() {
-  const currentXp = (getState().watched.length + getHotdState().watched.length + getBigBangState().watched.length + getAcolyteState().watched.length + getSiloState().watched.length + getStuartState().watched.length + getArkState().watched.length + getExtraState(DUNE_STORAGE_KEY).watched.length + getExtraState(DEXTER_STORAGE_KEY).watched.length + getExtraState(WALKING_DEAD_STORAGE_KEY).watched.length) * 22;
+  const currentXp = (getState().watched.length + getHotdState().watched.length + getBigBangState().watched.length + getAcolyteState().watched.length + getSiloState().watched.length + getStuartState().watched.length + getArkState().watched.length + [DUNE_STORAGE_KEY,DEXTER_STORAGE_KEY,WALKING_DEAD_STORAGE_KEY,SANDMAN_STORAGE_KEY,WITCHER_STORAGE_KEY,STRANGER_THINGS_STORAGE_KEY].reduce((sum,key)=>sum+getExtraState(key).watched.length,0)) * 22;
   const users = [{ name: 'Você', xp: currentXp, current: true }];
   document.getElementById('user-ranking-list').innerHTML = users.map((user, index) => {
     const info = getLevelInfo(user.xp);
