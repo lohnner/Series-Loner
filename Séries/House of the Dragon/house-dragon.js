@@ -5,7 +5,7 @@ const ACOLYTE_STORAGE_KEY = 'series-loner-acolyte-v1';
 const SILO_STORAGE_KEY = 'series-loner-silo-v1';
 const STUART_STORAGE_KEY = 'series-loner-stuart-v1';
 const ARK_STORAGE_KEY = 'series-loner-the-ark-v1';
-const EXTRA_STORAGE_KEYS = ['series-loner-dune-prophecy-v1','series-loner-dexter-v1','series-loner-walking-dead-v1','series-loner-sandman-v1','series-loner-witcher-v1','series-loner-stranger-things-v1'];
+const EXTRA_STORAGE_KEYS = ['series-loner-dune-prophecy-v1','series-loner-dexter-v1','series-loner-walking-dead-v1','series-loner-sandman-v1','series-loner-witcher-v1','series-loner-stranger-things-v1','series-loner-game-of-thrones-v1','series-loner-breaking-bad-v1','series-loner-black-mirror-v1'];
 const HOTD_ID = 'house-of-the-dragon';
 const hotdSeasons = {
   1: [
