@@ -4,6 +4,7 @@ const HOTD_STORAGE_KEY = 'series-loner-house-dragon-v1';
 const BIG_BANG_STORAGE_KEY = 'series-loner-big-bang-v1';
 const ACOLYTE_STORAGE_KEY = 'series-loner-acolyte-v1';
 const SILO_STORAGE_KEY = 'series-loner-silo-v1';
+const STUART_STORAGE_KEY = 'series-loner-stuart-v1';
 const seasons = {
   1: ['The Bone Orchard','The Secret of Spoons','Head Full of Snow','Git Gone','Lemon Scented You','A Murder of Gods','A Prayer for Mad Sweeney','Come to Jesus'],
   2: ['House on the Rock','The Beguiling Man','Muninn','The Greatest Story Ever Told','The Ways of the Dead','Donar the Great','Treasure of the Sun','Moon Shadow'],
@@ -40,6 +41,10 @@ function getSiloState() {
   try { const saved = JSON.parse(localStorage.getItem(SILO_STORAGE_KEY)) || {}; return { watched: Array.isArray(saved.watched) ? saved.watched : [], lastWatched: saved.lastWatched || null, inWatchlist: saved.inWatchlist === true }; }
   catch { return { watched: [], lastWatched: null, inWatchlist: false }; }
 }
+function getStuartState() {
+  try { const saved = JSON.parse(localStorage.getItem(STUART_STORAGE_KEY)) || {}; return { watched: Array.isArray(saved.watched) ? saved.watched : [], lastWatched: saved.lastWatched || null, inWatchlist: saved.inWatchlist === true }; }
+  catch { return { watched: [], lastWatched: null, inWatchlist: false }; }
+}
 function episodeKey(season, episode) { return `${SHOW_ID}-s${season}e${episode}`; }
 function xpForLevel(level) {
   if (level <= 1) return 0;
@@ -55,7 +60,7 @@ function getLevelInfo(xp) {
 function setWidth(id, percent) { const el = document.getElementById(id); if (el) el.style.width = `${percent}%`; }
 
 function updateHeaderXp() {
-  const xp = (getState().watched.length + getHotdState().watched.length + getBigBangState().watched.length + getAcolyteState().watched.length + getSiloState().watched.length) * 22;
+  const xp = (getState().watched.length + getHotdState().watched.length + getBigBangState().watched.length + getAcolyteState().watched.length + getSiloState().watched.length + getStuartState().watched.length) * 22;
   const info = getLevelInfo(xp);
   document.querySelectorAll('[data-header-level]').forEach(el => el.textContent = info.level);
   document.querySelectorAll('[data-header-xp]').forEach(el => el.textContent = `${xp} XP`);
@@ -131,7 +136,7 @@ function initSeriesPage() {
   }));
 }
 function initProfile() {
-  const state = getState(), hotd = getHotdState(), bigBang = getBigBangState(), acolyte = getAcolyteState(), silo = getSiloState(), count = state.watched.length, hotdCount = hotd.watched.length, bigBangCount = bigBang.watched.length, acolyteCount = acolyte.watched.length, siloCount = silo.watched.length, allCount = count + hotdCount + bigBangCount + acolyteCount + siloCount, xp = allCount * 22, info = getLevelInfo(xp), percent = Math.round((allCount / (totalEpisodes + 26 + 279 + 8 + 30)) * 100);
+  const state = getState(), hotd = getHotdState(), bigBang = getBigBangState(), acolyte = getAcolyteState(), silo = getSiloState(), stuart = getStuartState(), count = state.watched.length, hotdCount = hotd.watched.length, bigBangCount = bigBang.watched.length, acolyteCount = acolyte.watched.length, siloCount = silo.watched.length, stuartCount = stuart.watched.length, allCount = count + hotdCount + bigBangCount + acolyteCount + siloCount + stuartCount, xp = allCount * 22, info = getLevelInfo(xp), percent = Math.round((allCount / (totalEpisodes + 26 + 279 + 8 + 30 + 10)) * 100);
   document.getElementById('level-number').textContent = info.level;
   document.getElementById('avatar-level').textContent = info.level;
   document.getElementById('xp-current').textContent = `${xp} XP`;
@@ -139,7 +144,7 @@ function initProfile() {
   setWidth('xp-progress', info.percent);
   document.getElementById('stat-episodes').textContent = allCount;
   document.getElementById('stat-xp').textContent = xp;
-  document.getElementById('stat-series').textContent = Number(count === totalEpisodes) + Number(hotdCount === 26) + Number(bigBangCount === 279) + Number(acolyteCount === 8) + Number(siloCount === 30);
+  document.getElementById('stat-series').textContent = Number(count === totalEpisodes) + Number(hotdCount === 26) + Number(bigBangCount === 279) + Number(acolyteCount === 8) + Number(siloCount === 30) + Number(stuartCount === 10);
   document.getElementById('stat-progress').textContent = `${percent}%`;
   document.getElementById('watch-status').textContent = count === totalEpisodes ? 'Série concluída' : count ? 'Em andamento' : 'Ainda não iniciada';
   document.getElementById('last-watched').textContent = state.lastWatched ? `Último: T${state.lastWatched.season} E${state.lastWatched.episode} · ${state.lastWatched.title}` : 'Marque um episódio para iniciar sua jornada.';
@@ -170,11 +175,17 @@ function initProfile() {
   document.getElementById('silo-last-watched').textContent = silo.lastWatched ? `Último: T${silo.lastWatched.season} E${silo.lastWatched.episode} · ${silo.lastWatched.title}` : 'Comece a desvendar os segredos do silo.';
   document.getElementById('silo-profile-progress-label').textContent = `${siloCount} de 30 episódios`;
   setWidth('silo-profile-progress', siloPercent);
-  document.getElementById('profile-empty').hidden = state.inWatchlist || hotd.inWatchlist || bigBang.inWatchlist || acolyte.inWatchlist || silo.inWatchlist;
+  const stuartPercent = Math.round((stuartCount / 10) * 100);
+  document.getElementById('stuart-profile-card').hidden = !stuart.inWatchlist;
+  document.getElementById('stuart-watch-status').textContent = stuartCount === 10 ? 'Série concluída' : 'Em andamento';
+  document.getElementById('stuart-last-watched').textContent = stuart.lastWatched ? `Último: T${stuart.lastWatched.season} E${stuart.lastWatched.episode} · ${stuart.lastWatched.title}` : 'Comece a missão para restaurar o multiverso.';
+  document.getElementById('stuart-profile-progress-label').textContent = `${stuartCount} de 10 episódios`;
+  setWidth('stuart-profile-progress', stuartPercent);
+  document.getElementById('profile-empty').hidden = state.inWatchlist || hotd.inWatchlist || bigBang.inWatchlist || acolyte.inWatchlist || silo.inWatchlist || stuart.inWatchlist;
 }
 
 function initCatalog() {
-  const state = getState(), hotd = getHotdState(), bigBang = getBigBangState(), acolyte = getAcolyteState(), silo = getSiloState(), percent = Math.round((state.watched.length / totalEpisodes) * 100), hotdPercent = Math.round((hotd.watched.length / 26) * 100), bigBangPercent = Math.round((bigBang.watched.length / 279) * 100), acolytePercent = Math.round((acolyte.watched.length / 8) * 100), siloPercent = Math.round((silo.watched.length / 30) * 100);
+  const state = getState(), hotd = getHotdState(), bigBang = getBigBangState(), acolyte = getAcolyteState(), silo = getSiloState(), stuart = getStuartState(), percent = Math.round((state.watched.length / totalEpisodes) * 100), hotdPercent = Math.round((hotd.watched.length / 26) * 100), bigBangPercent = Math.round((bigBang.watched.length / 279) * 100), acolytePercent = Math.round((acolyte.watched.length / 8) * 100), siloPercent = Math.round((silo.watched.length / 30) * 100), stuartPercent = Math.round((stuart.watched.length / 10) * 100);
   document.getElementById('catalog-progress-label').textContent = `${percent}% assistido`;
   setWidth('catalog-progress', percent);
   document.getElementById('hotd-catalog-progress-label').textContent = `${hotdPercent}% assistido`;
@@ -185,16 +196,19 @@ function initCatalog() {
   setWidth('acolyte-catalog-progress', acolytePercent);
   document.getElementById('silo-catalog-progress-label').textContent = `${siloPercent}% assistido`;
   setWidth('silo-catalog-progress', siloPercent);
+  document.getElementById('stuart-catalog-progress-label').textContent = `${stuartPercent}% assistido`;
+  setWidth('stuart-catalog-progress', stuartPercent);
 }
 
 function initSeriesRanking() {
-  const american = getState(), hotd = getHotdState(), bigBang = getBigBangState(), acolyte = getAcolyteState(), silo = getSiloState();
+  const american = getState(), hotd = getHotdState(), bigBang = getBigBangState(), acolyte = getAcolyteState(), silo = getSiloState(), stuart = getStuartState();
   const entries = [
     { row: document.getElementById('american-rank-row'), score: Number(american.inWatchlist) },
     { row: document.getElementById('hotd-rank-row'), score: Number(hotd.inWatchlist) },
     { row: document.getElementById('big-bang-rank-row'), score: Number(bigBang.inWatchlist) },
     { row: document.getElementById('acolyte-rank-row'), score: Number(acolyte.inWatchlist) },
-    { row: document.getElementById('silo-rank-row'), score: Number(silo.inWatchlist) }
+    { row: document.getElementById('silo-rank-row'), score: Number(silo.inWatchlist) },
+    { row: document.getElementById('stuart-rank-row'), score: Number(stuart.inWatchlist) }
   ].sort((a, b) => b.score - a.score);
   const board = document.querySelector('.ranking-board');
   entries.forEach((entry, index) => {
@@ -208,7 +222,7 @@ function initSeriesRanking() {
 }
 
 function initUserRanking() {
-  const currentXp = (getState().watched.length + getHotdState().watched.length + getBigBangState().watched.length + getAcolyteState().watched.length + getSiloState().watched.length) * 22;
+  const currentXp = (getState().watched.length + getHotdState().watched.length + getBigBangState().watched.length + getAcolyteState().watched.length + getSiloState().watched.length + getStuartState().watched.length) * 22;
   const users = [{ name: 'Você', xp: currentXp, current: true }];
   document.getElementById('user-ranking-list').innerHTML = users.map((user, index) => {
     const info = getLevelInfo(user.xp);
