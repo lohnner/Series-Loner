@@ -5,6 +5,7 @@ const BIG_BANG_STORAGE_KEY = 'series-loner-big-bang-v1';
 const ACOLYTE_STORAGE_KEY = 'series-loner-acolyte-v1';
 const SILO_STORAGE_KEY = 'series-loner-silo-v1';
 const STUART_STORAGE_KEY = 'series-loner-stuart-v1';
+const ARK_STORAGE_KEY = 'series-loner-the-ark-v1';
 const seasons = {
   1: ['The Bone Orchard','The Secret of Spoons','Head Full of Snow','Git Gone','Lemon Scented You','A Murder of Gods','A Prayer for Mad Sweeney','Come to Jesus'],
   2: ['House on the Rock','The Beguiling Man','Muninn','The Greatest Story Ever Told','The Ways of the Dead','Donar the Great','Treasure of the Sun','Moon Shadow'],
@@ -45,6 +46,10 @@ function getStuartState() {
   try { const saved = JSON.parse(localStorage.getItem(STUART_STORAGE_KEY)) || {}; return { watched: Array.isArray(saved.watched) ? saved.watched : [], lastWatched: saved.lastWatched || null, inWatchlist: saved.inWatchlist === true }; }
   catch { return { watched: [], lastWatched: null, inWatchlist: false }; }
 }
+function getArkState() {
+  try { const saved = JSON.parse(localStorage.getItem(ARK_STORAGE_KEY)) || {}; return { watched: Array.isArray(saved.watched) ? saved.watched : [], lastWatched: saved.lastWatched || null, inWatchlist: saved.inWatchlist === true }; }
+  catch { return { watched: [], lastWatched: null, inWatchlist: false }; }
+}
 function episodeKey(season, episode) { return `${SHOW_ID}-s${season}e${episode}`; }
 function xpForLevel(level) {
   if (level <= 1) return 0;
@@ -60,7 +65,7 @@ function getLevelInfo(xp) {
 function setWidth(id, percent) { const el = document.getElementById(id); if (el) el.style.width = `${percent}%`; }
 
 function updateHeaderXp() {
-  const xp = (getState().watched.length + getHotdState().watched.length + getBigBangState().watched.length + getAcolyteState().watched.length + getSiloState().watched.length + getStuartState().watched.length) * 22;
+  const xp = (getState().watched.length + getHotdState().watched.length + getBigBangState().watched.length + getAcolyteState().watched.length + getSiloState().watched.length + getStuartState().watched.length + getArkState().watched.length) * 22;
   const info = getLevelInfo(xp);
   document.querySelectorAll('[data-header-level]').forEach(el => el.textContent = info.level);
   document.querySelectorAll('[data-header-xp]').forEach(el => el.textContent = `${xp} XP`);
@@ -136,7 +141,7 @@ function initSeriesPage() {
   }));
 }
 function initProfile() {
-  const state = getState(), hotd = getHotdState(), bigBang = getBigBangState(), acolyte = getAcolyteState(), silo = getSiloState(), stuart = getStuartState(), count = state.watched.length, hotdCount = hotd.watched.length, bigBangCount = bigBang.watched.length, acolyteCount = acolyte.watched.length, siloCount = silo.watched.length, stuartCount = stuart.watched.length, allCount = count + hotdCount + bigBangCount + acolyteCount + siloCount + stuartCount, xp = allCount * 22, info = getLevelInfo(xp), percent = Math.round((allCount / (totalEpisodes + 26 + 279 + 8 + 30 + 10)) * 100);
+  const state = getState(), hotd = getHotdState(), bigBang = getBigBangState(), acolyte = getAcolyteState(), silo = getSiloState(), stuart = getStuartState(), ark = getArkState(), count = state.watched.length, hotdCount = hotd.watched.length, bigBangCount = bigBang.watched.length, acolyteCount = acolyte.watched.length, siloCount = silo.watched.length, stuartCount = stuart.watched.length, arkCount = ark.watched.length, allCount = count + hotdCount + bigBangCount + acolyteCount + siloCount + stuartCount + arkCount, xp = allCount * 22, info = getLevelInfo(xp), percent = Math.round((allCount / (totalEpisodes + 26 + 279 + 8 + 30 + 10 + 36)) * 100);
   document.getElementById('level-number').textContent = info.level;
   document.getElementById('avatar-level').textContent = info.level;
   document.getElementById('xp-current').textContent = `${xp} XP`;
@@ -144,7 +149,7 @@ function initProfile() {
   setWidth('xp-progress', info.percent);
   document.getElementById('stat-episodes').textContent = allCount;
   document.getElementById('stat-xp').textContent = xp;
-  document.getElementById('stat-series').textContent = Number(count === totalEpisodes) + Number(hotdCount === 26) + Number(bigBangCount === 279) + Number(acolyteCount === 8) + Number(siloCount === 30) + Number(stuartCount === 10);
+  document.getElementById('stat-series').textContent = Number(count === totalEpisodes) + Number(hotdCount === 26) + Number(bigBangCount === 279) + Number(acolyteCount === 8) + Number(siloCount === 30) + Number(stuartCount === 10) + Number(arkCount === 36);
   document.getElementById('stat-progress').textContent = `${percent}%`;
   const americanPercent = Math.round((count / totalEpisodes) * 100);
   document.getElementById('profile-progress-label').textContent = `${americanPercent}% assistido`;
@@ -170,11 +175,15 @@ function initProfile() {
   document.getElementById('stuart-profile-card').hidden = !stuart.inWatchlist;
   document.getElementById('stuart-profile-progress-label').textContent = `${stuartPercent}% assistido`;
   setWidth('stuart-profile-progress', stuartPercent);
-  document.getElementById('profile-empty').hidden = state.inWatchlist || hotd.inWatchlist || bigBang.inWatchlist || acolyte.inWatchlist || silo.inWatchlist || stuart.inWatchlist;
+  const arkPercent = Math.round((arkCount / 36) * 100);
+  document.getElementById('ark-profile-card').hidden = !ark.inWatchlist;
+  document.getElementById('ark-profile-progress-label').textContent = `${arkPercent}% assistido`;
+  setWidth('ark-profile-progress', arkPercent);
+  document.getElementById('profile-empty').hidden = state.inWatchlist || hotd.inWatchlist || bigBang.inWatchlist || acolyte.inWatchlist || silo.inWatchlist || stuart.inWatchlist || ark.inWatchlist;
 }
 
 function initCatalog() {
-  const state = getState(), hotd = getHotdState(), bigBang = getBigBangState(), acolyte = getAcolyteState(), silo = getSiloState(), stuart = getStuartState(), percent = Math.round((state.watched.length / totalEpisodes) * 100), hotdPercent = Math.round((hotd.watched.length / 26) * 100), bigBangPercent = Math.round((bigBang.watched.length / 279) * 100), acolytePercent = Math.round((acolyte.watched.length / 8) * 100), siloPercent = Math.round((silo.watched.length / 30) * 100), stuartPercent = Math.round((stuart.watched.length / 10) * 100);
+  const state = getState(), hotd = getHotdState(), bigBang = getBigBangState(), acolyte = getAcolyteState(), silo = getSiloState(), stuart = getStuartState(), ark = getArkState(), percent = Math.round((state.watched.length / totalEpisodes) * 100), hotdPercent = Math.round((hotd.watched.length / 26) * 100), bigBangPercent = Math.round((bigBang.watched.length / 279) * 100), acolytePercent = Math.round((acolyte.watched.length / 8) * 100), siloPercent = Math.round((silo.watched.length / 30) * 100), stuartPercent = Math.round((stuart.watched.length / 10) * 100), arkPercent = Math.round((ark.watched.length / 36) * 100);
   document.getElementById('catalog-progress-label').textContent = `${percent}% assistido`;
   setWidth('catalog-progress', percent);
   document.getElementById('hotd-catalog-progress-label').textContent = `${hotdPercent}% assistido`;
@@ -187,17 +196,20 @@ function initCatalog() {
   setWidth('silo-catalog-progress', siloPercent);
   document.getElementById('stuart-catalog-progress-label').textContent = `${stuartPercent}% assistido`;
   setWidth('stuart-catalog-progress', stuartPercent);
+  document.getElementById('ark-catalog-progress-label').textContent = `${arkPercent}% assistido`;
+  setWidth('ark-catalog-progress', arkPercent);
 }
 
 function initSeriesRanking() {
-  const american = getState(), hotd = getHotdState(), bigBang = getBigBangState(), acolyte = getAcolyteState(), silo = getSiloState(), stuart = getStuartState();
+  const american = getState(), hotd = getHotdState(), bigBang = getBigBangState(), acolyte = getAcolyteState(), silo = getSiloState(), stuart = getStuartState(), ark = getArkState();
   const entries = [
     { row: document.getElementById('american-rank-row'), score: Number(american.inWatchlist) },
     { row: document.getElementById('hotd-rank-row'), score: Number(hotd.inWatchlist) },
     { row: document.getElementById('big-bang-rank-row'), score: Number(bigBang.inWatchlist) },
     { row: document.getElementById('acolyte-rank-row'), score: Number(acolyte.inWatchlist) },
     { row: document.getElementById('silo-rank-row'), score: Number(silo.inWatchlist) },
-    { row: document.getElementById('stuart-rank-row'), score: Number(stuart.inWatchlist) }
+    { row: document.getElementById('stuart-rank-row'), score: Number(stuart.inWatchlist) },
+    { row: document.getElementById('ark-rank-row'), score: Number(ark.inWatchlist) }
   ].sort((a, b) => b.score - a.score);
   const board = document.querySelector('.ranking-board');
   entries.forEach((entry, index) => {
@@ -211,7 +223,7 @@ function initSeriesRanking() {
 }
 
 function initUserRanking() {
-  const currentXp = (getState().watched.length + getHotdState().watched.length + getBigBangState().watched.length + getAcolyteState().watched.length + getSiloState().watched.length + getStuartState().watched.length) * 22;
+  const currentXp = (getState().watched.length + getHotdState().watched.length + getBigBangState().watched.length + getAcolyteState().watched.length + getSiloState().watched.length + getStuartState().watched.length + getArkState().watched.length) * 22;
   const users = [{ name: 'Você', xp: currentXp, current: true }];
   document.getElementById('user-ranking-list').innerHTML = users.map((user, index) => {
     const info = getLevelInfo(user.xp);
