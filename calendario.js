@@ -3,6 +3,7 @@ const calendarShows=[
   {name:'Silo',slug:'silo',id:38052,href:'Séries/Silo/index.html',cover:'Séries/Silo/Capa.png'},
   {name:'Stuart Fails to Save the Universe',slug:'stuart',id:83360,href:'Séries/Stuart Fails to Save the Universe/index.html',cover:'Séries/Stuart Fails to Save the Universe/Capa.png'},
   {name:'The Ark',slug:'ark',id:60153,href:'Séries/The Ark/index.html',cover:'Séries/The Ark/Capa.jpg'}
+  ,{name:'Dune: Prophecy',slug:'dune',id:42846,href:'Séries/Dune Prophecy/index.html',cover:'Séries/Dune Prophecy/Capa.png'}
 ];
 const today=new Date(),todayKey=`${today.getFullYear()}-${String(today.getMonth()+1).padStart(2,'0')}-${String(today.getDate()).padStart(2,'0')}`;let calendarDate=new Date(today.getFullYear(),today.getMonth(),1),calendarEvents=[];
 function isoDate(date){return`${date.getFullYear()}-${String(date.getMonth()+1).padStart(2,'0')}-${String(date.getDate()).padStart(2,'0')}`}function ptDate(value){return new Intl.DateTimeFormat('pt-BR',{day:'2-digit',month:'short',year:'numeric'}).format(new Date(`${value}T12:00:00`)).replace('.','')}function escapeCalendar(value){return String(value).replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;')}

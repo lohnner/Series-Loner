@@ -5,6 +5,7 @@ const ACOLYTE_STORAGE_KEY = 'series-loner-acolyte-v1';
 const SILO_STORAGE_KEY = 'series-loner-silo-v1';
 const STUART_STORAGE_KEY = 'series-loner-stuart-v1';
 const ARK_STORAGE_KEY = 'series-loner-the-ark-v1';
+const EXTRA_STORAGE_KEYS = ['series-loner-dune-prophecy-v1','series-loner-dexter-v1','series-loner-walking-dead-v1'];
 const HOTD_ID = 'house-of-the-dragon';
 const hotdSeasons = {
   1: [
@@ -28,10 +29,11 @@ function acolyteCount(){try{return(JSON.parse(localStorage.getItem(ACOLYTE_STORA
 function siloCount(){try{return(JSON.parse(localStorage.getItem(SILO_STORAGE_KEY))?.watched||[]).length}catch{return 0}}
 function stuartCount(){try{return(JSON.parse(localStorage.getItem(STUART_STORAGE_KEY))?.watched||[]).length}catch{return 0}}
 function arkCount(){try{return(JSON.parse(localStorage.getItem(ARK_STORAGE_KEY))?.watched||[]).length}catch{return 0}}
+function extraSeriesCount(){return EXTRA_STORAGE_KEYS.reduce((total,key)=>{try{return total+(JSON.parse(localStorage.getItem(key))?.watched||[]).length}catch{return total}},0)}
 function hotdXpForLevel(level){if(level<=1)return 0;const n=level-1;return Math.floor((50*n**3-150*n**2+400*n)/3)}
 function hotdLevelInfo(xp){let level=1;while(hotdXpForLevel(level+1)<=xp)level++;const floor=hotdXpForLevel(level),ceiling=hotdXpForLevel(level+1);return{level,ceiling,percent:(xp-floor)/(ceiling-floor)*100}}
 function hotdSetWidth(id,p){const el=document.getElementById(id);if(el)el.style.width=`${p}%`}
-function updateHotdHeader(){const xp=(americanCount()+getHotdState().watched.length+bigBangCount()+acolyteCount()+siloCount()+stuartCount()+arkCount())*22,info=hotdLevelInfo(xp);document.querySelectorAll('[data-header-level]').forEach(el=>el.textContent=info.level);document.querySelectorAll('[data-header-xp]').forEach(el=>el.textContent=`${xp} XP`);document.querySelectorAll('[data-header-next]').forEach(el=>el.textContent=`${info.ceiling-xp} XP para o nível ${info.level+1}`);document.querySelectorAll('[data-header-xp-bar]').forEach(el=>el.style.width=`${info.percent}%`)}
+function updateHotdHeader(){const xp=(americanCount()+getHotdState().watched.length+bigBangCount()+acolyteCount()+siloCount()+stuartCount()+arkCount()+extraSeriesCount())*22,info=hotdLevelInfo(xp);document.querySelectorAll('[data-header-level]').forEach(el=>el.textContent=info.level);document.querySelectorAll('[data-header-xp]').forEach(el=>el.textContent=`${xp} XP`);document.querySelectorAll('[data-header-next]').forEach(el=>el.textContent=`${info.ceiling-xp} XP para o nível ${info.level+1}`);document.querySelectorAll('[data-header-xp-bar]').forEach(el=>el.style.width=`${info.percent}%`)}
 function hotdReleased(date){const[d,m,y]=date.split('/').map(Number);return new Date(y,m-1,d,23,59,59)<=new Date()}
 function hotdToast(text){const el=document.getElementById('hotd-toast');el.textContent=text;el.classList.add('show');setTimeout(()=>el.classList.remove('show'),1800)}
 function renderHotdEpisodes(season){const list=document.getElementById('hotd-episode-list'),lock=document.getElementById('hotd-episode-lock'),state=getHotdState();lock.hidden=state.inWatchlist;list.innerHTML=hotdSeasons[season].map(([title,date],i)=>{const number=i+1,key=hotdKey(season,number),checked=state.watched.includes(key),released=hotdReleased(date),enabled=released&&state.inWatchlist;return`<label class="episode-row ${checked?'watched':''} ${released?'':'upcoming'} ${state.inWatchlist?'':'locked'}"><input type="checkbox" data-hotd-season="${season}" data-hotd-episode="${number}" ${checked?'checked':''} ${enabled?'':'disabled'}><span class="custom-check" aria-hidden="true">✓</span><span class="episode-number">${String(number).padStart(2,'0')}</span><span class="episode-name"><strong>${title}</strong><small>Temporada ${season} · Episódio ${number} · ${released?'Lançado':'Estreia'} em ${date}</small></span><span class="episode-xp">${released?(checked?'ASSISTIDO':'+22 XP'):'EM BREVE'}</span></label>`}).join('');list.querySelectorAll('input:not(:disabled)').forEach(el=>el.addEventListener('change',toggleHotdEpisode))}
