@@ -92,6 +92,8 @@ body.authenticated .auth-link{display:none}.header-user{max-width:92px;overflow:
 
 .profile-tabs{grid-column:1/-1;display:flex;flex-wrap:wrap;gap:9px;margin:0 0 12px}.profile-tabs button,.calendar-filters button{border:1px solid #cfcac1;background:#fff;color:#555;padding:11px 16px;font:700 11px 'DM Sans';letter-spacing:.02em;cursor:pointer;transition:.2s}.profile-tabs button:hover,.profile-tabs button.active,.calendar-filters button:hover,.calendar-filters button.active{background:var(--navy);border-color:var(--navy);color:#fff}.calendar-filters{display:flex;justify-content:center;flex-wrap:wrap;gap:10px;margin-top:27px}.calendar-intro>.calendar-filters:last-child{line-height:normal}
 .avatar-hero{background:linear-gradient(115deg,#173a51,#9a512e)}.spider-noir-hero{background:linear-gradient(115deg,#111519,#3a1015)}.knight-hero{background:linear-gradient(115deg,#25231c,#74512d)}
+.greys-hero{background:linear-gradient(115deg,#25313b,#637786)}.saving-hope-hero{background:linear-gradient(115deg,#183545,#5d7987)}.good-doctor-hero{background:linear-gradient(115deg,#163147,#4e718f)}
+.constantine-hero{background:linear-gradient(115deg,#15251b,#526b36)}.gotham-hero{background:linear-gradient(115deg,#10181f,#394d5b)}.daredevil-hero{background:linear-gradient(115deg,#210b0d,#71171c)}.flash-hero{background:linear-gradient(115deg,#451014,#b2471e)}
 .calendar-intro>p:not(.eyebrow){color:var(--muted);line-height:1.7}
 
 /* Calendário de lançamentos */

@@ -31,11 +31,18 @@ const HIMYF_STORAGE_KEY = 'series-loner-how-i-met-your-father-v1';
 const AVATAR_STORAGE_KEY = 'series-loner-avatar-last-airbender-v1';
 const SPIDER_NOIR_STORAGE_KEY = 'series-loner-spider-noir-v1';
 const KNIGHT_STORAGE_KEY = 'series-loner-knight-seven-kingdoms-v1';
+const GREYS_STORAGE_KEY = 'series-loner-greys-anatomy-v1';
+const SAVING_HOPE_STORAGE_KEY = 'series-loner-saving-hope-v1';
+const GOOD_DOCTOR_STORAGE_KEY = 'series-loner-the-good-doctor-v1';
+const CONSTANTINE_STORAGE_KEY = 'series-loner-constantine-v1';
+const GOTHAM_STORAGE_KEY = 'series-loner-gotham-v1';
+const DAREDEVIL_STORAGE_KEY = 'series-loner-marvels-daredevil-v1';
+const FLASH_STORAGE_KEY = 'series-loner-the-flash-v1';
 
 const PROFILE_LIBRARY = [
   ['profile','series-loner-progress-v1',26,'series'],['hotd','series-loner-house-dragon-v1',26,'hotd'],['big-bang','series-loner-big-bang-v1',279,'big-bang'],['acolyte','series-loner-acolyte-v1',8,'acolyte'],['silo','series-loner-silo-v1',30,'silo'],['stuart','series-loner-stuart-v1',10,'stuart'],['ark','series-loner-the-ark-v1',36,'the-ark'],
   ['dune','series-loner-dune-prophecy-v1',14,'dune-prophecy'],['dexter','series-loner-dexter-v1',96,'dexter'],['walking-dead','series-loner-walking-dead-v1',177,'walking-dead'],['sandman','series-loner-sandman-v1',21,'sandman'],['witcher','series-loner-witcher-v1',40,'witcher'],['stranger-things','series-loner-stranger-things-v1',42,'stranger-things'],['game-of-thrones','series-loner-game-of-thrones-v1',73,'game-of-thrones'],['breaking-bad','series-loner-breaking-bad-v1',62,'breaking-bad'],['black-mirror','series-loner-black-mirror-v1',33,'black-mirror'],['friends','series-loner-friends-v1',236,'friends'],['last-of-us','series-loner-last-of-us-v1',16,'last-of-us'],['dark','series-loner-dark-v1',26,'dark'],['wandavision','series-loner-wandavision-v1',9,'wandavision'],['squid-game','series-loner-squid-game-v1',22,'squid-game'],['sex-education','series-loner-sex-education-v1',32,'sex-education'],['sense8','series-loner-sense8-v1',24,'sense8'],['the-boys','series-loner-the-boys-v1',40,'the-boys'],['wednesday','series-loner-wednesday-v1',16,'wednesday'],['how-to-get-away-with-murder','series-loner-how-to-get-away-with-murder-v1',90,'how-to-get-away-with-murder'],['that-70s-show','series-loner-that-70s-show-v1',200,'that-70s-show'],['how-i-met-your-mother','series-loner-how-i-met-your-mother-v1',208,'how-i-met-your-mother'],['how-i-met-your-father','series-loner-how-i-met-your-father-v1',30,'how-i-met-your-father'],
-  ['avatar-last-airbender',AVATAR_STORAGE_KEY,15,'avatar-last-airbender'],['spider-noir',SPIDER_NOIR_STORAGE_KEY,8,'spider-noir'],['knight-seven-kingdoms',KNIGHT_STORAGE_KEY,6,'knight-seven-kingdoms']
+  ['avatar-last-airbender',AVATAR_STORAGE_KEY,15,'avatar-last-airbender'],['spider-noir',SPIDER_NOIR_STORAGE_KEY,8,'spider-noir'],['knight-seven-kingdoms',KNIGHT_STORAGE_KEY,6,'knight-seven-kingdoms'],['greys-anatomy',GREYS_STORAGE_KEY,467,'greys-anatomy'],['saving-hope',SAVING_HOPE_STORAGE_KEY,85,'saving-hope'],['the-good-doctor',GOOD_DOCTOR_STORAGE_KEY,126,'the-good-doctor'],['constantine',CONSTANTINE_STORAGE_KEY,13,'constantine'],['gotham',GOTHAM_STORAGE_KEY,100,'gotham'],['marvels-daredevil',DAREDEVIL_STORAGE_KEY,39,'marvels-daredevil'],['the-flash',FLASH_STORAGE_KEY,184,'the-flash']
 ];
 const seasons = {
   1: ['The Bone Orchard','The Secret of Spoons','Head Full of Snow','Git Gone','Lemon Scented You','A Murder of Gods','A Prayer for Mad Sweeney','Come to Jesus'],
@@ -300,10 +307,10 @@ function initExtendedLibrary() {
   document.querySelectorAll('[data-header-next]').forEach(el=>el.textContent=`${level.ceiling-xp} XP para o nível ${level.level+1}`);
   document.querySelectorAll('[data-header-xp-bar]').forEach(el=>el.style.width=`${level.percent}%`);
 
-  if(page==='catalog') records.slice(-3).forEach(item=>{const percent=Math.round(item.state.watched.length/item.total*100);const label=document.getElementById(`${item.id}-catalog-progress-label`);if(label)label.textContent=`${percent}% assistido`;setWidth(`${item.id}-catalog-progress`,percent)});
+  if(page==='catalog') records.forEach(item=>{const percent=Math.round(item.state.watched.length/item.total*100);const label=document.getElementById(`${item.id}-catalog-progress-label`);if(label){label.textContent=`${percent}% assistido`;setWidth(`${item.id}-catalog-progress`,percent)}});
 
   if(page==='profile') {
-    records.slice(-3).forEach(item=>{const percent=Math.round(item.state.watched.length/item.total*100);const label=document.getElementById(`${item.id}-profile-progress-label`);if(label)label.textContent=`${percent}% assistido`;setWidth(`${item.id}-profile-progress`,percent)});
+    records.forEach(item=>{const percent=Math.round(item.state.watched.length/item.total*100);const label=document.getElementById(`${item.id}-profile-progress-label`);if(label){label.textContent=`${percent}% assistido`;setWidth(`${item.id}-profile-progress`,percent)}});
     document.getElementById('level-number').textContent=level.level;document.getElementById('avatar-level').textContent=level.level;document.getElementById('xp-current').textContent=`${xp} XP`;document.getElementById('xp-next').textContent=`${level.ceiling-xp} XP para o nível ${level.level+1}`;setWidth('xp-progress',level.percent);
     document.getElementById('stat-episodes').textContent=watchedTotal;document.getElementById('stat-xp').textContent=xp;document.getElementById('stat-series').textContent=records.filter(item=>item.state.inWatchlist&&item.state.watched.length===item.total).length;document.getElementById('stat-progress').textContent=`${Math.round(watchedTotal/records.reduce((sum,item)=>sum+item.total,0)*100)}%`;
     const empty=document.getElementById('profile-empty'),tabs=[...document.querySelectorAll('[data-profile-filter]')];
@@ -314,7 +321,7 @@ function initExtendedLibrary() {
 
   if(page==='ranking-series') {
     const board=document.querySelector('.ranking-board');
-    records.slice(-3).forEach(item=>{const row=document.getElementById(`${item.id}-rank-row`);if(row)board.appendChild(row)});
+    records.forEach(item=>{const row=document.getElementById(`${item.id}-rank-row`);if(row)board.appendChild(row)});
     const rows=[...board.querySelectorAll('.rank-row')].sort((a,b)=>{const score=row=>{const item=records.find(entry=>row.id===`${entry.id}-rank-row`);return item?Number(item.state.inWatchlist):Number(row.querySelector('.rank-score strong')?.textContent||0)};return score(b)-score(a)});
     rows.forEach((row,index)=>{const item=records.find(entry=>row.id===`${entry.id}-rank-row`),score=item?Number(item.state.inWatchlist):Number(row.querySelector('.rank-score strong')?.textContent||0);row.querySelector('.rank-position').textContent=String(index+1).padStart(2,'0');row.querySelector('.rank-score strong').textContent=score;row.querySelector('.rank-score span').textContent=score===1?'ponto':'pontos';board.appendChild(row)});
   }
