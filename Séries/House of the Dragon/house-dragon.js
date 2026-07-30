@@ -5,7 +5,7 @@ const ACOLYTE_STORAGE_KEY = 'series-loner-acolyte-v1';
 const SILO_STORAGE_KEY = 'series-loner-silo-v1';
 const STUART_STORAGE_KEY = 'series-loner-stuart-v1';
 const ARK_STORAGE_KEY = 'series-loner-the-ark-v1';
-const EXTRA_STORAGE_KEYS = ['series-loner-dune-prophecy-v1','series-loner-dexter-v1','series-loner-walking-dead-v1','series-loner-sandman-v1','series-loner-witcher-v1','series-loner-stranger-things-v1','series-loner-game-of-thrones-v1','series-loner-breaking-bad-v1','series-loner-black-mirror-v1','series-loner-friends-v1','series-loner-last-of-us-v1','series-loner-dark-v1','series-loner-wandavision-v1','series-loner-squid-game-v1','series-loner-sex-education-v1','series-loner-sense8-v1','series-loner-the-boys-v1','series-loner-wednesday-v1','series-loner-how-to-get-away-with-murder-v1'];
+const EXTRA_STORAGE_KEYS = ['series-loner-dune-prophecy-v1','series-loner-dexter-v1','series-loner-walking-dead-v1','series-loner-sandman-v1','series-loner-witcher-v1','series-loner-stranger-things-v1','series-loner-game-of-thrones-v1','series-loner-breaking-bad-v1','series-loner-black-mirror-v1','series-loner-friends-v1','series-loner-last-of-us-v1','series-loner-dark-v1','series-loner-wandavision-v1','series-loner-squid-game-v1','series-loner-sex-education-v1','series-loner-sense8-v1','series-loner-the-boys-v1','series-loner-wednesday-v1','series-loner-how-to-get-away-with-murder-v1','series-loner-that-70s-show-v1','series-loner-how-i-met-your-mother-v1','series-loner-how-i-met-your-father-v1'];
 const HOTD_ID = 'house-of-the-dragon';
 const hotdSeasons = {
   1: [
