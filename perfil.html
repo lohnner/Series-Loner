@@ -5,14 +5,14 @@
   <title>Meu Perfil — Séries Loner</title>
   <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=2795ba5">
+  <link rel="stylesheet" href="styles.css?v=profile-tabs-1">
 </head>
 <body data-page="profile">
   <header class="site-header"><a class="brand" href="index.html"><span>S</span>Séries Loner</a><nav><a href="index.html">HOME</a><a href="series.html">SÉRIES</a><a href="calendario.html">CALENDÁRIO</a><div class="nav-dropdown"><button type="button" aria-haspopup="true">RANKING <span aria-hidden="true">⌄</span></button><div class="nav-dropdown-menu"><a href="ranking-series.html">Ranking de Séries</a><a href="ranking-usuarios.html">Ranking de Usuários</a></div></div></nav><a class="header-xp" href="perfil.html" aria-current="page"><span class="header-level"><small>NÍVEL</small><b data-header-level>1</b></span><span class="header-xp-details"><span><b data-header-xp>0 XP</b><small data-header-next>100 XP para o nível 2</small></span><i><em data-header-xp-bar></em></i></span></a></header>
   <main class="profile-page">
     <section class="profile-head">
       <div class="avatar"><span>L</span><i id="avatar-level">1</i></div>
-      <div><p class="eyebrow">AVENTUREIRO SOLITÁRIO</p><h1>Meu perfil</h1><p>Cada episódio é um passo na sua próxima jornada.</p></div>
+      <div><h1>Meu perfil</h1></div>
     </section>
 
     <section class="level-card">
@@ -31,7 +31,8 @@
     </section>
 
     <section class="watching-section">
-      <div class="section-heading"><div><p class="eyebrow">CONTINUE ASSISTINDO</p><h2>Suas séries</h2></div></div>
+      <div class="section-heading"><div><h2>Suas séries</h2></div></div>
+      <div class="profile-tabs" role="tablist" aria-label="Filtrar suas séries"><button class="active" type="button" role="tab" aria-selected="true" data-profile-filter="watching">Continue Assistindo</button><button type="button" role="tab" aria-selected="false" data-profile-filter="completed">Finalizadas</button><button type="button" role="tab" aria-selected="false" data-profile-filter="5">5 estrelas</button><button type="button" role="tab" aria-selected="false" data-profile-filter="4">4 estrelas</button><button type="button" role="tab" aria-selected="false" data-profile-filter="3">3 estrelas</button><button type="button" role="tab" aria-selected="false" data-profile-filter="2">2 estrelas</button><button type="button" role="tab" aria-selected="false" data-profile-filter="1">1 estrela</button></div>
       <div id="profile-empty" class="profile-empty"><strong>Nenhuma série na sua lista</strong><p>Visite o acervo e adicione uma série para assistir.</p><a class="button button-primary" href="series.html">Ver séries</a></div>
       <a id="profile-series-card" class="profile-series" href="Séries/American Gods/index.html" hidden>
         <img src="Séries/American Gods/Capa.png" alt="Capa de American Gods">
@@ -70,6 +71,9 @@
       <a id="that-70s-show-profile-card" class="profile-series" href="Séries/That '70s Show/index.html" hidden><img src="Séries/That '70s Show/Capa.png" alt="Capa de That '70s Show"><div><h3>That '70s Show</h3><p>8 temporadas · 200 episódios</p><div class="progress-track"><div id="that-70s-show-profile-progress" class="progress-fill"></div></div><span id="that-70s-show-profile-progress-label">0% assistido</span></div><b aria-hidden="true">→</b></a>
       <a id="how-i-met-your-mother-profile-card" class="profile-series" href="Séries/How I Met Your Mother/index.html" hidden><img src="Séries/How I Met Your Mother/Capa.png" alt="Capa de How I Met Your Mother"><div><h3>How I Met Your Mother</h3><p>9 temporadas · 208 episódios</p><div class="progress-track"><div id="how-i-met-your-mother-profile-progress" class="progress-fill"></div></div><span id="how-i-met-your-mother-profile-progress-label">0% assistido</span></div><b aria-hidden="true">→</b></a>
       <a id="how-i-met-your-father-profile-card" class="profile-series" href="Séries/How I Met Your Father/index.html" hidden><img src="Séries/How I Met Your Father/Capa.png" alt="Capa de How I Met Your Father"><div><h3>How I Met Your Father</h3><p>2 temporadas · 30 episódios</p><div class="progress-track"><div id="how-i-met-your-father-profile-progress" class="progress-fill"></div></div><span id="how-i-met-your-father-profile-progress-label">0% assistido</span></div><b aria-hidden="true">→</b></a>
+      <a id="avatar-last-airbender-profile-card" class="profile-series" href="Séries/Avatar the Last Airbender/index.html" hidden><img src="Séries/Avatar the Last Airbender/Capa.png" alt="Capa de Avatar: The Last Airbender"><div><h3>Avatar: The Last Airbender</h3><p>2 temporadas · 15 episódios</p><div class="progress-track"><div id="avatar-last-airbender-profile-progress" class="progress-fill"></div></div><span id="avatar-last-airbender-profile-progress-label">0% assistido</span></div><b aria-hidden="true">→</b></a>
+      <a id="spider-noir-profile-card" class="profile-series" href="Séries/Spider-Noir/index.html" hidden><img src="Séries/Spider-Noir/Capa.png" alt="Capa de Spider-Noir"><div><h3>Spider-Noir</h3><p>1 temporada · 8 episódios</p><div class="progress-track"><div id="spider-noir-profile-progress" class="progress-fill"></div></div><span id="spider-noir-profile-progress-label">0% assistido</span></div><b aria-hidden="true">→</b></a>
+      <a id="knight-seven-kingdoms-profile-card" class="profile-series" href="Séries/A Knight of the Seven Kingdoms/index.html" hidden><img src="Séries/A Knight of the Seven Kingdoms/Capa.png" alt="Capa de A Knight of the Seven Kingdoms"><div><h3>A Knight of the Seven Kingdoms</h3><p>1 temporada · 6 episódios</p><div class="progress-track"><div id="knight-seven-kingdoms-profile-progress" class="progress-fill"></div></div><span id="knight-seven-kingdoms-profile-progress-label">0% assistido</span></div><b aria-hidden="true">→</b></a>
     </section>
   </main>
   <footer><a class="brand footer-brand" href="index.html"><span>S</span>Séries Loner</a></footer>
