@@ -1,5 +1,6 @@
 import { initializeApp, getApps } from 'https://www.gstatic.com/firebasejs/12.1.0/firebase-app.js';
 import { getAuth, GoogleAuthProvider, createUserWithEmailAndPassword, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile, onAuthStateChanged } from 'https://www.gstatic.com/firebasejs/12.1.0/firebase-auth.js';
+import { startCloudSync, stopCloudSync, saveCloudProfile } from './cloud-data.js';
 
 const firebaseConfig={apiKey:'AIzaSyCgZgwPUo5Ehp5JIdprYfjhIb5VlyJ2RcM',authDomain:'games-loner.firebaseapp.com',projectId:'games-loner',storageBucket:'games-loner.firebasestorage.app',messagingSenderId:'243629336740',appId:'1:243629336740:web:841224ffe9661397781e31'};
 const auth=getAuth(getApps()[0]||initializeApp(firebaseConfig));
@@ -13,7 +14,8 @@ modal.innerHTML=`<div class="login-backdrop"></div><section class="login-dialog"
 document.body.appendChild(modal);
 
 const dialog=modal.querySelector('.login-dialog'),form=modal.querySelector('.login-form'),title=modal.querySelector('h2'),intro=modal.querySelector('.login-intro'),message=modal.querySelector('.auth-message'),usernameField=modal.querySelector('.username-field'),emailField=modal.querySelector('.email-field'),passwordField=modal.querySelector('.password-field'),googleButton=modal.querySelector('.google-login'),modeButton=modal.querySelector('.auth-mode'),accountPanel=modal.querySelector('.account-panel');
-const usernameKey=user=>`series-loner-username-${user.uid}`;
+const headerLogout=document.createElement('button');headerLogout.type='button';headerLogout.className='header-logout';headerLogout.textContent='SAIR';headerLogout.setAttribute('aria-label','Sair da conta');document.querySelector('.header-xp')?.insertAdjacentElement('beforebegin',headerLogout);headerLogout.addEventListener('click',async()=>{headerLogout.disabled=true;try{await signOut(auth)}finally{headerLogout.disabled=false}});
+const usernameKey=user=>{const key=`series-loner-username-${user.uid}`;if(user.displayName&&!localStorage.getItem(key))localStorage.setItem(key,user.displayName);return key};
 function showMessage(text,error=false){message.textContent=text;message.classList.toggle('error',error)}
 function showHeaderUsername(name){document.querySelectorAll('.header-xp-details>span').forEach(row=>{let label=row.querySelector('.header-user');if(!label){label=document.createElement('strong');label.className='header-user';row.prepend(label)}label.textContent=name})}
 function friendly(error){return({'auth/invalid-credential':'E-mail ou senha incorretos.','auth/email-already-in-use':'Este e-mail já possui uma conta.','auth/weak-password':'Use uma senha com pelo menos 6 caracteres.','auth/popup-closed-by-user':'A janela do Google foi fechada.','auth/popup-blocked':'O navegador bloqueou a janela do Google.'})[error.code]||'Não foi possível concluir. Tente novamente.'}
@@ -45,4 +47,7 @@ if(document.body.dataset.page==='profile'){const panel=document.createElement('s
 
 onAuthStateChanged(auth,user=>{window.seriesLonerUser=user;document.body.classList.toggle('authenticated',!!user);document.body.classList.add('auth-ready');document.querySelectorAll('.auth-link').forEach(link=>link.textContent='ENTRAR');if(user){const shownName=user.displayName||'Usuário';showHeaderUsername(shownName);const profileTitle=document.querySelector('.profile-head h1');if(profileTitle)profileTitle.textContent=shownName;const avatar=document.querySelector('.avatar>span');if(avatar)avatar.textContent=shownName.charAt(0).toUpperCase();const rankingName=document.querySelector('.current-user .user-name strong');if(rankingName)rankingName.textContent=shownName;const rankingAvatar=document.querySelector('.current-user .rank-avatar');if(rankingAvatar)rankingAvatar.textContent=shownName.charAt(0).toUpperCase()}window.dispatchEvent(new CustomEvent('seriesloner-auth-change',{detail:{user}}));if(user&&!localStorage.getItem(usernameKey(user))){openModal('username')}else if(!modal.hidden){mode=user?'account':'login';syncModal()} });
 
+window.addEventListener('seriesloner-auth-change',event=>{const user=event.detail.user;if(user){startCloudSync(user).catch(error=>console.error('Falha ao iniciar sincronização:',error));if(user.displayName)localStorage.setItem(usernameKey(user),user.displayName)}else stopCloudSync()});
+window.addEventListener('seriesloner-cloud-ready',event=>{const key=`series-loner-cloud-ready-${event.detail.user.uid}`;if(!sessionStorage.getItem(key)){sessionStorage.setItem(key,'1');location.reload()}});
+window.addEventListener('seriesloner-profile-updated',event=>saveCloudProfile(event.detail.user));
 window.SeriesLonerAuth={open:openModal,get user(){return window.seriesLonerUser}};

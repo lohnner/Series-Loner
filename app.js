@@ -340,4 +340,16 @@ if (page === 'catalog') initCatalog();
 if (page === 'ranking-series') initSeriesRanking();
 if (page === 'ranking-users') initUserRanking();
 initExtendedLibrary();
+window.addEventListener('seriesloner-ranking-change',event=>{
+  const {users,seriesScores}=event.detail;
+  if(page==='ranking-users'){
+    const uid=window.seriesLonerUser?.uid,list=document.getElementById('user-ranking-list');
+    if(list)list.innerHTML=users.map((user,index)=>{const info=getLevelInfo(user.xp),current=user.uid===uid,name=String(user.name).replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;');return `<div class="user-rank-row ${index<3?`top-${index+1}`:''} ${current?'current-user':''}"><strong class="user-position">${String(index+1).padStart(2,'0')}</strong><span class="rank-avatar">${name.charAt(0).toUpperCase()}</span><div class="user-name"><strong>${name}</strong><small>${current?'SEU PERFIL':'AVENTUREIRO'}</small></div><div class="user-level"><span>NÍVEL ${info.level}</span><strong>${user.xp} XP</strong></div></div>`}).join('');
+  }
+  if(page==='ranking-series'){
+    const board=document.querySelector('.ranking-board');if(!board)return;
+    const rows=[...board.querySelectorAll('.rank-row')].map(row=>{const item=row.id==='american-rank-row'?PROFILE_LIBRARY[0]:PROFILE_LIBRARY.find(entry=>row.id===`${entry[0]}-rank-row`);return{row,score:item?Number(seriesScores[item[1]]||0):0}}).sort((a,b)=>b.score-a.score);
+    rows.forEach(({row,score},index)=>{row.querySelector('.rank-position').textContent=String(index+1).padStart(2,'0');row.querySelector('.rank-score strong').textContent=score;row.querySelector('.rank-score span').textContent=score===1?'ponto':'pontos';row.classList.toggle('rank-first',index===0&&score>0);board.appendChild(row)});
+  }
+});
 import('./auth-shell.js');
