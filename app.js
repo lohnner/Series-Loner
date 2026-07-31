@@ -342,7 +342,7 @@ updateHeaderXp();
 if (page === 'home') updateGlobalProgress();
 if (page === 'series') initSeriesPage();
 if (page === 'profile') initProfile();
-if (page === 'catalog') initCatalog();
+if (page === 'catalog' && !window.SeriesCatalog) initCatalog();
 if (page === 'ranking-series') initSeriesRanking();
 if (page === 'ranking-users') initUserRanking();
 initExtendedLibrary();

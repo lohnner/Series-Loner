@@ -1,0 +1,831 @@
+[
+  {
+    "id": "american",
+    "title": "American Gods",
+    "year": 2017,
+    "channel": "Starz",
+    "platform": "Starz",
+    "country": "Estados Unidos",
+    "genres": [
+      "Drama",
+      "Fantasia",
+      "Mistério"
+    ],
+    "status": "Finalizada",
+    "rating": 7.6,
+    "seasons": 3,
+    "image": "Séries/American Gods/Capa.png",
+    "page": "Séries/American Gods/index.html",
+    "description": ""
+  },
+  {
+    "id": "hotd",
+    "title": "House of the Dragon",
+    "year": 2022,
+    "channel": "HBO",
+    "platform": "HBO",
+    "country": "Estados Unidos",
+    "genres": [
+      "Drama",
+      "Fantasia",
+      "Aventura"
+    ],
+    "status": "Em andamento",
+    "rating": 8.2,
+    "seasons": 3,
+    "image": "Séries/House of the Dragon/Capa.png",
+    "page": "Séries/House of the Dragon/index.html",
+    "description": ""
+  },
+  {
+    "id": "big-bang",
+    "title": "The Big Bang Theory",
+    "year": 2007,
+    "channel": "CBS",
+    "platform": "CBS",
+    "country": "Estados Unidos",
+    "genres": [
+      "Comédia",
+      "Romance",
+      "Sitcom"
+    ],
+    "status": "Finalizada",
+    "rating": 8.1,
+    "seasons": 12,
+    "image": "Séries/The Big Bang Theory/Capa.png",
+    "page": "Séries/The Big Bang Theory/index.html",
+    "description": ""
+  },
+  {
+    "id": "acolyte",
+    "title": "The Acolyte",
+    "year": 2024,
+    "channel": "Disney+",
+    "platform": "Disney+",
+    "country": "Estados Unidos",
+    "genres": [
+      "Ficção científica",
+      "Mistério",
+      "Ação"
+    ],
+    "status": "Cancelada",
+    "rating": 5.8,
+    "seasons": 1,
+    "image": "Séries/The Acolyte/Capa.png",
+    "page": "Séries/The Acolyte/index.html",
+    "description": ""
+  },
+  {
+    "id": "silo",
+    "title": "Silo",
+    "year": 2023,
+    "channel": "Apple TV+",
+    "platform": "Apple TV+",
+    "country": "Estados Unidos",
+    "genres": [
+      "Drama",
+      "Ficção científica",
+      "Mistério"
+    ],
+    "status": "Em andamento",
+    "rating": 8.1,
+    "seasons": 3,
+    "image": "Séries/Silo/Capa.png",
+    "page": "Séries/Silo/index.html",
+    "description": ""
+  },
+  {
+    "id": "stuart",
+    "title": "Stuart Fails to Save the Universe",
+    "year": 2026,
+    "channel": "HBO Max",
+    "platform": "HBO Max",
+    "country": "Estados Unidos",
+    "genres": [
+      "Comédia",
+      "Ficção científica",
+      "Aventura"
+    ],
+    "status": "Em andamento",
+    "rating": 0,
+    "seasons": 1,
+    "image": "Séries/Stuart Fails to Save the Universe/Capa.png",
+    "page": "Séries/Stuart Fails to Save the Universe/index.html",
+    "description": ""
+  },
+  {
+    "id": "ark",
+    "title": "The Ark",
+    "year": 2023,
+    "channel": "Syfy",
+    "platform": "Syfy",
+    "country": "Estados Unidos",
+    "genres": [
+      "Drama",
+      "Ficção científica"
+    ],
+    "status": "Em andamento",
+    "rating": 5.8,
+    "seasons": 3,
+    "image": "Séries/The Ark/Capa.png",
+    "page": "Séries/The Ark/index.html",
+    "description": ""
+  },
+  {
+    "id": "dune",
+    "title": "Dune: Prophecy",
+    "year": 2024,
+    "channel": "HBO",
+    "platform": "HBO",
+    "country": "Estados Unidos",
+    "genres": [
+      "Drama",
+      "Ficção científica"
+    ],
+    "status": "Em andamento",
+    "rating": 7.2,
+    "seasons": 2,
+    "image": "Séries/Dune Prophecy/Capa.png",
+    "page": "Séries/Dune Prophecy/index.html",
+    "description": ""
+  },
+  {
+    "id": "dexter",
+    "title": "Dexter",
+    "year": 2006,
+    "channel": "Showtime",
+    "platform": "Showtime",
+    "country": "Estados Unidos",
+    "genres": [
+      "Drama",
+      "Crime",
+      "Mistério"
+    ],
+    "status": "Finalizada",
+    "rating": 8.4,
+    "seasons": 8,
+    "image": "Séries/Dexter/Capa.png",
+    "page": "Séries/Dexter/index.html",
+    "description": ""
+  },
+  {
+    "id": "walking-dead",
+    "title": "The Walking Dead",
+    "year": 2010,
+    "channel": "AMC",
+    "platform": "AMC",
+    "country": "Estados Unidos",
+    "genres": [
+      "Drama",
+      "Ação",
+      "Terror"
+    ],
+    "status": "Finalizada",
+    "rating": 7.9,
+    "seasons": 11,
+    "image": "Séries/The Walking Dead/Capa.png",
+    "page": "Séries/The Walking Dead/index.html",
+    "description": ""
+  },
+  {
+    "id": "sandman",
+    "title": "The Sandman",
+    "year": 2022,
+    "channel": "Netflix",
+    "platform": "Netflix",
+    "country": "Estados Unidos",
+    "genres": [
+      "Drama",
+      "Fantasia"
+    ],
+    "status": "Finalizada",
+    "rating": 7.4,
+    "seasons": 2,
+    "image": "Séries/The Sandman/Capa.png",
+    "page": "Séries/The Sandman/index.html",
+    "description": ""
+  },
+  {
+    "id": "witcher",
+    "title": "The Witcher",
+    "year": 2019,
+    "channel": "Netflix",
+    "platform": "Netflix",
+    "country": "Estados Unidos",
+    "genres": [
+      "Drama",
+      "Ação",
+      "Fantasia"
+    ],
+    "status": "Em andamento",
+    "rating": 7.8,
+    "seasons": 5,
+    "image": "Séries/The Witcher/Capa.png",
+    "page": "Séries/The Witcher/index.html",
+    "description": ""
+  },
+  {
+    "id": "stranger-things",
+    "title": "Stranger Things",
+    "year": 2016,
+    "channel": "Netflix",
+    "platform": "Netflix",
+    "country": "Estados Unidos",
+    "genres": [
+      "Drama",
+      "Terror",
+      "Ficção científica"
+    ],
+    "status": "Finalizada",
+    "rating": 8.4,
+    "seasons": 5,
+    "image": "Séries/Stranger Things/Capa.png",
+    "page": "Séries/Stranger Things/index.html",
+    "description": ""
+  },
+  {
+    "id": "game-of-thrones",
+    "title": "Game of Thrones",
+    "year": 2011,
+    "channel": "HBO",
+    "platform": "HBO",
+    "country": "Estados Unidos",
+    "genres": [
+      "Drama",
+      "Aventura",
+      "Fantasia"
+    ],
+    "status": "Finalizada",
+    "rating": 8.9,
+    "seasons": 8,
+    "image": "Séries/Game of Thrones/Capa.png",
+    "page": "Séries/Game of Thrones/index.html",
+    "description": ""
+  },
+  {
+    "id": "breaking-bad",
+    "title": "Breaking Bad",
+    "year": 2008,
+    "channel": "AMC",
+    "platform": "AMC",
+    "country": "Estados Unidos",
+    "genres": [
+      "Drama",
+      "Crime",
+      "Suspense"
+    ],
+    "status": "Finalizada",
+    "rating": 9.2,
+    "seasons": 5,
+    "image": "Séries/Breaking Bad/Capa.png",
+    "page": "Séries/Breaking Bad/index.html",
+    "description": ""
+  },
+  {
+    "id": "black-mirror",
+    "title": "Black Mirror",
+    "year": 2011,
+    "channel": "Netflix",
+    "platform": "Netflix",
+    "country": "Reino Unido",
+    "genres": [
+      "Drama",
+      "Ficção científica",
+      "Suspense"
+    ],
+    "status": "Em andamento",
+    "rating": 8.4,
+    "seasons": 7,
+    "image": "Séries/Black Mirror/Capa.png",
+    "page": "Séries/Black Mirror/index.html",
+    "description": ""
+  },
+  {
+    "id": "friends",
+    "title": "Friends",
+    "year": 1994,
+    "channel": "NBC",
+    "platform": "NBC",
+    "country": "Estados Unidos",
+    "genres": [
+      "Comédia",
+      "Romance"
+    ],
+    "status": "Finalizada",
+    "rating": 8.5,
+    "seasons": 10,
+    "image": "Séries/Friends/Capa.png",
+    "page": "Séries/Friends/index.html",
+    "description": ""
+  },
+  {
+    "id": "last-of-us",
+    "title": "The Last of Us",
+    "year": 2023,
+    "channel": "HBO",
+    "platform": "HBO",
+    "country": "Estados Unidos",
+    "genres": [
+      "Drama",
+      "Ação",
+      "Terror"
+    ],
+    "status": "Em andamento",
+    "rating": 7.9,
+    "seasons": 2,
+    "image": "Séries/The Last of Us/Capa.png",
+    "page": "Séries/The Last of Us/index.html",
+    "description": ""
+  },
+  {
+    "id": "dark",
+    "title": "Dark",
+    "year": 2017,
+    "channel": "Netflix",
+    "platform": "Netflix",
+    "country": "Alemanha",
+    "genres": [
+      "Drama",
+      "Ficção científica",
+      "Sobrenatural"
+    ],
+    "status": "Finalizada",
+    "rating": 8.2,
+    "seasons": 3,
+    "image": "Séries/Dark/Capa.png",
+    "page": "Séries/Dark/index.html",
+    "description": ""
+  },
+  {
+    "id": "wandavision",
+    "title": "WandaVision",
+    "year": 2021,
+    "channel": "Disney+",
+    "platform": "Disney+",
+    "country": "Estados Unidos",
+    "genres": [
+      "Drama",
+      "Comédia",
+      "Ficção científica"
+    ],
+    "status": "Finalizada",
+    "rating": 7.6,
+    "seasons": 1,
+    "image": "Séries/WandaVision/Capa.png",
+    "page": "Séries/WandaVision/index.html",
+    "description": ""
+  },
+  {
+    "id": "squid-game",
+    "title": "Squid Game",
+    "year": 2021,
+    "channel": "Netflix",
+    "platform": "Netflix",
+    "country": "Coreia do Sul",
+    "genres": [
+      "Drama",
+      "Suspense",
+      "Mistério"
+    ],
+    "status": "Finalizada",
+    "rating": 7.9,
+    "seasons": 3,
+    "image": "Séries/Squid Game/Capa.png",
+    "page": "Séries/Squid Game/index.html",
+    "description": ""
+  },
+  {
+    "id": "sex-education",
+    "title": "Sex Education",
+    "year": 2019,
+    "channel": "Netflix",
+    "platform": "Netflix",
+    "country": "Reino Unido",
+    "genres": [
+      "Drama",
+      "Comédia",
+      "Romance"
+    ],
+    "status": "Finalizada",
+    "rating": 7.8,
+    "seasons": 4,
+    "image": "Séries/Sex Education/Capa.png",
+    "page": "Séries/Sex Education/index.html",
+    "description": ""
+  },
+  {
+    "id": "sense8",
+    "title": "Sense8",
+    "year": 2015,
+    "channel": "Netflix",
+    "platform": "Netflix",
+    "country": "Estados Unidos",
+    "genres": [
+      "Drama",
+      "Ficção científica",
+      "Suspense"
+    ],
+    "status": "Finalizada",
+    "rating": 8.1,
+    "seasons": 2,
+    "image": "Séries/Sense8/Capa.png",
+    "page": "Séries/Sense8/index.html",
+    "description": ""
+  },
+  {
+    "id": "the-boys",
+    "title": "The Boys",
+    "year": 2019,
+    "channel": "Prime Video",
+    "platform": "Prime Video",
+    "country": "Estados Unidos",
+    "genres": [
+      "Ação",
+      "Fantasia",
+      "Super-heróis"
+    ],
+    "status": "Finalizada",
+    "rating": 8.3,
+    "seasons": 5,
+    "image": "Séries/The Boys/Capa.png",
+    "page": "Séries/The Boys/index.html",
+    "description": ""
+  },
+  {
+    "id": "wednesday",
+    "title": "Wednesday",
+    "year": 2022,
+    "channel": "Netflix",
+    "platform": "Netflix",
+    "country": "Estados Unidos",
+    "genres": [
+      "Comédia",
+      "Mistério",
+      "Sobrenatural"
+    ],
+    "status": "Em andamento",
+    "rating": 7.9,
+    "seasons": 2,
+    "image": "Séries/Wednesday/Capa.png",
+    "page": "Séries/Wednesday/index.html",
+    "description": ""
+  },
+  {
+    "id": "how-to-get-away-with-murder",
+    "title": "How to Get Away with Murder",
+    "year": 2014,
+    "channel": "ABC",
+    "platform": "ABC",
+    "country": "Estados Unidos",
+    "genres": [
+      "Drama",
+      "Suspense",
+      "Jurídico"
+    ],
+    "status": "Finalizada",
+    "rating": 7.6,
+    "seasons": 6,
+    "image": "Séries/How to Get Away with Murder/Capa.png",
+    "page": "Séries/How to Get Away with Murder/index.html",
+    "description": ""
+  },
+  {
+    "id": "that-70s-show",
+    "title": "That '70s Show",
+    "year": 1998,
+    "channel": "FOX",
+    "platform": "FOX",
+    "country": "Estados Unidos",
+    "genres": [
+      "Comédia",
+      "Sitcom"
+    ],
+    "status": "Finalizada",
+    "rating": 8,
+    "seasons": 8,
+    "image": "Séries/That '70s Show/Capa.png",
+    "page": "Séries/That '70s Show/index.html",
+    "description": ""
+  },
+  {
+    "id": "how-i-met-your-mother",
+    "title": "How I Met Your Mother",
+    "year": 2005,
+    "channel": "CBS",
+    "platform": "CBS",
+    "country": "Estados Unidos",
+    "genres": [
+      "Drama",
+      "Comédia",
+      "Romance"
+    ],
+    "status": "Finalizada",
+    "rating": 7.9,
+    "seasons": 9,
+    "image": "Séries/How I Met Your Mother/Capa.png",
+    "page": "Séries/How I Met Your Mother/index.html",
+    "description": ""
+  },
+  {
+    "id": "how-i-met-your-father",
+    "title": "How I Met Your Father",
+    "year": 2022,
+    "channel": "Hulu",
+    "platform": "Hulu",
+    "country": "Estados Unidos",
+    "genres": [
+      "Comédia",
+      "Romance"
+    ],
+    "status": "Cancelada",
+    "rating": 5.3,
+    "seasons": 2,
+    "image": "Séries/How I Met Your Father/Capa.png",
+    "page": "Séries/How I Met Your Father/index.html",
+    "description": ""
+  },
+  {
+    "id": "avatar-last-airbender",
+    "title": "Avatar: The Last Airbender",
+    "year": 2024,
+    "channel": "Netflix",
+    "platform": "Netflix",
+    "country": "Estados Unidos",
+    "genres": [
+      "Ação",
+      "Aventura",
+      "Fantasia"
+    ],
+    "status": "Em andamento",
+    "rating": 7.4,
+    "seasons": 2,
+    "image": "Séries/Avatar the Last Airbender/Capa.png",
+    "page": "Séries/Avatar the Last Airbender/index.html",
+    "description": ""
+  },
+  {
+    "id": "spider-noir",
+    "title": "Spider-Noir",
+    "year": 2026,
+    "channel": "MGM+",
+    "platform": "MGM+",
+    "country": "Estados Unidos",
+    "genres": [
+      "Drama",
+      "Ação",
+      "Ficção científica"
+    ],
+    "status": "Em andamento",
+    "rating": 7.4,
+    "seasons": 1,
+    "image": "Séries/Spider-Noir/Capa.png",
+    "page": "Séries/Spider-Noir/index.html",
+    "description": ""
+  },
+  {
+    "id": "knight-seven-kingdoms",
+    "title": "A Knight of the Seven Kingdoms",
+    "year": 2026,
+    "channel": "HBO",
+    "platform": "HBO",
+    "country": "Estados Unidos",
+    "genres": [
+      "Drama",
+      "Ação",
+      "Fantasia"
+    ],
+    "status": "Em andamento",
+    "rating": 8.2,
+    "seasons": 1,
+    "image": "Séries/A Knight of the Seven Kingdoms/Capa.png",
+    "page": "Séries/A Knight of the Seven Kingdoms/index.html",
+    "description": ""
+  },
+  {
+    "id": "greys-anatomy",
+    "title": "Grey's Anatomy",
+    "year": 2005,
+    "channel": "ABC",
+    "platform": "ABC",
+    "country": "Estados Unidos",
+    "genres": [
+      "Drama",
+      "Romance",
+      "Médica"
+    ],
+    "status": "Em andamento",
+    "rating": 7.6,
+    "seasons": 23,
+    "image": "Séries/Grey's Anatomy/Capa.png",
+    "page": "Séries/Grey's Anatomy/index.html",
+    "description": ""
+  },
+  {
+    "id": "saving-hope",
+    "title": "Saving Hope",
+    "year": 2012,
+    "channel": "CTV",
+    "platform": "CTV",
+    "country": "Canadá",
+    "genres": [
+      "Drama",
+      "Fantasia",
+      "Médica"
+    ],
+    "status": "Finalizada",
+    "rating": 7.7,
+    "seasons": 5,
+    "image": "Séries/Saving Hope/Capa.png",
+    "page": "Séries/Saving Hope/index.html",
+    "description": ""
+  },
+  {
+    "id": "the-good-doctor",
+    "title": "The Good Doctor",
+    "year": 2017,
+    "channel": "ABC",
+    "platform": "ABC",
+    "country": "Estados Unidos",
+    "genres": [
+      "Drama",
+      "Médica"
+    ],
+    "status": "Finalizada",
+    "rating": 7.6,
+    "seasons": 7,
+    "image": "Séries/The Good Doctor/Capa.png",
+    "page": "Séries/The Good Doctor/index.html",
+    "description": ""
+  },
+  {
+    "id": "constantine",
+    "title": "Constantine",
+    "year": 2014,
+    "channel": "NBC",
+    "platform": "NBC",
+    "country": "Estados Unidos",
+    "genres": [
+      "Drama",
+      "Ação",
+      "Terror"
+    ],
+    "status": "Finalizada",
+    "rating": 7.5,
+    "seasons": 1,
+    "image": "Séries/Constantine/Capa.png",
+    "page": "Séries/Constantine/index.html",
+    "description": ""
+  },
+  {
+    "id": "gotham",
+    "title": "Gotham",
+    "year": 2014,
+    "channel": "FOX",
+    "platform": "FOX",
+    "country": "Estados Unidos",
+    "genres": [
+      "Drama",
+      "Ação",
+      "Crime"
+    ],
+    "status": "Finalizada",
+    "rating": 7.7,
+    "seasons": 5,
+    "image": "Séries/Gotham/Capa.png",
+    "page": "Séries/Gotham/index.html",
+    "description": ""
+  },
+  {
+    "id": "marvels-daredevil",
+    "title": "Marvel's Daredevil",
+    "year": 2015,
+    "channel": "Netflix",
+    "platform": "Netflix",
+    "country": "Estados Unidos",
+    "genres": [
+      "Drama",
+      "Ação",
+      "Crime"
+    ],
+    "status": "Finalizada",
+    "rating": 8.4,
+    "seasons": 3,
+    "image": "Séries/Marvel's Daredevil/Capa.png",
+    "page": "Séries/Marvel's Daredevil/index.html",
+    "description": ""
+  },
+  {
+    "id": "the-flash",
+    "title": "The Flash",
+    "year": 2014,
+    "channel": "The CW",
+    "platform": "The CW",
+    "country": "Estados Unidos",
+    "genres": [
+      "Drama",
+      "Ação",
+      "Ficção científica"
+    ],
+    "status": "Finalizada",
+    "rating": 7.5,
+    "seasons": 9,
+    "image": "Séries/The Flash/Capa.png",
+    "page": "Séries/The Flash/index.html",
+    "description": ""
+  },
+  {
+    "id": "better-call-saul",
+    "title": "Better Call Saul",
+    "year": 2015,
+    "channel": "AMC",
+    "platform": "AMC",
+    "country": "Estados Unidos",
+    "genres": [
+      "Drama",
+      "Crime",
+      "Jurídico"
+    ],
+    "status": "Finalizada",
+    "rating": 8.6,
+    "seasons": 6,
+    "image": "Séries/Better Call Saul/Capa.png",
+    "page": "Séries/Better Call Saul/index.html",
+    "description": ""
+  },
+  {
+    "id": "mr-robot",
+    "title": "Mr. Robot",
+    "year": 2015,
+    "channel": "USA Network",
+    "platform": "USA Network",
+    "country": "Estados Unidos",
+    "genres": [
+      "Drama",
+      "Crime",
+      "Suspense"
+    ],
+    "status": "Finalizada",
+    "rating": 8.3,
+    "seasons": 4,
+    "image": "Séries/Mr. Robot/Capa.png",
+    "page": "Séries/Mr. Robot/index.html",
+    "description": ""
+  },
+  {
+    "id": "marvels-jessica-jones",
+    "title": "Marvel's Jessica Jones",
+    "year": 2015,
+    "channel": "Netflix",
+    "platform": "Netflix",
+    "country": "Estados Unidos",
+    "genres": [
+      "Ação",
+      "Crime",
+      "Ficção científica"
+    ],
+    "status": "Finalizada",
+    "rating": 7.9,
+    "seasons": 3,
+    "image": "Séries/Marvel's Jessica Jones/Capa.png",
+    "page": "Séries/Marvel's Jessica Jones/index.html",
+    "description": ""
+  },
+  {
+    "id": "marvels-luke-cage",
+    "title": "Marvel's Luke Cage",
+    "year": 2016,
+    "channel": "Netflix",
+    "platform": "Netflix",
+    "country": "Estados Unidos",
+    "genres": [
+      "Ação",
+      "Crime",
+      "Ficção científica"
+    ],
+    "status": "Finalizada",
+    "rating": 7.2,
+    "seasons": 2,
+    "image": "Séries/Marvel's Luke Cage/Capa.png",
+    "page": "Séries/Marvel's Luke Cage/index.html",
+    "description": ""
+  },
+  {
+    "id": "marvels-iron-fist",
+    "title": "Marvel's Iron Fist",
+    "year": 2017,
+    "channel": "Netflix",
+    "platform": "Netflix",
+    "country": "Estados Unidos",
+    "genres": [
+      "Drama",
+      "Crime",
+      "Ficção científica"
+    ],
+    "status": "Finalizada",
+    "rating": 7,
+    "seasons": 2,
+    "image": "Séries/Marvel's Iron Fist/Capa.png",
+    "page": "Séries/Marvel's Iron Fist/index.html",
+    "description": ""
+  }
+]
