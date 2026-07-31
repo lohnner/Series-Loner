@@ -827,5 +827,24 @@
     "image": "Séries/Marvel's Iron Fist/Capa.png",
     "page": "Séries/Marvel's Iron Fist/index.html",
     "description": ""
+  },
+  {
+    "id": "ransom-canyon",
+    "title": "Ransom Canyon",
+    "year": 2025,
+    "channel": "Netflix",
+    "platform": "Netflix",
+    "country": "Estados Unidos",
+    "genres": [
+      "Drama",
+      "Romance",
+      "Faroeste"
+    ],
+    "status": "Em andamento",
+    "rating": 7.2,
+    "seasons": 2,
+    "image": "Séries/Ransom Canyon/Capa.png",
+    "page": "Séries/Ransom Canyon/index.html",
+    "description": "Um drama familiar romântico ambientado no Texas, onde as vidas de três famílias de rancheiros se cruzam."
   }
 ]
