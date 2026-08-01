@@ -12,6 +12,7 @@
   document.title=pageLetter?`Séries com ${pageLetter} — Séries Loner`:'Catálogo de Séries — Séries Loner';
   document.querySelector('meta[name="description"]')?.setAttribute('content',pageLetter?`Séries cadastradas com a letra ${pageLetter} no Séries Loner.`:'Pesquise e filtre todo o catálogo do Séries Loner por plataforma, gênero, ano, status e país.');
   all.forEach(item=>{item.description=item.description||'';item.popularity=0});
+  let hasSearched=Boolean(pageLetter);const initialRandom=[...all].sort(()=>Math.random()-.5).slice(0,5);
   const values=key=>[...new Set(all.map(item=>item[key]).filter(Boolean))].sort((a,b)=>String(a).localeCompare(String(b),'pt-BR'));
   const genres=[...new Set(all.flatMap(item=>item.genres))].sort((a,b)=>a.localeCompare(b,'pt-BR'));
   const letters='ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
@@ -35,7 +36,7 @@
   const storageKey=id=>({american:'series-loner-progress-v1',hotd:'series-loner-house-dragon-v1','big-bang':'series-loner-big-bang-v1',acolyte:'series-loner-acolyte-v1',ark:'series-loner-the-ark-v1'}[id]||`series-loner-${id}-v1`);
   const progress=item=>{try{const value=JSON.parse(localStorage.getItem(storageKey(item.id))||'{}');return Math.round(((value.watched||[]).length/(Number(document.querySelector(`#${CSS.escape(item.id)}-catalog-progress`)?.dataset.total)||1))*100)}catch{return 0}};
   const card=(item,compact=false)=>`<a class="catalog-card ${compact?'featured-card':''}" href="${encodeURI(item.page)}" data-id="${item.id}"><div class="catalog-poster"><img src="${encodeURI(item.image)}" alt="Capa de ${item.title}" loading="lazy"><span>${item.status}</span></div><div class="catalog-info"><small>${item.year} · ${item.platform}</small><h2>${item.title}</h2><p>${item.genres.join(' · ')}</p><div class="catalog-card-meta"><span>★ ${item.rating||'—'}</span><span>${item.seasons} temporada${item.seasons===1?'':'s'}</span><span>${item.country}</span></div></div></a>`;
-  function filtered(){let result=all.filter(item=>{
+  function filtered(){if(!hasSearched)return initialRandom;let result=all.filter(item=>{
     if(state.letter&&normalize(item.title).charAt(0)!==normalize(state.letter))return false;
     if(state.search&&!normalize(item.title).includes(normalize(state.search)))return false;
     if(state.platform&&item.platform!==state.platform)return false;
@@ -49,13 +50,13 @@
     return result.sort(sorters[state.sort]||sorters.az)}
   function persist(){const copy={...state};delete copy.letter;delete copy.limit;localStorage.setItem('series-loner-catalog-filters',JSON.stringify(copy))}
   function render(){const result=filtered(),visible=result.slice(0,state.limit);grid.innerHTML=visible.map(item=>card(item)).join('');document.getElementById('catalog-count').textContent=`${result.length} série${result.length===1?'':'s'} encontrada${result.length===1?'':'s'}`;const yearLabel=state.decade?(state.decade.startsWith('d-')?`Década de ${state.decade.slice(2)}`:state.decade.slice(2)):'';const active=[state.platform,yearLabel,state.status,state.country,...state.genres].filter(Boolean);document.getElementById('catalog-active-filters').textContent=active.join(' · ');empty.hidden=result.length>0;empty.innerHTML=`<strong>${pageLetter?'Nenhuma série cadastrada com esta letra.':'Nenhuma série encontrada.'}</strong><p>Tente alterar a pesquisa ou limpar os filtros.</p>`;more.hidden=result.length<=state.limit;persist()}
-  const search=document.getElementById('catalog-search');search.value=state.search;search.addEventListener('input',()=>{state.search=search.value;state.limit=20;render()});
+  const search=document.getElementById('catalog-search');search.value=state.search;
   [['filter-platform','platform'],['filter-decade','decade'],['filter-status','status'],['filter-country','country'],['filter-sort','sort']].forEach(([id,key])=>{document.getElementById(id).value=state[key]});
   controls.querySelectorAll('.genre-filter input').forEach(input=>input.checked=state.genres.includes(input.value));
-  document.getElementById('apply-filters').addEventListener('click',()=>{state.platform=document.getElementById('filter-platform').value;state.decade=document.getElementById('filter-decade').value;state.status=document.getElementById('filter-status').value;state.country=document.getElementById('filter-country').value;state.sort=document.getElementById('filter-sort').value;state.genres=[...controls.querySelectorAll('.genre-filter input:checked')].map(item=>item.value);state.limit=20;render();grid.scrollIntoView({behavior:'smooth',block:'start'})});
-  document.getElementById('clear-filters').addEventListener('click',()=>{Object.assign(state,{search:'',platform:'',decade:'',status:'',country:'',genres:[],sort:'az',limit:20});search.value='';controls.querySelectorAll('select').forEach(select=>select.value=select.id==='filter-sort'?'az':'');controls.querySelectorAll('.genre-filter input').forEach(input=>input.checked=false);render()});
+  document.getElementById('apply-filters').addEventListener('click',()=>{state.search=search.value;state.platform=document.getElementById('filter-platform').value;state.decade=document.getElementById('filter-decade').value;state.status=document.getElementById('filter-status').value;state.country=document.getElementById('filter-country').value;state.sort=document.getElementById('filter-sort').value;state.genres=[...controls.querySelectorAll('.genre-filter input:checked')].map(item=>item.value);state.limit=all.length;hasSearched=true;render();grid.scrollIntoView({behavior:'smooth',block:'start'})});
+  document.getElementById('clear-filters').addEventListener('click',()=>{Object.assign(state,{search:'',platform:'',decade:'',status:'',country:'',genres:[],sort:'az',limit:5});hasSearched=Boolean(pageLetter);search.value='';controls.querySelectorAll('select').forEach(select=>select.value=select.id==='filter-sort'?'az':'');controls.querySelectorAll('.genre-filter input').forEach(input=>input.checked=false);render()});
   more.addEventListener('click',()=>{state.limit+=20;render()});window.addEventListener('scroll',()=>top.classList.toggle('show',scrollY>500),{passive:true});
   window.addEventListener('seriesloner-ranking-change',event=>{all.forEach(item=>item.popularity=Number(event.detail.seriesScores[storageKey(item.id)]||0));if(state.sort==='popular')render()});
   if(matchMedia('(max-width:600px)').matches)controls.querySelector('.catalog-filters').removeAttribute('open');
-  render();await import('./app.js?v=library-45');
+  if(!pageLetter)state.limit=5;render();await import('./app.js?v=library-45');
 })().catch(error=>{console.error(error);const grid=document.querySelector('.catalog-grid');if(grid)grid.innerHTML='<div class="catalog-empty"><strong>Não foi possível carregar o catálogo.</strong><p>Atualize a página e tente novamente.</p></div>'});
