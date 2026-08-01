@@ -846,5 +846,20 @@
     "image": "Séries/Ransom Canyon/Capa.png",
     "page": "Séries/Ransom Canyon/index.html",
     "description": "Um drama familiar romântico ambientado no Texas, onde as vidas de três famílias de rancheiros se cruzam."
+  },
+  {
+    "id": "love-is-blind-france",
+    "title": "Love Is Blind: France",
+    "year": 2025,
+    "channel": "Netflix",
+    "platform": "Netflix",
+    "country": "França",
+    "genres": ["Reality show", "Romance"],
+    "status": "Em andamento",
+    "rating": 6.2,
+    "seasons": 1,
+    "image": "Séries/Love Is Blind France/Capa.png",
+    "page": "Séries/Love Is Blind France/index.html",
+    "description": "Solteiros franceses buscam o amor e ficam noivos sem nunca terem se visto, colocando à prova se a conexão emocional é mais forte que a aparência."
   }
 ]
