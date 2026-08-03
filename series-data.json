@@ -956,5 +956,21 @@
   {
     "id": "dcs-legends-of-tomorrow", "title": "DC's Legends of Tomorrow", "year": 2016, "channel": "The CW", "platform": "The CW", "country": "Estados Unidos", "genres": ["Drama", "Ação", "Ficção científica"], "status": "Finalizada", "rating": 7.1, "seasons": 7,
     "image": "Séries/DC's Legends of Tomorrow/capa.png", "page": "Séries/DC's Legends of Tomorrow/index.html", "description": "Um grupo improvável de heróis e vilões viaja no tempo para impedir catástrofes e proteger a história."
+  },
+  {
+    "id": "another-life", "title": "Another Life", "year": 2019, "channel": "Netflix", "platform": "Netflix", "country": "Estados Unidos", "genres": ["Drama", "Ficção científica", "Aventura"], "status": "Finalizada", "rating": 6.3, "seasons": 2,
+    "image": "Séries/Another Life/Capa.png", "page": "Séries/Another Life/index.html", "description": "A astronauta Niko Breckinridge lidera uma missão para investigar a origem de um misterioso artefato alienígena que chegou à Terra."
+  },
+  {
+    "id": "lost-in-space", "title": "Lost in Space", "year": 2018, "channel": "Netflix", "platform": "Netflix", "country": "Estados Unidos", "genres": ["Drama", "Ficção científica", "Aventura"], "status": "Finalizada", "rating": 7.7, "seasons": 3,
+    "image": "Séries/Lost in Space/Capa.png", "page": "Séries/Lost in Space/index.html", "description": "Após um pouso forçado em um planeta desconhecido, a família Robinson luta para sobreviver e reencontrar o caminho para casa."
+  },
+  {
+    "id": "scream", "title": "Scream", "year": 2015, "channel": "MTV / VH1", "platform": "MTV / VH1", "country": "Estados Unidos", "genres": ["Terror", "Mistério", "Drama"], "status": "Finalizada", "rating": 7.0, "seasons": 3,
+    "image": "Séries/Scream/Capa.png", "page": "Séries/Scream/index.html", "description": "Um assassinato brutal desperta lembranças de crimes antigos e transforma um grupo de adolescentes em alvos de um novo assassino mascarado."
+  },
+  {
+    "id": "bates-motel", "title": "Bates Motel", "year": 2013, "channel": "A&E", "platform": "A&E", "country": "Estados Unidos", "genres": ["Drama", "Terror", "Suspense"], "status": "Finalizada", "rating": 8.0, "seasons": 5,
+    "image": "Séries/Bates Motel/Capa.png", "page": "Séries/Bates Motel/index.html", "description": "Norma Bates compra um motel para recomeçar a vida com o filho Norman, mas segredos sombrios ameaçam a relação entre os dois."
   }
 ]

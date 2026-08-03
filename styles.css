@@ -99,6 +99,7 @@ body.authenticated .auth-link{display:none}.profile-logout{display:none;margin-l
 .avatar-hero{background:linear-gradient(115deg,#173a51,#9a512e)}.spider-noir-hero{background:linear-gradient(115deg,#111519,#3a1015)}.knight-hero{background:linear-gradient(115deg,#25231c,#74512d)}
 .greys-hero{background:linear-gradient(115deg,#25313b,#637786)}.saving-hope-hero{background:linear-gradient(115deg,#183545,#5d7987)}.good-doctor-hero{background:linear-gradient(115deg,#163147,#4e718f)}
 .constantine-hero{background:linear-gradient(115deg,#15251b,#526b36)}.gotham-hero{background:linear-gradient(115deg,#10181f,#394d5b)}.daredevil-hero{background:linear-gradient(115deg,#210b0d,#71171c)}.flash-hero{background:linear-gradient(115deg,#451014,#b2471e)}
+.another-life-hero{background:linear-gradient(115deg,#071621,#174968 58%,#8c5b35)}.lost-in-space-hero{background:linear-gradient(115deg,#07151d,#1e5268 58%,#bd6d35)}.scream-hero{background:linear-gradient(115deg,#0d0d10,#29262b 58%,#7e161c)}.bates-motel-hero{background:linear-gradient(115deg,#11181a,#34484a 58%,#765d49)}
 .calendar-intro>p:not(.eyebrow){color:var(--muted);line-height:1.7}
 
 /* Calendário de lançamentos */
