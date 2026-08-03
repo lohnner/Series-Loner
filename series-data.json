@@ -936,5 +936,25 @@
     "image": "Séries/Your Friends and Neighbors/Capa.png",
     "page": "Séries/Your Friends and Neighbors/index.html",
     "description": "Após perder o emprego, um gestor de fundos divorciado passa a roubar os vizinhos ricos para sustentar o estilo de vida da família."
+  },
+  {
+    "id": "arrow", "title": "Arrow", "year": 2012, "channel": "The CW", "platform": "The CW", "country": "Estados Unidos", "genres": ["Drama", "Ação", "Ficção científica"], "status": "Finalizada", "rating": 7.4, "seasons": 8,
+    "image": "Séries/Arrow/Capa.png", "page": "Séries/Arrow/index.html", "description": "Oliver Queen retorna após cinco anos desaparecido e assume a identidade de um vigilante para combater o crime em Starling City."
+  },
+  {
+    "id": "marvels-agents-of-shield", "title": "Marvel's Agents of S.H.I.E.L.D.", "year": 2013, "channel": "ABC", "platform": "ABC", "country": "Estados Unidos", "genres": ["Ação", "Aventura", "Ficção científica"], "status": "Finalizada", "rating": 8.0, "seasons": 7,
+    "image": "Séries/Marvel's Agents of S.H.I.E.L.D/Capa.png", "page": "Séries/Marvel's Agents of S.H.I.E.L.D/index.html", "description": "Phil Coulson lidera uma equipe de agentes especializados que investiga ameaças extraordinárias ao redor do mundo."
+  },
+  {
+    "id": "marvels-agent-carter", "title": "Marvel's Agent Carter", "year": 2015, "channel": "ABC", "platform": "ABC", "country": "Estados Unidos", "genres": ["Ação", "Aventura", "Ficção científica"], "status": "Finalizada", "rating": 8.0, "seasons": 2,
+    "image": "Séries/Marvel's Agent Carter/Capa.png", "page": "Séries/Marvel's Agent Carter/index.html", "description": "Peggy Carter equilibra o trabalho na SSR com missões secretas para Howard Stark na América do pós-guerra."
+  },
+  {
+    "id": "supergirl", "title": "Supergirl", "year": 2015, "channel": "The CW", "platform": "The CW", "country": "Estados Unidos", "genres": ["Drama", "Ação", "Ficção científica"], "status": "Finalizada", "rating": 7.0, "seasons": 6,
+    "image": "Séries/Supergirl/Capa.png", "page": "Séries/Supergirl/index.html", "description": "Kara Zor-El assume seus poderes e se torna a protetora de National City."
+  },
+  {
+    "id": "dcs-legends-of-tomorrow", "title": "DC's Legends of Tomorrow", "year": 2016, "channel": "The CW", "platform": "The CW", "country": "Estados Unidos", "genres": ["Drama", "Ação", "Ficção científica"], "status": "Finalizada", "rating": 7.1, "seasons": 7,
+    "image": "Séries/DC's Legends of Tomorrow/capa.png", "page": "Séries/DC's Legends of Tomorrow/index.html", "description": "Um grupo improvável de heróis e vilões viaja no tempo para impedir catástrofes e proteger a história."
   }
 ]

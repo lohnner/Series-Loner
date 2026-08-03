@@ -1,6 +1,6 @@
 (async()=>{
   window.SeriesCatalog=true;
-  const response=await fetch('series-data.json?v=46');
+  const response=await fetch('series-data.json?v=52');
   const all=await response.json();
   const normalize=value=>String(value||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase();
   const params=new URLSearchParams(location.search),pageLetter=(document.body.dataset.catalogLetter||params.get('letter')||'').toUpperCase();
@@ -58,5 +58,5 @@
   more.addEventListener('click',()=>{state.limit+=20;render()});window.addEventListener('scroll',()=>top.classList.toggle('show',scrollY>500),{passive:true});
   window.addEventListener('seriesloner-ranking-change',event=>{all.forEach(item=>item.popularity=Number(event.detail.seriesScores[storageKey(item.id)]||0));if(state.sort==='popular')render()});
   if(matchMedia('(max-width:600px)').matches)controls.querySelector('.catalog-filters').removeAttribute('open');
-  if(!pageLetter)state.limit=5;render();await import('./app.js?v=library-45');
+  if(!pageLetter)state.limit=5;render();await import('./app.js?v=library-52');
 })().catch(error=>{console.error(error);const grid=document.querySelector('.catalog-grid');if(grid)grid.innerHTML='<div class="catalog-empty"><strong>Não foi possível carregar o catálogo.</strong><p>Atualize a página e tente novamente.</p></div>'});
