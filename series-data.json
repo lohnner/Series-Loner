@@ -972,5 +972,29 @@
   {
     "id": "bates-motel", "title": "Bates Motel", "year": 2013, "channel": "A&E", "platform": "A&E", "country": "Estados Unidos", "genres": ["Drama", "Terror", "Suspense"], "status": "Finalizada", "rating": 8.0, "seasons": 5,
     "image": "Séries/Bates Motel/Capa.png", "page": "Séries/Bates Motel/index.html", "description": "Norma Bates compra um motel para recomeçar a vida com o filho Norman, mas segredos sombrios ameaçam a relação entre os dois."
+  },
+  {
+    "id": "1670", "title": "1670", "year": 2023, "channel": "Netflix", "platform": "Netflix", "country": "Polônia", "genres": ["Comédia", "História"], "status": "Em andamento", "rating": 7.9, "seasons": 2,
+    "image": "Séries/1670/Capa.png", "page": "Séries/1670/index.html", "description": "Em uma comédia satírica, um nobre excêntrico enfrenta disputas familiares e conflitos com camponeses enquanto tenta se tornar a figura mais famosa da Polônia."
+  },
+  {
+    "id": "rain-dogs", "title": "Rain Dogs", "year": 2023, "channel": "HBO", "platform": "HBO", "country": "Reino Unido", "genres": ["Drama", "Comédia"], "status": "Finalizada", "rating": 6.2, "seasons": 1,
+    "image": "Séries/Rain Dogs/Capa.png", "page": "Séries/Rain Dogs/index.html", "description": "Costello Jones luta contra a pobreza para criar a filha, apoiada por amizades intensas e por uma família pouco convencional."
+  },
+  {
+    "id": "ojitos-de-huevo", "title": "Ojitos de Huevo", "year": 2023, "channel": "Netflix", "platform": "Netflix", "country": "México", "genres": ["Comédia"], "status": "Em andamento", "rating": 6.5, "seasons": 2,
+    "image": "Séries/Ojitos de Huevo/Capa.png", "page": "Séries/Ojitos de Huevo/index.html", "description": "Um aspirante a comediante cego parte em busca de seus sonhos ao lado do melhor amigo, enfrentando juntos tudo o que aparece pelo caminho."
+  },
+  {
+    "id": "the-power-of-parker", "title": "The Power of Parker", "year": 2023, "channel": "BBC One", "platform": "BBC iPlayer", "country": "Reino Unido", "genres": ["Drama", "Comédia"], "status": "Em andamento", "rating": 6.5, "seasons": 2,
+    "image": "Séries/The Power of Parker/Capa.png", "page": "Séries/The Power of Parker/index.html", "description": "Em 1990, o empresário Martin Parker parece ter tudo, mas dívidas e uma vida amorosa complicada colocam seu pequeno império em risco."
+  },
+  {
+    "id": "choona", "title": "Choona", "year": 2023, "channel": "Netflix", "platform": "Netflix", "country": "Índia", "genres": ["Comédia", "Crime", "Drama"], "status": "Finalizada", "rating": 6.5, "seasons": 1,
+    "image": "Séries/Choona/Capa.png", "page": "Séries/Choona/index.html", "description": "Um grupo improvável de adversários se une para executar um audacioso golpe contra o político corrupto que arruinou suas vidas."
+  },
+  {
+    "id": "sisters", "title": "SisterS", "year": 2023, "channel": "RTÉ One", "platform": "RTÉ Player", "country": "Irlanda", "genres": ["Drama", "Comédia"], "status": "Em andamento", "rating": 5.9, "seasons": 2,
+    "image": "Séries/SisterS/Capa.png", "page": "Séries/SisterS/index.html", "description": "Duas mulheres, criadas entre o Canadá e a Irlanda, descobrem que são meias-irmãs e partem em uma viagem para encontrar o pai alcoólatra."
   }
 ]
