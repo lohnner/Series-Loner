@@ -1012,5 +1012,13 @@
   {
     "id": "trying", "title": "Trying", "year": 2020, "channel": "Apple TV", "platform": "Apple TV", "country": "Reino Unido", "genres": ["Comédia", "Drama", "Romance"], "status": "Em andamento", "rating": 6.6, "seasons": 5,
     "image": "Séries/Trying/Capa.png", "page": "Séries/Trying/index.html", "description": "Nikki e Jason desejam formar uma família e enfrentam juntos os desafios, surpresas e emoções do processo de adoção."
+  },
+  {
+    "id": "sterling-point", "title": "Sterling Point", "year": 2026, "channel": "Prime Video", "platform": "Prime Video", "country": "Estados Unidos", "genres": ["Drama", "Romance", "Mistério"], "status": "Em andamento", "rating": 0, "seasons": 1,
+    "image": "Séries/Sterling Point/Capa.png", "page": "Séries/Sterling Point/index.html", "description": "Aos 17 anos, Annie herda a misteriosa ilha do avô no Canadá, onde encontra novos amigos, romances e segredos desconhecidos de sua família."
+  },
+  {
+    "id": "diarra-from-detroit", "title": "Diarra from Detroit", "year": 2024, "channel": "Paramount+", "platform": "Paramount+", "country": "Estados Unidos", "genres": ["Drama", "Comédia", "Mistério"], "status": "Em andamento", "rating": 7.8, "seasons": 2,
+    "image": "Séries/Diarra from Detroit/Capa.png", "page": "Séries/Diarra from Detroit/index.html", "description": "Uma professora em processo de divórcio se recusa a acreditar que foi ignorada por um encontro e acaba mergulhando em um antigo mistério do submundo de Detroit."
   }
 ]
