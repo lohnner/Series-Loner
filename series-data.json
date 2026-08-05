@@ -1112,5 +1112,25 @@
   {
     "id": "the-good-place", "title": "The Good Place", "year": 2016, "channel": "NBC", "platform": "NBC", "country": "Estados Unidos", "genres": ["Comédia", "Fantasia", "Sobrenatural"], "status": "Finalizada", "rating": 7.6, "seasons": 4,
     "image": "Séries/The Good Place/Capa.png", "page": "Séries/The Good Place/index.html", "description": "Após morrer, Eleanor Shellstrop chega por engano ao Lugar Bom e tenta se tornar uma pessoa melhor para merecer sua nova vida após a morte."
+  },
+  {
+    "id": "wizards-beyond-waverly-place", "title": "Wizards Beyond Waverly Place", "year": 2024, "channel": "Disney Channel", "platform": "Disney+", "country": "Estados Unidos", "genres": ["Comédia", "Família", "Fantasia"], "status": "Finalizada", "rating": 5.0, "seasons": 3,
+    "image": "Séries/Wizards Beyond Waverly Place/Capa.png", "page": "Séries/Wizards Beyond Waverly Place/index.html", "description": "Justin Russo tenta levar uma vida comum com a família, mas retorna ao mundo da magia para orientar a jovem e poderosa feiticeira Billie."
+  },
+  {
+    "id": "geek-girl", "title": "Geek Girl", "year": 2024, "channel": "Netflix", "platform": "Netflix", "country": "Reino Unido", "genres": ["Drama", "Comédia", "Romance"], "status": "Em andamento", "rating": 7.5, "seasons": 1,
+    "image": "Séries/Geek Girl/Capa.png", "page": "Séries/Geek Girl/index.html", "description": "A desajeitada adolescente Harriet Manners é descoberta por uma agência de modelos e precisa aprender a equilibrar escola, amizades e o mundo da moda."
+  },
+  {
+    "id": "english-teacher", "title": "English Teacher", "year": 2024, "channel": "FX", "platform": "Hulu", "country": "Estados Unidos", "genres": ["Comédia"], "status": "Finalizada", "rating": 4.5, "seasons": 2,
+    "image": "Séries/English Teacher/Capa.png", "page": "Séries/English Teacher/index.html", "description": "Um professor de inglês em uma escola de Austin tenta conciliar alunos, colegas, expectativas sociais e os desafios da vida pessoal."
+  },
+  {
+    "id": "ted", "title": "Ted", "year": 2024, "channel": "Peacock", "platform": "Peacock", "country": "Estados Unidos", "genres": ["Comédia", "Fantasia"], "status": "Finalizada", "rating": 7.1, "seasons": 2,
+    "image": "Séries/Ted/Capa.png", "page": "Séries/Ted/index.html", "description": "Nos anos 1990, o irreverente urso de pelúcia Ted vive com o adolescente John Bennett e sua família em Massachusetts."
+  },
+  {
+    "id": "the-handmaids-tale", "title": "The Handmaid's Tale", "year": 2017, "channel": "Hulu", "platform": "Hulu", "country": "Estados Unidos", "genres": ["Drama", "Ficção científica"], "status": "Finalizada", "rating": 7.4, "seasons": 6,
+    "image": "Séries/The Handmaid's Tale/Capa.png", "page": "Séries/The Handmaid's Tale/index.html", "description": "Em uma sociedade totalitária que subjuga mulheres férteis, June Osborne luta para sobreviver, reencontrar a família e derrubar o regime de Gilead."
   }
 ]
