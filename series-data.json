@@ -996,5 +996,21 @@
   {
     "id": "sisters", "title": "SisterS", "year": 2023, "channel": "RTÉ One", "platform": "RTÉ Player", "country": "Irlanda", "genres": ["Drama", "Comédia"], "status": "Em andamento", "rating": 5.9, "seasons": 2,
     "image": "Séries/SisterS/Capa.png", "page": "Séries/SisterS/index.html", "description": "Duas mulheres, criadas entre o Canadá e a Irlanda, descobrem que são meias-irmãs e partem em uma viagem para encontrar o pai alcoólatra."
+  },
+  {
+    "id": "youre-killing-me", "title": "You're Killing Me", "year": 2026, "channel": "Acorn TV", "platform": "Acorn TV", "country": "Estados Unidos", "genres": ["Drama", "Comédia", "Crime"], "status": "Em andamento", "rating": 6.1, "seasons": 1,
+    "image": "Séries/You're Killing Me/Capa.png", "page": "Séries/You're Killing Me/index.html", "description": "Uma romancista e uma aspirante a escritora formam uma aliança improvável para encontrar o assassino de uma amiga em uma pequena cidade da Nova Inglaterra."
+  },
+  {
+    "id": "lucky", "title": "Lucky", "year": 2026, "channel": "Apple TV", "platform": "Apple TV", "country": "Estados Unidos", "genres": ["Ação", "Suspense"], "status": "Em andamento", "rating": 6.5, "seasons": 1,
+    "image": "Séries/Lucky/Capa.png", "page": "Séries/Lucky/index.html", "description": "Após um golpe milionário dar errado, uma vigarista foge enquanto é perseguida pelo FBI e por um implacável chefe do crime."
+  },
+  {
+    "id": "ted-lasso", "title": "Ted Lasso", "year": 2020, "channel": "Apple TV", "platform": "Apple TV", "country": "Estados Unidos", "genres": ["Drama", "Comédia", "Esporte"], "status": "Em andamento", "rating": 8.1, "seasons": 4,
+    "image": "Séries/Ted Lasso/Capa.png", "page": "Séries/Ted Lasso/index.html", "description": "Um otimista técnico de futebol americano é contratado para comandar um clube inglês, apesar de não ter experiência alguma com o esporte."
+  },
+  {
+    "id": "trying", "title": "Trying", "year": 2020, "channel": "Apple TV", "platform": "Apple TV", "country": "Reino Unido", "genres": ["Comédia", "Drama", "Romance"], "status": "Em andamento", "rating": 6.6, "seasons": 5,
+    "image": "Séries/Trying/Capa.png", "page": "Séries/Trying/index.html", "description": "Nikki e Jason desejam formar uma família e enfrentam juntos os desafios, surpresas e emoções do processo de adoção."
   }
 ]
