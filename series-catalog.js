@@ -5,7 +5,8 @@
   const normalize=value=>String(value||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase();
   const params=new URLSearchParams(location.search),pageLetter=(document.body.dataset.catalogLetter||params.get('letter')||'').toUpperCase();
   let saved={};try{saved=JSON.parse(localStorage.getItem('series-loner-catalog-filters')||'{}')}catch{localStorage.removeItem('series-loner-catalog-filters')}
-  const state={search:'',platform:'',decade:'',status:'',country:'',genres:[],sort:'az',limit:20,...saved};
+  const state={search:'',platform:'',decade:'',status:'',country:'',genres:[],channels:[],sort:'az',limit:20,...saved};
+  if(!Array.isArray(state.genres))state.genres=[];if(!Array.isArray(state.channels))state.channels=[];
   if(pageLetter)state.letter=pageLetter;
   const main=document.querySelector('.catalog-page'),head=document.querySelector('.catalog-head'),grid=document.querySelector('.catalog-grid');
   if(!main||!head||!grid)return;
@@ -15,6 +16,7 @@
   let hasSearched=Boolean(pageLetter);const initialRandom=[...all].sort(()=>Math.random()-.5).slice(0,5);
   const values=key=>[...new Set(all.map(item=>item[key]).filter(Boolean))].sort((a,b)=>String(a).localeCompare(String(b),'pt-BR'));
   const genres=[...new Set(all.flatMap(item=>item.genres))].sort((a,b)=>a.localeCompare(b,'pt-BR'));
+  const channels=values('channel');
   const letters='ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
   const optionList=(items,label)=>`<option value="">${label}</option>${items.map(value=>`<option value="${value}">${value}</option>`).join('')}`;
   const controls=document.createElement('section');controls.className='catalog-tools';controls.innerHTML=`
@@ -27,7 +29,7 @@
       <label>Status<select id="filter-status">${optionList(values('status'),'Todos')}</select></label>
       <label>País<select id="filter-country">${optionList(values('country'),'Todos')}</select></label>
       <label>Ordenar<select id="filter-sort"><option value="az">A–Z</option><option value="za">Z–A</option><option value="newest">Mais novas</option><option value="oldest">Mais antigas</option><option value="rating">Melhor avaliação</option><option value="popular">Mais populares</option></select></label>
-    </div><fieldset class="genre-filter"><legend>Gêneros <small>(selecione um ou mais)</small></legend>${genres.map(genre=>`<label><input type="checkbox" value="${genre}"><span>${genre}</span></label>`).join('')}</fieldset><div class="filter-actions"><button id="apply-filters" type="button">Buscar</button><button id="clear-filters" type="button">Limpar filtros</button></div></details>
+    </div><fieldset class="genre-filter"><legend>Gêneros <small>(selecione um ou mais)</small></legend>${genres.map(genre=>`<label><input type="checkbox" value="${genre}"><span>${genre}</span></label>`).join('')}</fieldset><fieldset class="channel-filter"><legend>Canais <small>(selecione um ou mais)</small></legend>${channels.map(channel=>`<label><input type="checkbox" value="${channel}"><span>${channel}</span></label>`).join('')}</fieldset><div class="filter-actions"><button id="apply-filters" type="button">Buscar</button><button id="clear-filters" type="button">Limpar filtros</button></div></details>
     <div class="catalog-result-head"><strong id="catalog-count"></strong><span id="catalog-active-filters"></span></div>`;
   head.insertAdjacentElement('afterend',controls);
   const empty=document.createElement('div');empty.className='catalog-empty';empty.hidden=true;grid.insertAdjacentElement('afterend',empty);
@@ -46,16 +48,18 @@
     if(state.status&&item.status!==state.status)return false;
     if(state.country&&item.country!==state.country)return false;
     if(state.genres.length&&!state.genres.every(genre=>item.genres.includes(genre)))return false;
+    if(state.channels.length&&!state.channels.includes(item.channel))return false;
     return true});
     const sorters={az:(a,b)=>a.title.localeCompare(b.title,'pt-BR'),za:(a,b)=>b.title.localeCompare(a.title,'pt-BR'),newest:(a,b)=>b.year-a.year,oldest:(a,b)=>a.year-b.year,rating:(a,b)=>b.rating-a.rating,popular:(a,b)=>b.popularity-a.popularity||b.rating-a.rating};
     return result.sort(sorters[state.sort]||sorters.az)}
   function persist(){const copy={...state};delete copy.letter;delete copy.limit;localStorage.setItem('series-loner-catalog-filters',JSON.stringify(copy))}
-  function render(){const result=filtered(),visible=result.slice(0,state.limit);grid.innerHTML=visible.map(item=>card(item)).join('');document.getElementById('catalog-count').textContent=`${result.length} série${result.length===1?'':'s'} encontrada${result.length===1?'':'s'}`;const yearLabel=state.decade?(state.decade.startsWith('d-')?`Década de ${state.decade.slice(2)}`:state.decade.slice(2)):'';const active=[state.platform,yearLabel,state.status,state.country,...state.genres].filter(Boolean);document.getElementById('catalog-active-filters').textContent=active.join(' · ');empty.hidden=result.length>0;empty.innerHTML=`<strong>${pageLetter?'Nenhuma série cadastrada com esta letra.':'Nenhuma série encontrada.'}</strong><p>Tente alterar a pesquisa ou limpar os filtros.</p>`;more.hidden=result.length<=state.limit;persist()}
+  function render(){const result=filtered(),visible=result.slice(0,state.limit);grid.innerHTML=visible.map(item=>card(item)).join('');document.getElementById('catalog-count').textContent=`${result.length} série${result.length===1?'':'s'} encontrada${result.length===1?'':'s'}`;const yearLabel=state.decade?(state.decade.startsWith('d-')?`Década de ${state.decade.slice(2)}`:state.decade.slice(2)):'';const active=[state.platform,yearLabel,state.status,state.country,...state.genres,...state.channels].filter(Boolean);document.getElementById('catalog-active-filters').textContent=active.join(' · ');empty.hidden=result.length>0;empty.innerHTML=`<strong>${pageLetter?'Nenhuma série cadastrada com esta letra.':'Nenhuma série encontrada.'}</strong><p>Tente alterar a pesquisa ou limpar os filtros.</p>`;more.hidden=result.length<=state.limit;persist()}
   const search=document.getElementById('catalog-search');search.value=state.search;
   [['filter-platform','platform'],['filter-decade','decade'],['filter-status','status'],['filter-country','country'],['filter-sort','sort']].forEach(([id,key])=>{document.getElementById(id).value=state[key]});
   controls.querySelectorAll('.genre-filter input').forEach(input=>input.checked=state.genres.includes(input.value));
-  document.getElementById('apply-filters').addEventListener('click',()=>{state.search=search.value;state.platform=document.getElementById('filter-platform').value;state.decade=document.getElementById('filter-decade').value;state.status=document.getElementById('filter-status').value;state.country=document.getElementById('filter-country').value;state.sort=document.getElementById('filter-sort').value;state.genres=[...controls.querySelectorAll('.genre-filter input:checked')].map(item=>item.value);state.limit=all.length;hasSearched=true;render();grid.scrollIntoView({behavior:'smooth',block:'start'})});
-  document.getElementById('clear-filters').addEventListener('click',()=>{Object.assign(state,{search:'',platform:'',decade:'',status:'',country:'',genres:[],sort:'az',limit:5});hasSearched=Boolean(pageLetter);search.value='';controls.querySelectorAll('select').forEach(select=>select.value=select.id==='filter-sort'?'az':'');controls.querySelectorAll('.genre-filter input').forEach(input=>input.checked=false);render()});
+  controls.querySelectorAll('.channel-filter input').forEach(input=>input.checked=state.channels.includes(input.value));
+  document.getElementById('apply-filters').addEventListener('click',()=>{state.search=search.value;state.platform=document.getElementById('filter-platform').value;state.decade=document.getElementById('filter-decade').value;state.status=document.getElementById('filter-status').value;state.country=document.getElementById('filter-country').value;state.sort=document.getElementById('filter-sort').value;state.genres=[...controls.querySelectorAll('.genre-filter input:checked')].map(item=>item.value);state.channels=[...controls.querySelectorAll('.channel-filter input:checked')].map(item=>item.value);state.limit=all.length;hasSearched=true;render();grid.scrollIntoView({behavior:'smooth',block:'start'})});
+  document.getElementById('clear-filters').addEventListener('click',()=>{Object.assign(state,{search:'',platform:'',decade:'',status:'',country:'',genres:[],channels:[],sort:'az',limit:5});hasSearched=Boolean(pageLetter);search.value='';controls.querySelectorAll('select').forEach(select=>select.value=select.id==='filter-sort'?'az':'');controls.querySelectorAll('.genre-filter input,.channel-filter input').forEach(input=>input.checked=false);render()});
   more.addEventListener('click',()=>{state.limit+=20;render()});window.addEventListener('scroll',()=>top.classList.toggle('show',scrollY>500),{passive:true});
   window.addEventListener('seriesloner-ranking-change',event=>{all.forEach(item=>item.popularity=Number(event.detail.seriesScores[storageKey(item.id)]||0));if(state.sort==='popular')render()});
   if(matchMedia('(max-width:600px)').matches)controls.querySelector('.catalog-filters').removeAttribute('open');
