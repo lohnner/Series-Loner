@@ -1156,5 +1156,9 @@
   {
     "id": "dead-boy-detectives", "title": "Dead Boy Detectives", "year": 2024, "channel": "Netflix", "platform": "Netflix", "country": "Estados Unidos", "genres": ["Terror", "Mistério", "Sobrenatural"], "status": "Finalizada", "rating": 6.9, "seasons": 1,
     "image": "Séries/Dead Boy Detectives/Capa.png", "page": "Séries/Dead Boy Detectives/index.html", "description": "Dois fantasmas adolescentes e uma médium solucionam casos sobrenaturais enquanto fogem de bruxas, do Inferno e da própria Morte."
+  },
+  {
+    "id": "lord-of-the-flies", "title": "Lord of the Flies", "year": 2026, "channel": "BBC", "platform": "BBC iPlayer", "country": "Reino Unido", "genres": ["Drama", "Aventura", "Suspense"], "status": "Finalizada", "rating": 6.1, "seasons": 1,
+    "image": "Séries/Lord of the Flies/Capa.png", "page": "Séries/Lord of the Flies/index.html", "description": "Após um acidente aéreo, um grupo de garotos fica isolado em uma ilha tropical e tenta criar sua própria sociedade, que rapidamente mergulha no medo e na violência."
   }
 ]

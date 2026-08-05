@@ -1,4 +1,4 @@
-fetch('series-data.json?v=53')
+fetch('series-data.json?v=54')
   .then(response=>response.json())
   .then(series=>{
     document.getElementById('about-series-count').textContent=series.length;
