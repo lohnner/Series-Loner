@@ -1160,5 +1160,9 @@
   {
     "id": "lord-of-the-flies", "title": "Lord of the Flies", "year": 2026, "channel": "BBC", "platform": "BBC iPlayer", "country": "Reino Unido", "genres": ["Drama", "Aventura", "Suspense"], "status": "Finalizada", "rating": 6.1, "seasons": 1,
     "image": "Séries/Lord of the Flies/Capa.png", "page": "Séries/Lord of the Flies/index.html", "description": "Após um acidente aéreo, um grupo de garotos fica isolado em uma ilha tropical e tenta criar sua própria sociedade, que rapidamente mergulha no medo e na violência."
+  },
+  {
+    "id": "fallout", "title": "Fallout", "year": 2024, "channel": "Prime Video", "platform": "Prime Video", "country": "Estados Unidos", "genres": ["Drama", "Ação", "Ficção científica"], "status": "Em andamento", "rating": 7.9, "seasons": 2,
+    "image": "Séries/Fallout/Capa.png", "page": "Séries/Fallout/index.html", "description": "Duzentos anos após o apocalipse, uma jovem deixa a segurança de um abrigo subterrâneo e encontra um mundo devastado, violento e cheio de segredos."
   }
 ]

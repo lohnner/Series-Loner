@@ -322,7 +322,7 @@ function renderCompleteSeriesRanking(){if(!completeRankingCatalog.length)return;
 async function initExtendedLibrary() {
   let library=[...PROFILE_LIBRARY],catalog=[];
   if(page==='profile'||page==='ranking-series')try{
-    catalog=await fetch('series-data.json?v=profile-3').then(response=>response.json());
+    catalog=await fetch('series-data.json?v=profile-4').then(response=>response.json());
     if(page==='profile'){const known=new Set(library.map(item=>item[0]));
     const additions=await Promise.all(catalog.filter(item=>!known.has(item.id)).map(async item=>{
       let total=0;try{const html=await fetch(encodeURI(item.page)).then(response=>response.text());total=Number(html.match(/SERIES_CONFIG=\{[^}]*total:(\d+)/)?.[1]||0)}catch{}
