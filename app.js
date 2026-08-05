@@ -311,16 +311,21 @@ function initUserRanking() {
   }).join('');
 }
 
+let completeRankingCatalog=[],completeRankingScores=null,completeRankingPage=0;
+const completeRankingKey=item=>PROFILE_LIBRARY.find(entry=>entry[0]===item.id)?.[1]||`series-loner-${item.id}-v1`;
+function rankingPagination(total,current){const pages=Math.ceil(total/50);if(pages<=1)return'';return`<nav class="ranking-pagination" aria-label="Páginas do ranking">${Array.from({length:pages},(_,index)=>{const start=index*50+1,end=Math.min((index+1)*50,total);return`<button type="button" class="${index===current?'active':''}" data-ranking-page="${index}">${start}–${end}</button>`}).join('')}</nav>`}
+function renderCompleteSeriesRanking(){if(!completeRankingCatalog.length)return;const board=document.querySelector('.ranking-board'),escape=value=>String(value).replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;');const entries=completeRankingCatalog.map(item=>{const key=completeRankingKey(item),score=completeRankingScores?Number(completeRankingScores[key]||0):Number(getExtraState(key).inWatchlist);return{item,score}}).sort((a,b)=>b.score-a.score||a.item.title.localeCompare(b.item.title,'pt-BR'));const start=completeRankingPage*50;board.innerHTML=entries.slice(start,start+50).map(({item,score},offset)=>{const index=start+offset;return`<a id="${item.id}-rank-row" class="rank-row ${index===0&&score>0?'rank-first':''}" href="${encodeURI(item.page)}"><strong class="rank-position">${String(index+1).padStart(2,'0')}</strong><img src="${encodeURI(item.image)}" alt="Capa de ${escape(item.title)}"><div class="rank-name"><small>${index===0&&score>0?'LÍDER DO ACERVO':'NO RANKING'}</small><h2>${escape(item.title)}</h2><p>${item.genres.map(escape).join(' · ')}</p></div><div class="rank-score"><strong>${score}</strong><span>${score===1?'ponto':'pontos'}</span></div></a>`}).join('');document.querySelector('.ranking-pagination')?.remove();board.insertAdjacentHTML('afterend',rankingPagination(entries.length,completeRankingPage));document.querySelectorAll('[data-ranking-page]').forEach(button=>button.addEventListener('click',()=>{completeRankingPage=Number(button.dataset.rankingPage);renderCompleteSeriesRanking();document.querySelector('.ranking-intro')?.scrollIntoView({behavior:'smooth'})}))}
+
 async function initExtendedLibrary() {
   let library=[...PROFILE_LIBRARY],catalog=[];
-  if(page==='profile')try{
+  if(page==='profile'||page==='ranking-series')try{
     catalog=await fetch('series-data.json?v=profile-2').then(response=>response.json());
-    const known=new Set(library.map(item=>item[0]));
+    if(page==='profile'){const known=new Set(library.map(item=>item[0]));
     const additions=await Promise.all(catalog.filter(item=>!known.has(item.id)).map(async item=>{
       let total=0;try{const html=await fetch(encodeURI(item.page)).then(response=>response.text());total=Number(html.match(/SERIES_CONFIG=\{[^}]*total:(\d+)/)?.[1]||0)}catch{}
       return[item.id,`series-loner-${item.id}-v1`,total||1,item.id];
     }));
-    library.push(...additions);
+    library.push(...additions)};
   }catch(error){console.error('Falha ao carregar biblioteca completa:',error)}
   const records = library.map(([id,key,total,ratingSlug])=>({id,key,total,ratingSlug,state:getExtraState(key)}));
   const watchedTotal = records.reduce((sum,item)=>sum+item.state.watched.length,0);
@@ -347,10 +352,7 @@ async function initExtendedLibrary() {
   }
 
   if(page==='ranking-series') {
-    const board=document.querySelector('.ranking-board');
-    records.forEach(item=>{const row=document.getElementById(`${item.id}-rank-row`);if(row)board.appendChild(row)});
-    const rows=[...board.querySelectorAll('.rank-row')].sort((a,b)=>{const score=row=>{const item=records.find(entry=>row.id===`${entry.id}-rank-row`);return item?Number(item.state.inWatchlist):Number(row.querySelector('.rank-score strong')?.textContent||0)};return score(b)-score(a)});
-    rows.forEach((row,index)=>{const item=records.find(entry=>row.id===`${entry.id}-rank-row`),score=item?Number(item.state.inWatchlist):Number(row.querySelector('.rank-score strong')?.textContent||0);row.querySelector('.rank-position').textContent=String(index+1).padStart(2,'0');row.querySelector('.rank-score strong').textContent=score;row.querySelector('.rank-score span').textContent=score===1?'ponto':'pontos';board.appendChild(row)});
+    completeRankingCatalog=catalog;renderCompleteSeriesRanking();
   }
 
   if(page==='ranking-users'){const xpNode=document.querySelector('.current-user .user-level strong');if(xpNode)xpNode.textContent=`${xp} XP`}
@@ -374,9 +376,7 @@ window.addEventListener('seriesloner-ranking-change',event=>{
     if(list)list.innerHTML=users.map((user,index)=>{const info=getLevelInfo(user.xp),current=user.uid===uid,name=String(user.name).replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;');return `<div class="user-rank-row ${index<3?`top-${index+1}`:''} ${current?'current-user':''}"><strong class="user-position">${String(index+1).padStart(2,'0')}</strong><span class="rank-avatar">${name.charAt(0).toUpperCase()}</span><div class="user-name"><strong>${name}</strong><small>${current?'SEU PERFIL':'AVENTUREIRO'}</small></div><div class="user-level"><span>NÍVEL ${info.level}</span><strong>${user.xp} XP</strong></div></div>`}).join('');
   }
   if(page==='ranking-series'){
-    const board=document.querySelector('.ranking-board');if(!board)return;
-    const rows=[...board.querySelectorAll('.rank-row')].map(row=>{const item=row.id==='american-rank-row'?PROFILE_LIBRARY[0]:PROFILE_LIBRARY.find(entry=>row.id===`${entry[0]}-rank-row`);return{row,score:item?Number(seriesScores[item[1]]||0):0}}).sort((a,b)=>b.score-a.score);
-    rows.forEach(({row,score},index)=>{row.querySelector('.rank-position').textContent=String(index+1).padStart(2,'0');row.querySelector('.rank-score strong').textContent=score;row.querySelector('.rank-score span').textContent=score===1?'ponto':'pontos';row.classList.toggle('rank-first',index===0&&score>0);board.appendChild(row)});
+    completeRankingScores=seriesScores;renderCompleteSeriesRanking();
   }
 });
 import('./auth-shell.js');
