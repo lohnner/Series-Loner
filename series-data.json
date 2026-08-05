@@ -1020,5 +1020,9 @@
   {
     "id": "diarra-from-detroit", "title": "Diarra from Detroit", "year": 2024, "channel": "Paramount+", "platform": "Paramount+", "country": "Estados Unidos", "genres": ["Drama", "Comédia", "Mistério"], "status": "Em andamento", "rating": 7.8, "seasons": 2,
     "image": "Séries/Diarra from Detroit/Capa.png", "page": "Séries/Diarra from Detroit/index.html", "description": "Uma professora em processo de divórcio se recusa a acreditar que foi ignorada por um encontro e acaba mergulhando em um antigo mistério do submundo de Detroit."
+  },
+  {
+    "id": "love-is-blind-brazil", "title": "Love Is Blind: Brazil", "year": 2021, "channel": "Netflix", "platform": "Netflix", "country": "Brasil", "genres": ["Reality show", "Romance"], "status": "Em andamento", "rating": 0, "seasons": 5,
+    "image": "Séries/Love Is Blind Brazil/Capa.png", "page": "Séries/Love Is Blind Brazil/index.html", "description": "Solteiros buscam o amor e ficam noivos antes de se conhecerem pessoalmente neste experimento que coloca a conexão emocional acima das aparências."
   }
 ]
