@@ -1132,5 +1132,29 @@
   {
     "id": "the-handmaids-tale", "title": "The Handmaid's Tale", "year": 2017, "channel": "Hulu", "platform": "Hulu", "country": "Estados Unidos", "genres": ["Drama", "Ficção científica"], "status": "Finalizada", "rating": 7.4, "seasons": 6,
     "image": "Séries/The Handmaid's Tale/Capa.png", "page": "Séries/The Handmaid's Tale/index.html", "description": "Em uma sociedade totalitária que subjuga mulheres férteis, June Osborne luta para sobreviver, reencontrar a família e derrubar o regime de Gilead."
+  },
+  {
+    "id": "reacher", "title": "Reacher", "year": 2022, "channel": "Prime Video", "platform": "Prime Video", "country": "Estados Unidos", "genres": ["Drama", "Ação", "Suspense"], "status": "Em andamento", "rating": 8.2, "seasons": 4,
+    "image": "Séries/Reacher/Capa.png", "page": "Séries/Reacher/index.html", "description": "O ex-investigador militar Jack Reacher atravessa os Estados Unidos e enfrenta conspirações perigosas usando inteligência, experiência e força."
+  },
+  {
+    "id": "marvels-the-punisher", "title": "Marvel's The Punisher", "year": 2017, "channel": "Netflix", "platform": "Netflix", "country": "Estados Unidos", "genres": ["Drama", "Ação", "Crime"], "status": "Finalizada", "rating": 8.4, "seasons": 2,
+    "image": "Séries/Marvel's The Punisher/Capa.png", "page": "Séries/Marvel's The Punisher/index.html", "description": "Após vingar a morte da família, Frank Castle descobre uma conspiração militar e assume de vez a identidade do vigilante conhecido como Justiceiro."
+  },
+  {
+    "id": "prison-break", "title": "Prison Break", "year": 2005, "channel": "FOX", "platform": "FOX", "country": "Estados Unidos", "genres": ["Drama", "Ação", "Crime", "Suspense"], "status": "Finalizada", "rating": 8.2, "seasons": 5,
+    "image": "Séries/Prison Break/Capa.png", "page": "Séries/Prison Break/index.html", "description": "Michael Scofield entra deliberadamente na prisão para executar um plano elaborado e salvar o irmão Lincoln de uma condenação injusta."
+  },
+  {
+    "id": "lanterns", "title": "Lanterns", "year": 2026, "channel": "HBO", "platform": "HBO Max", "country": "Estados Unidos", "genres": ["Drama", "Ação", "Aventura", "Ficção científica"], "status": "Em andamento", "rating": 8.4, "seasons": 1,
+    "image": "Séries/Lanterns/Capa.png", "page": "Séries/Lanterns/index.html", "description": "John Stewart e o veterano Hal Jordan, dois policiais intergalácticos, investigam um assassinato ligado a um sombrio mistério no interior dos Estados Unidos."
+  },
+  {
+    "id": "the-penguin", "title": "The Penguin", "year": 2024, "channel": "HBO", "platform": "HBO Max", "country": "Estados Unidos", "genres": ["Drama", "Crime"], "status": "Finalizada", "rating": 8.0, "seasons": 1,
+    "image": "Séries/The Penguin/Capa.png", "page": "Séries/The Penguin/index.html", "description": "Após os acontecimentos de The Batman, Oz Cobb disputa o controle do submundo de Gotham e inicia sua ascensão ao poder."
+  },
+  {
+    "id": "dead-boy-detectives", "title": "Dead Boy Detectives", "year": 2024, "channel": "Netflix", "platform": "Netflix", "country": "Estados Unidos", "genres": ["Terror", "Mistério", "Sobrenatural"], "status": "Finalizada", "rating": 6.9, "seasons": 1,
+    "image": "Séries/Dead Boy Detectives/Capa.png", "page": "Séries/Dead Boy Detectives/index.html", "description": "Dois fantasmas adolescentes e uma médium solucionam casos sobrenaturais enquanto fogem de bruxas, do Inferno e da própria Morte."
   }
 ]
