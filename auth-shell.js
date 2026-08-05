@@ -60,3 +60,4 @@ window.addEventListener('seriesloner-auth-change',event=>{const user=event.detai
 window.addEventListener('seriesloner-cloud-ready',event=>{const key=`series-loner-cloud-ready-${event.detail.user.uid}`;if(!sessionStorage.getItem(key)){sessionStorage.setItem(key,'1');location.reload()}});
 window.addEventListener('seriesloner-profile-updated',event=>saveCloudProfile(event.detail.user));
 window.SeriesLonerAuth={open:openModal,get user(){return window.seriesLonerUser}};
+import('./series-remaining.js?v=1');
