@@ -311,6 +311,9 @@ function initUserRanking() {
   }).join('');
 }
 
+let completeUserRanking=[],userRankingPage=0,userRankingSearch='';
+function renderCompleteUserRanking(){const list=document.getElementById('user-ranking-list');if(!list)return;const uid=window.seriesLonerUser?.uid,term=userRankingSearch.toLocaleLowerCase('pt-BR'),filtered=completeUserRanking.filter(user=>user.name.toLocaleLowerCase('pt-BR').includes(term)),start=userRankingPage*50,escape=value=>String(value).replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;');list.innerHTML=filtered.length?filtered.slice(start,start+50).map(user=>{const position=completeUserRanking.indexOf(user)+1,info=getLevelInfo(user.xp),current=user.uid===uid,name=escape(user.name);return`<a class="user-rank-row ${position<=3?`top-${position}`:''} ${current?'current-user':''}" href="perfil-publico.html?uid=${encodeURIComponent(user.uid)}"><strong class="user-position">${String(position).padStart(2,'0')}</strong><span class="rank-avatar">${name.charAt(0).toUpperCase()}</span><div class="user-name"><strong>${name}</strong><small>${current?'SEU PERFIL':`${user.watchlistCount||0} SÉRIES NA LISTA`}</small></div><div class="user-level"><span>NÍVEL ${info.level}</span><strong>${user.xp} XP</strong></div></a>`}).join(''):'<div class="ranking-search-empty">Nenhum usuário encontrado.</div>';const count=document.getElementById('user-ranking-count');if(count)count.textContent=`${filtered.length} usuário${filtered.length===1?'':'s'} encontrado${filtered.length===1?'':'s'}`;document.querySelector('.user-ranking-pagination')?.remove();const pages=Math.ceil(filtered.length/50);if(pages>1){document.querySelector('.user-ranking-card').insertAdjacentHTML('afterend',`<nav class="ranking-pagination user-ranking-pagination" aria-label="Páginas do ranking de usuários">${Array.from({length:pages},(_,index)=>`<button type="button" class="${index===userRankingPage?'active':''}" data-user-ranking-page="${index}">${index*50+1}–${Math.min((index+1)*50,filtered.length)}</button>`).join('')}</nav>`);document.querySelectorAll('[data-user-ranking-page]').forEach(button=>button.addEventListener('click',()=>{userRankingPage=Number(button.dataset.userRankingPage);renderCompleteUserRanking();document.querySelector('.ranking-intro')?.scrollIntoView({behavior:'smooth'})}))}}
+
 let completeRankingCatalog=[],completeRankingScores=null,completeRankingPage=0;
 const completeRankingKey=item=>PROFILE_LIBRARY.find(entry=>entry[0]===item.id)?.[1]||`series-loner-${item.id}-v1`;
 function rankingPagination(total,current){const pages=Math.ceil(total/50);if(pages<=1)return'';return`<nav class="ranking-pagination" aria-label="Páginas do ranking">${Array.from({length:pages},(_,index)=>{const start=index*50+1,end=Math.min((index+1)*50,total);return`<button type="button" class="${index===current?'active':''}" data-ranking-page="${index}">${start}–${end}</button>`}).join('')}</nav>`}
@@ -368,12 +371,12 @@ if (page === 'profile') initProfile();
 if (page === 'catalog' && !window.SeriesCatalog) initCatalog();
 if (page === 'ranking-series') initSeriesRanking();
 if (page === 'ranking-users') initUserRanking();
+if(page==='ranking-users'){const search=document.getElementById('user-ranking-search');search?.addEventListener('input',()=>{userRankingSearch=search.value.trim();userRankingPage=0;renderCompleteUserRanking()})}
 initExtendedLibrary().catch(error=>console.error('Falha ao iniciar biblioteca:',error));
 window.addEventListener('seriesloner-ranking-change',event=>{
   const {users,seriesScores}=event.detail;
   if(page==='ranking-users'){
-    const uid=window.seriesLonerUser?.uid,list=document.getElementById('user-ranking-list');
-    if(list)list.innerHTML=users.map((user,index)=>{const info=getLevelInfo(user.xp),current=user.uid===uid,name=String(user.name).replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;');return `<div class="user-rank-row ${index<3?`top-${index+1}`:''} ${current?'current-user':''}"><strong class="user-position">${String(index+1).padStart(2,'0')}</strong><span class="rank-avatar">${name.charAt(0).toUpperCase()}</span><div class="user-name"><strong>${name}</strong><small>${current?'SEU PERFIL':'AVENTUREIRO'}</small></div><div class="user-level"><span>NÍVEL ${info.level}</span><strong>${user.xp} XP</strong></div></div>`}).join('');
+    completeUserRanking=users;renderCompleteUserRanking();
   }
   if(page==='ranking-series'){
     completeRankingScores=seriesScores;renderCompleteSeriesRanking();
