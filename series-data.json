@@ -1024,5 +1024,25 @@
   {
     "id": "love-is-blind-brazil", "title": "Love Is Blind: Brazil", "year": 2021, "channel": "Netflix", "platform": "Netflix", "country": "Brasil", "genres": ["Reality show", "Romance"], "status": "Em andamento", "rating": 0, "seasons": 5,
     "image": "Séries/Love Is Blind Brazil/Capa.png", "page": "Séries/Love Is Blind Brazil/index.html", "description": "Solteiros buscam o amor e ficam noivos antes de se conhecerem pessoalmente neste experimento que coloca a conexão emocional acima das aparências."
+  },
+  {
+    "id": "cape-fear", "title": "Cape Fear", "year": 2026, "channel": "Apple TV", "platform": "Apple TV", "country": "Estados Unidos", "genres": ["Suspense", "Drama"], "status": "Finalizada", "rating": 5.8, "seasons": 1,
+    "image": "Séries/Cape Fear/Capa.png", "page": "Séries/Cape Fear/index.html", "description": "Os advogados Anna e Tom Bowden veem sua vida ameaçada quando Max Cady, o assassino que ajudaram a colocar na prisão, é libertado em busca de vingança."
+  },
+  {
+    "id": "lets-marry-harry", "title": "Let's Marry Harry", "year": 2026, "channel": "Netflix", "platform": "Netflix", "country": "Estados Unidos", "genres": ["Reality show", "Romance"], "status": "Em andamento", "rating": 0, "seasons": 1,
+    "image": "Séries/Let's Marry Harry/Capa.png", "page": "Séries/Let's Marry Harry/index.html", "description": "Amigos e familiares ajudam Harry Jowsey a escolher entre pretendentes selecionadas enquanto ele tenta deixar a vida de solteiro e encontrar uma esposa."
+  },
+  {
+    "id": "the-shards", "title": "The Shards", "year": 2026, "channel": "FX", "platform": "Hulu", "country": "Estados Unidos", "genres": ["Drama", "Crime", "Suspense"], "status": "Em andamento", "rating": 0, "seasons": 1,
+    "image": "Séries/The Shards/Capa.png", "page": "Séries/The Shards/index.html", "description": "Na Los Angeles de 1981, estudantes privilegiados enfrentam obsessões, ciúmes e crimes perturbadores com a chegada de um misterioso novo colega."
+  },
+  {
+    "id": "the-office", "title": "The Office", "year": 2005, "channel": "NBC", "platform": "Peacock", "country": "Estados Unidos", "genres": ["Comédia"], "status": "Finalizada", "rating": 8.5, "seasons": 9,
+    "image": "Séries/The Office/Capa.png", "page": "Séries/The Office/index.html", "description": "Uma equipe de documentário registra o cotidiano, as rivalidades e as situações absurdas dos funcionários da filial da Dunder Mifflin em Scranton."
+  },
+  {
+    "id": "seinfeld", "title": "Seinfeld", "year": 1989, "channel": "NBC", "platform": "Netflix", "country": "Estados Unidos", "genres": ["Comédia"], "status": "Finalizada", "rating": 8.3, "seasons": 9,
+    "image": "Séries/Seinfeld/Capa.png", "page": "Séries/Seinfeld/index.html", "description": "Jerry Seinfeld e seus amigos transformam encontros, manias e pequenos contratempos da vida em Nova York em situações hilárias."
   }
 ]
