@@ -36,6 +36,7 @@ const seriesHero=document.querySelector('.series-hero-copy'),seriesSlug=document
 const rootPrefix=pageRoot;
 const channelPagePath=channel=>`Canais/${String(channel).normalize('NFD').replace(/[\u0300-\u036f]/g,'').replaceAll('&','-and-').replaceAll('+','-plus-').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'')}/index.html`;
 document.querySelectorAll('.nav-dropdown-menu').forEach(menu=>{if(!menu.querySelector('a[href*="ranking-canais"]')){const link=document.createElement('a');link.href=`${rootPrefix}ranking-canais.html`;link.textContent='Ranking de Canais';menu.appendChild(link)}});
+document.querySelectorAll('.site-header nav').forEach(nav=>{if(!nav.querySelector('a[href*="sobre.html"]')){const link=document.createElement('a');link.href=`${rootPrefix}sobre.html`;link.textContent='SOBRE';if(document.body.dataset.page==='about')link.className='active';nav.appendChild(link)}});
 if(seriesHero){
   const channelPanel=document.createElement('a');channelPanel.className='series-channel';channelPanel.innerHTML='<span>Canal</span><strong>Carregando...</strong>';
   seriesHero.querySelector('.meta')?.insertAdjacentElement('afterend',channelPanel);
