@@ -35,9 +35,9 @@ const seriesHero=document.querySelector('.series-hero-copy'),seriesSlug=document
 const insideSeries=location.pathname.includes('/S%C3%A9ries/')||location.pathname.includes('/Séries/'),rootPrefix=insideSeries?'../../':'';
 document.querySelectorAll('.nav-dropdown-menu').forEach(menu=>{if(!menu.querySelector('a[href*="ranking-canais"]')){const link=document.createElement('a');link.href=`${rootPrefix}ranking-canais.html`;link.textContent='Ranking de Canais';menu.appendChild(link)}});
 if(seriesHero){
-  const channelPanel=document.createElement('div');channelPanel.className='series-channel';channelPanel.innerHTML='<span>Canal</span><strong>Carregando...</strong>';
+  const channelPanel=document.createElement('a');channelPanel.className='series-channel';channelPanel.innerHTML='<span>Canal</span><strong>Carregando...</strong>';
   seriesHero.querySelector('.meta')?.insertAdjacentElement('afterend',channelPanel);
-  fetch(`${rootPrefix}series-data.json`).then(response=>response.json()).then(items=>{const title=seriesHero.querySelector('h1')?.textContent.trim(),item=items.find(entry=>entry.title===title||entry.id===seriesSlug);channelPanel.querySelector('strong').textContent=item?.channel||item?.platform||'Não informado'}).catch(()=>channelPanel.querySelector('strong').textContent='Não informado');
+  fetch(`${rootPrefix}series-data.json`).then(response=>response.json()).then(items=>{const title=seriesHero.querySelector('h1')?.textContent.trim(),item=items.find(entry=>entry.title===title||entry.id===seriesSlug),channel=item?.channel||item?.platform||'Não informado';channelPanel.querySelector('strong').textContent=channel;channelPanel.href=`${rootPrefix}canal.html?canal=${encodeURIComponent(channel)}`}).catch(()=>channelPanel.querySelector('strong').textContent='Não informado');
 }
 let ratingPanel=null;
 if(seriesHero&&seriesSlug){
