@@ -1076,5 +1076,41 @@
   {
     "id": "elite", "title": "Élite", "year": 2018, "channel": "Netflix", "platform": "Netflix", "country": "Espanha", "genres": ["Drama", "Crime", "Mistério"], "status": "Finalizada", "rating": 7.3, "seasons": 8,
     "image": "Séries/Elite/Capa.png", "page": "Séries/Elite/index.html", "description": "Três jovens de origem humilde ingressam em uma escola exclusiva da Espanha, onde conflitos de classe, romances e segredos acabam levando ao crime."
+  },
+  {
+    "id": "the-originals", "title": "The Originals", "year": 2013, "channel": "The CW", "platform": "The CW", "country": "Estados Unidos", "genres": ["Drama", "Romance", "Sobrenatural"], "status": "Finalizada", "rating": 8.3, "seasons": 5,
+    "image": "Séries/The Originals/Capa.png", "page": "Séries/The Originals/index.html", "description": "A família de vampiros originais retorna a Nova Orleans e enfrenta antigas alianças, inimigos e disputas pelo controle sobrenatural da cidade."
+  },
+  {
+    "id": "the-vampire-diaries", "title": "The Vampire Diaries", "year": 2009, "channel": "The CW", "platform": "The CW", "country": "Estados Unidos", "genres": ["Drama", "Romance", "Sobrenatural"], "status": "Finalizada", "rating": 7.9, "seasons": 8,
+    "image": "Séries/The Vampire Diaries/Capa.png", "page": "Séries/The Vampire Diaries/index.html", "description": "Em Mystic Falls, Elena Gilbert se envolve com os irmãos vampiros Stefan e Damon Salvatore e descobre um mundo de segredos sobrenaturais."
+  },
+  {
+    "id": "glee", "title": "Glee", "year": 2009, "channel": "FOX", "platform": "FOX", "country": "Estados Unidos", "genres": ["Drama", "Musical", "Romance"], "status": "Finalizada", "rating": 6.7, "seasons": 6,
+    "image": "Séries/Glee/Capa.png", "page": "Séries/Glee/index.html", "description": "Um professor reúne estudantes diferentes no coral da escola e tenta levá-los às competições enquanto eles enfrentam amizades, romances e inseguranças."
+  },
+  {
+    "id": "faking-it", "title": "Faking It", "year": 2014, "channel": "MTV", "platform": "MTV", "country": "Estados Unidos", "genres": ["Comédia", "Romance"], "status": "Finalizada", "rating": 7.5, "seasons": 3,
+    "image": "Séries/Faking It/Capa.png", "page": "Séries/Faking It/index.html", "description": "Duas melhores amigas fingem ser um casal para conquistar popularidade, mas o plano complica sentimentos, identidades e relacionamentos."
+  },
+  {
+    "id": "teen-wolf", "title": "Teen Wolf", "year": 2011, "channel": "MTV", "platform": "MTV", "country": "Estados Unidos", "genres": ["Drama", "Romance", "Sobrenatural"], "status": "Finalizada", "rating": 8.1, "seasons": 6,
+    "image": "Séries/Teen Wolf/Capa.png", "page": "Séries/Teen Wolf/index.html", "description": "Após ser mordido por um lobisomem, o adolescente Scott McCall precisa equilibrar a escola, os relacionamentos e as ameaças sobrenaturais de Beacon Hills."
+  },
+  {
+    "id": "once-upon-a-time", "title": "Once Upon a Time", "year": 2011, "channel": "ABC", "platform": "ABC", "country": "Estados Unidos", "genres": ["Drama", "Fantasia", "Romance"], "status": "Finalizada", "rating": 7.5, "seasons": 7,
+    "image": "Séries/Once Upon a Time/Capa.png", "page": "Séries/Once Upon a Time/index.html", "description": "Personagens de contos de fadas vivem sem memória no mundo real até que Emma Swan chega à cidade de Storybrooke para quebrar uma poderosa maldição."
+  },
+  {
+    "id": "supernatural", "title": "Supernatural", "year": 2005, "channel": "The CW", "platform": "The CW", "country": "Estados Unidos", "genres": ["Drama", "Ação", "Sobrenatural"], "status": "Finalizada", "rating": 8.3, "seasons": 15,
+    "image": "Séries/Supernatural/Capa.png", "page": "Séries/Supernatural/index.html", "description": "Os irmãos Sam e Dean Winchester atravessam os Estados Unidos caçando monstros, demônios e outras ameaças sobrenaturais."
+  },
+  {
+    "id": "brooklyn-nine-nine", "title": "Brooklyn Nine-Nine", "year": 2013, "channel": "NBC", "platform": "NBC", "country": "Estados Unidos", "genres": ["Comédia", "Ação", "Crime"], "status": "Finalizada", "rating": 8.1, "seasons": 8,
+    "image": "Séries/Brooklyn Nine-Nine/Capa.png", "page": "Séries/Brooklyn Nine-Nine/index.html", "description": "O talentoso e imaturo detetive Jake Peralta trabalha com uma equipe excêntrica em uma delegacia do Brooklyn comandada pelo rigoroso capitão Holt."
+  },
+  {
+    "id": "the-good-place", "title": "The Good Place", "year": 2016, "channel": "NBC", "platform": "NBC", "country": "Estados Unidos", "genres": ["Comédia", "Fantasia", "Sobrenatural"], "status": "Finalizada", "rating": 7.6, "seasons": 4,
+    "image": "Séries/The Good Place/Capa.png", "page": "Séries/The Good Place/index.html", "description": "Após morrer, Eleanor Shellstrop chega por engano ao Lugar Bom e tenta se tornar uma pessoa melhor para merecer sua nova vida após a morte."
   }
 ]
