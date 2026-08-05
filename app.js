@@ -311,8 +311,18 @@ function initUserRanking() {
   }).join('');
 }
 
-function initExtendedLibrary() {
-  const records = PROFILE_LIBRARY.map(([id,key,total,ratingSlug])=>({id,key,total,ratingSlug,state:getExtraState(key)}));
+async function initExtendedLibrary() {
+  let library=[...PROFILE_LIBRARY],catalog=[];
+  if(page==='profile')try{
+    catalog=await fetch('series-data.json?v=profile-1').then(response=>response.json());
+    const known=new Set(library.map(item=>item[0]));
+    const additions=await Promise.all(catalog.filter(item=>!known.has(item.id)).map(async item=>{
+      let total=0;try{const html=await fetch(encodeURI(item.page)).then(response=>response.text());total=Number(html.match(/SERIES_CONFIG=\{[^}]*total:(\d+)/)?.[1]||0)}catch{}
+      return[item.id,`series-loner-${item.id}-v1`,total||1,item.id];
+    }));
+    library.push(...additions);
+  }catch(error){console.error('Falha ao carregar biblioteca completa:',error)}
+  const records = library.map(([id,key,total,ratingSlug])=>({id,key,total,ratingSlug,state:getExtraState(key)}));
   const watchedTotal = records.reduce((sum,item)=>sum+item.state.watched.length,0);
   const xp = watchedTotal * 22;
   const level = getLevelInfo(xp);
@@ -324,13 +334,16 @@ function initExtendedLibrary() {
   if(page==='catalog') records.forEach(item=>{const percent=Math.round(item.state.watched.length/item.total*100);const label=document.getElementById(`${item.id}-catalog-progress-label`);if(label){label.textContent=`${percent}% assistido`;setWidth(`${item.id}-catalog-progress`,percent)}});
 
   if(page==='profile') {
+    const list=document.querySelector('.watching-section'),existing=new Set([...list.querySelectorAll('.profile-series')].map(card=>card.id));
+    const escape=value=>String(value).replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;');
+    catalog.forEach(item=>{if(existing.has(`${item.id}-profile-card`))return;const record=records.find(entry=>entry.id===item.id);list.insertAdjacentHTML('beforeend',`<a id="${item.id}-profile-card" class="profile-series" href="${encodeURI(item.page)}" hidden><img src="${encodeURI(item.image)}" alt="Capa de ${escape(item.title)}"><div><h3>${escape(item.title)}</h3><p>${item.seasons} temporada${item.seasons===1?'':'s'} · ${record.total} episódios</p><div class="progress-track"><div id="${item.id}-profile-progress" class="progress-fill"></div></div><span id="${item.id}-profile-progress-label">0% assistido</span></div><b aria-hidden="true">→</b></a>`)});
     records.forEach(item=>{const percent=Math.round(item.state.watched.length/item.total*100);const label=document.getElementById(`${item.id}-profile-progress-label`);if(label){label.textContent=`${percent}% assistido`;setWidth(`${item.id}-profile-progress`,percent)}});
     document.getElementById('level-number').textContent=level.level;document.getElementById('avatar-level').textContent=level.level;document.getElementById('xp-current').textContent=`${xp} XP`;document.getElementById('xp-next').textContent=`${level.ceiling-xp} XP para o nível ${level.level+1}`;setWidth('xp-progress',level.percent);
     document.getElementById('stat-episodes').textContent=watchedTotal;document.getElementById('stat-xp').textContent=xp;document.getElementById('stat-series').textContent=records.filter(item=>item.state.inWatchlist&&item.state.watched.length===item.total).length;document.getElementById('stat-progress').textContent=`${Math.round(watchedTotal/records.reduce((sum,item)=>sum+item.total,0)*100)}%`;
     const empty=document.getElementById('profile-empty'),tabs=[...document.querySelectorAll('[data-profile-filter]')];
-    const applyFilter=filter=>{const uid=window.seriesLonerUser?.uid;let shown=0;records.forEach(item=>{const card=document.getElementById(`${item.id}-profile-card`);if(!card)return;const rating=uid?Number(localStorage.getItem(`series-loner-rating-${uid}-${item.ratingSlug}`)||0):0;const visible=item.state.inWatchlist&&(filter==='watching'?item.state.watched.length<item.total:filter==='completed'?item.state.watched.length===item.total:rating===Number(filter));card.hidden=!visible;if(visible)shown++});empty.hidden=shown>0;if(!shown){const labels={watching:'Nenhuma série para continuar',completed:'Nenhuma série finalizada'};empty.querySelector('strong').textContent=labels[filter]||`Nenhuma série com ${filter} estrela${filter==='1'?'':'s'}`;empty.querySelector('p').textContent=filter==='watching'?'Adicione uma série ao acervo para começar a assistir.':filter==='completed'?'As séries aparecem aqui quando todos os episódios forem assistidos.':'Avalie suas séries para encontrá-las nesta aba.'}};
+    const applyFilter=filter=>{const uid=window.seriesLonerUser?.uid;let shown=0;records.forEach(item=>{item.state=getExtraState(item.key);const percent=Math.round(item.state.watched.length/item.total*100),label=document.getElementById(`${item.id}-profile-progress-label`);if(label){label.textContent=`${percent}% assistido`;setWidth(`${item.id}-profile-progress`,percent)}const card=document.getElementById(`${item.id}-profile-card`);if(!card)return;const rating=uid?Number(localStorage.getItem(`series-loner-rating-${uid}-${item.ratingSlug}`)||0):0;const visible=item.state.inWatchlist&&(filter==='watching'?item.state.watched.length<item.total:filter==='completed'?item.state.watched.length===item.total:rating===Number(filter));card.hidden=!visible;if(visible)shown++});const currentWatched=records.reduce((sum,item)=>sum+item.state.watched.length,0);document.getElementById('stat-episodes').textContent=currentWatched;document.getElementById('stat-xp').textContent=currentWatched*22;document.getElementById('stat-series').textContent=records.filter(item=>item.state.inWatchlist&&item.state.watched.length===item.total).length;document.getElementById('stat-progress').textContent=`${Math.round(currentWatched/records.reduce((sum,item)=>sum+item.total,0)*100)}%`;empty.hidden=shown>0;if(!shown){const labels={watching:'Nenhuma série para continuar',completed:'Nenhuma série finalizada'};empty.querySelector('strong').textContent=labels[filter]||`Nenhuma série com ${filter} estrela${filter==='1'?'':'s'}`;empty.querySelector('p').textContent=filter==='watching'?'Adicione uma série ao acervo para começar a assistir.':filter==='completed'?'As séries aparecem aqui quando todos os episódios forem assistidos.':'Avalie suas séries para encontrá-las nesta aba.'}};
     tabs.forEach(tab=>tab.addEventListener('click',()=>{tabs.forEach(item=>{const active=item===tab;item.classList.toggle('active',active);item.setAttribute('aria-selected',String(active))});applyFilter(tab.dataset.profileFilter)}));
-    applyFilter('watching');window.addEventListener('seriesloner-auth-change',()=>applyFilter(document.querySelector('[data-profile-filter].active')?.dataset.profileFilter||'watching'));
+    const refreshProfile=()=>applyFilter(document.querySelector('[data-profile-filter].active')?.dataset.profileFilter||'watching');applyFilter('watching');window.addEventListener('seriesloner-auth-change',refreshProfile);window.addEventListener('seriesloner-cloud-change',refreshProfile);window.addEventListener('seriesloner-cloud-ready',refreshProfile);
   }
 
   if(page==='ranking-series') {
@@ -353,7 +366,7 @@ if (page === 'profile') initProfile();
 if (page === 'catalog' && !window.SeriesCatalog) initCatalog();
 if (page === 'ranking-series') initSeriesRanking();
 if (page === 'ranking-users') initUserRanking();
-initExtendedLibrary();
+initExtendedLibrary().catch(error=>console.error('Falha ao iniciar biblioteca:',error));
 window.addEventListener('seriesloner-ranking-change',event=>{
   const {users,seriesScores}=event.detail;
   if(page==='ranking-users'){
