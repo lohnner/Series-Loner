@@ -1276,5 +1276,9 @@
   {
     "id": "lioness", "title": "Lioness", "year": 2023, "channel": "Paramount+", "platform": "Paramount+", "country": "Estados Unidos", "genres": ["Drama", "Ação", "Espionagem"], "status": "Em andamento", "rating": 7.6, "seasons": 3,
     "image": "Séries/Lioness/Capa.png", "page": "Séries/Lioness/index.html", "description": "A agente da CIA Joe McNamara lidera operações secretas do programa Lioness enquanto equilibra missões perigosas e sua vida pessoal."
+  },
+  {
+    "id": "the-librarians", "title": "The Librarians", "year": 2014, "channel": "TNT", "platform": "TNT", "country": "Estados Unidos", "genres": ["Ação", "Aventura", "Sobrenatural"], "status": "Finalizada", "rating": 7.3, "seasons": 4,
+    "image": "Séries/The Librarians/Capa.png", "page": "Séries/The Librarians/index.html", "description": "Uma equipe de bibliotecários protege artefatos mágicos e enfrenta ameaças sobrenaturais que colocam o mundo em perigo."
   }
 ]
