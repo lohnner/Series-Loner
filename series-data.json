@@ -1232,5 +1232,9 @@
   {
     "id": "the-o-c", "title": "The O.C.", "year": 2003, "channel": "FOX", "platform": "HBO Max", "country": "Estados Unidos", "genres": ["Drama", "Comédia", "Romance"], "status": "Finalizada", "rating": 7.2, "seasons": 4,
     "image": "Séries/The O.C/Capa.png", "page": "Séries/The O.C/index.html", "description": "Ryan Atwood deixa uma vida difícil para morar com uma família de Newport Beach e descobre os conflitos escondidos sob o luxo da comunidade."
+  },
+  {
+    "id": "harry-potter", "title": "Harry Potter", "year": 2026, "channel": "HBO", "platform": "HBO Max", "country": "Reino Unido", "genres": ["Drama", "Fantasia", "Aventura"], "status": "Em breve", "rating": 0, "seasons": 1,
+    "image": "Séries/Harry Potter/Capa.png", "page": "Séries/Harry Potter/index.html", "description": "Uma nova adaptação dos livros acompanha Harry Potter ao descobrir o mundo da magia, ingressar em Hogwarts e formar uma amizade inseparável com Hermione Granger e Ron Weasley."
   }
 ]
