@@ -1236,5 +1236,37 @@
   {
     "id": "harry-potter", "title": "Harry Potter", "year": 2026, "channel": "HBO", "platform": "HBO Max", "country": "Reino Unido", "genres": ["Drama", "Fantasia", "Aventura"], "status": "Em breve", "rating": 0, "seasons": 1,
     "image": "Séries/Harry Potter/Capa.png", "page": "Séries/Harry Potter/index.html", "description": "Uma nova adaptação dos livros acompanha Harry Potter ao descobrir o mundo da magia, ingressar em Hogwarts e formar uma amizade inseparável com Hermione Granger e Ron Weasley."
+  },
+  {
+    "id": "blade-runner-2099", "title": "Blade Runner 2099", "year": 2026, "channel": "Prime Video", "platform": "Prime Video", "country": "Estados Unidos", "genres": ["Drama", "Ficção científica", "Suspense"], "status": "Em breve", "rating": 0, "seasons": 1,
+    "image": "Séries/Blade Runner 2099/Capa.png", "page": "Séries/Blade Runner 2099/index.html", "description": "Cinquenta anos após Blade Runner 2049, uma nova história explora replicantes, poder e identidade em uma Los Angeles transformada."
+  },
+  {
+    "id": "tomb-raider", "title": "Tomb Raider", "year": 2027, "channel": "Prime Video", "platform": "Prime Video", "country": "Reino Unido", "genres": ["Ação", "Aventura", "Fantasia"], "status": "Em breve", "rating": 0, "seasons": 1,
+    "image": "Séries/Tomb Raider/Capa.png", "page": "Séries/Tomb Raider/index.html", "description": "Lara Croft parte em uma nova jornada repleta de tumbas, artefatos e perigos na adaptação estrelada por Sophie Turner."
+  },
+  {
+    "id": "neuromancer", "title": "Neuromancer", "year": 2027, "channel": "Apple TV", "platform": "Apple TV", "country": "Estados Unidos", "genres": ["Drama", "Ficção científica", "Suspense"], "status": "Em breve", "rating": 0, "seasons": 1,
+    "image": "Séries/Neuromancer/Capa.png", "page": "Séries/Neuromancer/index.html", "description": "O hacker Case é lançado em uma teia de espionagem digital e crime ao lado da assassina Molly em um futuro cyberpunk."
+  },
+  {
+    "id": "assassins-creed", "title": "Assassin’s Creed", "year": 2027, "channel": "Netflix", "platform": "Netflix", "country": "Estados Unidos", "genres": ["Drama", "Ação", "Histórico"], "status": "Em breve", "rating": 0, "seasons": 1,
+    "image": "Séries/Assassin’s Creed/Capa.png", "page": "Séries/Assassin’s Creed/index.html", "description": "Uma história original ambientada na Roma de 64 d.C. leva a antiga guerra entre Assassinos e Templários para uma série live-action."
+  },
+  {
+    "id": "god-of-war", "title": "God of War", "year": 2027, "channel": "Prime Video", "platform": "Prime Video", "country": "Estados Unidos", "genres": ["Drama", "Ação", "Fantasia"], "status": "Em breve", "rating": 0, "seasons": 1,
+    "image": "Séries/God of War/Capa.png", "page": "Séries/God of War/index.html", "description": "Kratos e Atreus viajam para espalhar as cinzas de Faye enquanto pai e filho enfrentam deuses e criaturas da mitologia nórdica."
+  },
+  {
+    "id": "visionquest", "title": "VisionQuest", "year": 2026, "channel": "Disney+", "platform": "Disney+", "country": "Estados Unidos", "genres": ["Drama", "Ação", "Ficção científica"], "status": "Em breve", "rating": 0, "seasons": 1,
+    "image": "Séries/VisionQuest/Capa.png", "page": "Séries/VisionQuest/index.html", "description": "O Visão Branco explora seu novo propósito e tenta reconstruir a própria identidade após os acontecimentos de WandaVision."
+  },
+  {
+    "id": "crystal-lake", "title": "Crystal Lake", "year": 2026, "channel": "Peacock", "platform": "Peacock", "country": "Estados Unidos", "genres": ["Drama", "Terror", "Suspense"], "status": "Em breve", "rating": 0, "seasons": 1,
+    "image": "Séries/Crystal Lake/Capa.png", "page": "Séries/Crystal Lake/index.html", "description": "A série prelúdio de Sexta-Feira 13 retorna às origens sombrias da família Voorhees e aos segredos de Crystal Lake."
+  },
+  {
+    "id": "vought-rising", "title": "Vought Rising", "year": 2027, "channel": "Prime Video", "platform": "Prime Video", "country": "Estados Unidos", "genres": ["Drama", "Ação", "Ficção científica"], "status": "Em breve", "rating": 0, "seasons": 1,
+    "image": "Séries/Vought Rising/Capa.png", "page": "Séries/Vought Rising/index.html", "description": "Na década de 1950, Soldier Boy e Stormfront protagonizam um mistério de assassinato ligado às origens sombrias da Vought."
   }
 ]
