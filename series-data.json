@@ -1268,5 +1268,13 @@
   {
     "id": "vought-rising", "title": "Vought Rising", "year": 2027, "channel": "Prime Video", "platform": "Prime Video", "country": "Estados Unidos", "genres": ["Drama", "Ação", "Ficção científica"], "status": "Em breve", "rating": 0, "seasons": 1,
     "image": "Séries/Vought Rising/Capa.png", "page": "Séries/Vought Rising/index.html", "description": "Na década de 1950, Soldier Boy e Stormfront protagonizam um mistério de assassinato ligado às origens sombrias da Vought."
+  },
+  {
+    "id": "star-trek-strange-new-worlds", "title": "Star Trek: Strange New Worlds", "year": 2022, "channel": "Paramount+", "platform": "Paramount+", "country": "Estados Unidos", "genres": ["Ação", "Aventura", "Ficção científica"], "status": "Em andamento", "rating": 7.9, "seasons": 4,
+    "image": "Séries/Star Trek Strange New Worlds/Capa.png", "page": "Séries/Star Trek Strange New Worlds/index.html", "description": "O capitão Christopher Pike e a tripulação da U.S.S. Enterprise exploram novos mundos e civilizações antes da jornada de James T. Kirk."
+  },
+  {
+    "id": "lioness", "title": "Lioness", "year": 2023, "channel": "Paramount+", "platform": "Paramount+", "country": "Estados Unidos", "genres": ["Drama", "Ação", "Espionagem"], "status": "Em andamento", "rating": 7.6, "seasons": 3,
+    "image": "Séries/Lioness/Capa.png", "page": "Séries/Lioness/index.html", "description": "A agente da CIA Joe McNamara lidera operações secretas do programa Lioness enquanto equilibra missões perigosas e sua vida pessoal."
   }
 ]
