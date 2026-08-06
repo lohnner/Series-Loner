@@ -1204,5 +1204,33 @@
   {
     "id": "3-percent", "title": "3%", "year": 2016, "channel": "Netflix", "platform": "Netflix", "country": "Brasil", "genres": ["Drama", "Ficção científica", "Suspense"], "status": "Finalizada", "rating": 7.3, "seasons": 4,
     "image": "Séries/3%/Capa.png", "page": "Séries/3%/index.html", "description": "Em um futuro desigual, jovens disputam uma chance de integrar uma sociedade privilegiada por meio de um processo rigoroso que aprova apenas três por cento."
+  },
+  {
+    "id": "under-the-dome", "title": "Under the Dome", "year": 2013, "channel": "CBS", "platform": "Paramount+", "country": "Estados Unidos", "genres": ["Drama", "Ficção científica", "Suspense"], "status": "Finalizada", "rating": 6.6, "seasons": 3,
+    "image": "Séries/Under the Dome/Capa.png", "page": "Séries/Under the Dome/index.html", "description": "Uma cidade fica isolada do mundo por uma misteriosa cúpula transparente, obrigando seus moradores a lutar pela sobrevivência e buscar respostas."
+  },
+  {
+    "id": "csi-miami", "title": "CSI: Miami", "year": 2002, "channel": "CBS", "platform": "Paramount+", "country": "Estados Unidos", "genres": ["Drama", "Crime", "Mistério"], "status": "Finalizada", "rating": 7.6, "seasons": 10,
+    "image": "Séries/CSI Miami/Capa.png", "page": "Séries/CSI Miami/index.html", "description": "Horatio Caine lidera uma equipe de peritos forenses que usa ciência e investigação para solucionar crimes em Miami."
+  },
+  {
+    "id": "the-rookie", "title": "The Rookie", "year": 2018, "channel": "ABC", "platform": "ABC", "country": "Estados Unidos", "genres": ["Drama", "Comédia", "Crime"], "status": "Em andamento", "rating": 8.0, "seasons": 8,
+    "image": "Séries/The Rookie/Capa.png", "page": "Séries/The Rookie/index.html", "description": "John Nolan recomeça a vida como o recruta mais velho da polícia de Los Angeles e precisa provar que merece seu lugar na corporação."
+  },
+  {
+    "id": "awkward", "title": "Awkward.", "year": 2011, "channel": "MTV", "platform": "MTV", "country": "Estados Unidos", "genres": ["Drama", "Comédia", "Romance"], "status": "Finalizada", "rating": 7.3, "seasons": 5,
+    "image": "Séries/Awkward/Capa.png", "page": "Séries/Awkward/index.html", "description": "Após um acidente ser confundido com uma tentativa de suicídio, Jenna Hamilton enfrenta a escola, romances e a inesperada popularidade."
+  },
+  {
+    "id": "gossip-girl", "title": "Gossip Girl", "year": 2007, "channel": "The CW", "platform": "HBO Max", "country": "Estados Unidos", "genres": ["Drama", "Romance"], "status": "Finalizada", "rating": 7.3, "seasons": 6,
+    "image": "Séries/Gossip Girl/Capa.png", "page": "Séries/Gossip Girl/index.html", "description": "Jovens da elite de Manhattan têm seus segredos expostos por uma blogueira anônima que acompanha cada passo do grupo."
+  },
+  {
+    "id": "one-tree-hill", "title": "One Tree Hill", "year": 2003, "channel": "The CW", "platform": "HBO Max", "country": "Estados Unidos", "genres": ["Drama", "Romance"], "status": "Finalizada", "rating": 7.9, "seasons": 9,
+    "image": "Séries/One Tree Hill/Capa.png", "page": "Séries/One Tree Hill/index.html", "description": "Dois meio-irmãos rivais dividem a paixão pelo basquete enquanto enfrentam relacionamentos, sonhos e conflitos familiares em Tree Hill."
+  },
+  {
+    "id": "the-o-c", "title": "The O.C.", "year": 2003, "channel": "FOX", "platform": "HBO Max", "country": "Estados Unidos", "genres": ["Drama", "Comédia", "Romance"], "status": "Finalizada", "rating": 7.2, "seasons": 4,
+    "image": "Séries/The O.C/Capa.png", "page": "Séries/The O.C/index.html", "description": "Ryan Atwood deixa uma vida difícil para morar com uma família de Newport Beach e descobre os conflitos escondidos sob o luxo da comunidade."
   }
 ]
