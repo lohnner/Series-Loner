@@ -15,7 +15,7 @@ const hotdSeasons = {
     ['A Son for a Son','16/06/2024'],['Rhaenyra the Cruel','23/06/2024'],['The Burning Mill','30/06/2024'],['The Red Dragon and the Gold','07/07/2024'],['Regent','14/07/2024'],['Smallfolk','21/07/2024'],['The Red Sowing','28/07/2024'],['The Queen Who Ever Was','04/08/2024']
   ],
   3: [
-    ['Salt and Sea, Fire and Blood','21/06/2026'],["Queen's Landing",'28/06/2026'],['Rhaenyra Triumphant','05/07/2026'],['Tumbleton','12/07/2026'],['Unbowed and Unbent','19/07/2026'],['Faceless Men','26/07/2026'],['Título a confirmar','02/08/2026'],['Título a confirmar','09/08/2026']
+    ['Salt and Sea, Fire and Blood','21/06/2026'],["Queen's Landing",'28/06/2026'],['Rhaenyra Triumphant','05/07/2026'],['Tumbleton','12/07/2026'],['Unbowed and Unbent','19/07/2026'],['Faceless Men','26/07/2026'],['The Dragon in Winter','02/08/2026'],['Título a confirmar','09/08/2026']
   ]
 };
 const hotdTotal = 26;
