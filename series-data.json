@@ -1192,5 +1192,17 @@
   {
     "id": "from", "title": "From", "year": 2022, "channel": "MGM+", "platform": "MGM+", "country": "Estados Unidos", "genres": ["Drama", "Terror", "Mistério"], "status": "Em andamento", "rating": 7.8, "seasons": 5,
     "image": "Séries/From/Capa.png", "page": "Séries/From/index.html", "description": "Moradores de uma cidade que aprisiona todos os visitantes procuram uma saída enquanto tentam sobreviver às criaturas que surgem após o anoitecer."
+  },
+  {
+    "id": "westworld", "title": "Westworld", "year": 2016, "channel": "HBO", "platform": "HBO Max", "country": "Estados Unidos", "genres": ["Drama", "Ficção científica", "Faroeste"], "status": "Cancelada", "rating": 8.5, "seasons": 4,
+    "image": "Séries/Westworld/Capa.png", "page": "Séries/Westworld/index.html", "description": "Em um parque futurista povoado por anfitriões androides, visitantes vivem fantasias sem limites até que as máquinas começam a questionar a própria realidade."
+  },
+  {
+    "id": "a-series-of-unfortunate-events", "title": "A Series of Unfortunate Events", "year": 2017, "channel": "Netflix", "platform": "Netflix", "country": "Estados Unidos", "genres": ["Drama", "Família", "Mistério"], "status": "Finalizada", "rating": 7.8, "seasons": 3,
+    "image": "Séries/A Series of Unfortunate Events/Capa.png", "page": "Séries/A Series of Unfortunate Events/index.html", "description": "Os órfãos Baudelaire enfrentam os disfarces e planos do perverso Conde Olaf enquanto investigam os segredos deixados por seus pais."
+  },
+  {
+    "id": "3-percent", "title": "3%", "year": 2016, "channel": "Netflix", "platform": "Netflix", "country": "Brasil", "genres": ["Drama", "Ficção científica", "Suspense"], "status": "Finalizada", "rating": 7.3, "seasons": 4,
+    "image": "Séries/3%/Capa.png", "page": "Séries/3%/index.html", "description": "Em um futuro desigual, jovens disputam uma chance de integrar uma sociedade privilegiada por meio de um processo rigoroso que aprova apenas três por cento."
   }
 ]
