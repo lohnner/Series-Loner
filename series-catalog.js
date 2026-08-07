@@ -9,7 +9,7 @@
   if(!Array.isArray(state.genres))state.genres=[];if(!Array.isArray(state.channels))state.channels=[];
   if(pageLetter)state.letter=pageLetter;
   const main=document.querySelector('.catalog-page'),head=document.querySelector('.catalog-head'),grid=document.querySelector('.catalog-grid');
-  if(!main||!head||!grid)return;
+  if(!main||!grid)return;
   document.title=pageLetter?`Séries com ${pageLetter} — Séries Loner`:'Catálogo de Séries — Séries Loner';
   document.querySelector('meta[name="description"]')?.setAttribute('content',pageLetter?`Séries cadastradas com a letra ${pageLetter} no Séries Loner.`:'Pesquise e filtre todo o catálogo do Séries Loner por plataforma, gênero, ano, status e país.');
   all.forEach(item=>{item.description=item.description||'';item.popularity=0});
@@ -31,7 +31,7 @@
       <label>Ordenar<select id="filter-sort"><option value="az">A–Z</option><option value="za">Z–A</option><option value="newest">Mais novas</option><option value="oldest">Mais antigas</option><option value="rating">Melhor avaliação</option><option value="popular">Mais populares</option></select></label>
     </div><fieldset class="genre-filter"><legend>Gêneros <small>(selecione um ou mais)</small></legend>${genres.map(genre=>`<label><input type="checkbox" value="${genre}"><span>${genre}</span></label>`).join('')}</fieldset><fieldset class="channel-filter"><legend>Canais <small>(selecione um ou mais)</small></legend>${channels.map(channel=>`<label><input type="checkbox" value="${channel}"><span>${channel}</span></label>`).join('')}</fieldset><div class="filter-actions"><button id="apply-filters" type="button">Buscar</button><button id="clear-filters" type="button">Limpar filtros</button></div></details>
     <div class="catalog-result-head"><strong id="catalog-count"></strong><span id="catalog-active-filters"></span></div>`;
-  head.insertAdjacentElement('afterend',controls);
+  if(head)head.insertAdjacentElement('afterend',controls);else grid.insertAdjacentElement('beforebegin',controls);
   const empty=document.createElement('div');empty.className='catalog-empty';empty.hidden=true;grid.insertAdjacentElement('afterend',empty);
   const more=document.createElement('button');more.id='catalog-more';more.className='button catalog-more';more.type='button';more.textContent='Carregar mais séries';empty.insertAdjacentElement('afterend',more);
   const top=document.createElement('button');top.className='back-to-top';top.type='button';top.textContent='↑ Voltar ao topo';top.addEventListener('click',()=>scrollTo({top:0,behavior:'smooth'}));document.body.appendChild(top);
