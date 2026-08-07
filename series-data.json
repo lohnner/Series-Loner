@@ -1280,5 +1280,29 @@
   {
     "id": "the-librarians", "title": "The Librarians", "year": 2014, "channel": "TNT", "platform": "TNT", "country": "Estados Unidos", "genres": ["Ação", "Aventura", "Sobrenatural"], "status": "Finalizada", "rating": 7.3, "seasons": 4,
     "image": "Séries/The Librarians/Capa.png", "page": "Séries/The Librarians/index.html", "description": "Uma equipe de bibliotecários protege artefatos mágicos e enfrenta ameaças sobrenaturais que colocam o mundo em perigo."
+  },
+  {
+    "id": "supacell", "title": "Supacell", "year": 2024, "channel": "Netflix", "platform": "Netflix", "country": "Reino Unido", "genres": ["Drama", "Ação", "Ficção científica"], "status": "Em andamento", "rating": 6.7, "seasons": 1,
+    "image": "Séries/Supacell/Capa.png", "page": "Séries/Supacell/index.html", "description": "Cinco pessoas comuns do sul de Londres desenvolvem superpoderes inesperadamente e precisam se unir quando seus destinos se cruzam."
+  },
+  {
+    "id": "wild-cards", "title": "Wild Cards", "year": 2024, "channel": "CBC", "platform": "CBC Gem", "country": "Canadá", "genres": ["Drama", "Comédia", "Crime"], "status": "Em andamento", "rating": 7.5, "seasons": 3,
+    "image": "Séries/Wild Cards/Capa.png", "page": "Séries/Wild Cards/index.html", "description": "Um detetive rebaixado e uma golpista espirituosa formam uma dupla improvável para solucionar crimes e conquistar uma segunda chance."
+  },
+  {
+    "id": "veronika", "title": "Veronika", "year": 2024, "channel": "SkyShowtime", "platform": "SkyShowtime", "country": "Suécia", "genres": ["Drama", "Suspense", "Crime"], "status": "Em andamento", "rating": 7.5, "seasons": 3,
+    "image": "Séries/Veronika/Capa.png", "page": "Séries/Veronika/index.html", "description": "Uma policial dependente de comprimidos começa a ver vítimas de crimes não solucionados e percebe que seu passado pode ajudá-la a encontrar um assassino."
+  },
+  {
+    "id": "i-dina-hander", "title": "I Dina Händer", "year": 2024, "channel": "Netflix", "platform": "Netflix", "country": "Suécia", "genres": ["Drama", "Crime", "Suspense"], "status": "Finalizada", "rating": 6.5, "seasons": 1,
+    "image": "Séries/I Dina Händer/Capa.png", "page": "Séries/I Dina Händer/index.html", "description": "Os adolescentes Billy e Dogge são recrutados por uma gangue local e arrastados para um mundo violento do qual são jovens demais para se proteger."
+  },
+  {
+    "id": "the-baxters", "title": "The Baxters", "year": 2024, "channel": "Prime Video", "platform": "Prime Video", "country": "Estados Unidos", "genres": ["Drama", "Família"], "status": "Finalizada", "rating": 5.5, "seasons": 3,
+    "image": "Séries/The Baxters/Capa.png", "page": "Séries/The Baxters/index.html", "description": "Elizabeth e John Baxter e seus cinco filhos adultos enfrentam crises familiares, relacionamentos e escolhas guiadas pela fé."
+  },
+  {
+    "id": "miss-austen", "title": "Miss Austen", "year": 2025, "channel": "BBC One", "platform": "BBC iPlayer", "country": "Reino Unido", "genres": ["Drama", "Histórico"], "status": "Finalizada", "rating": 6.4, "seasons": 1,
+    "image": "Séries/Miss Austen/Capa.png", "page": "Séries/Miss Austen/index.html", "description": "Cassandra Austen procura cartas privadas da irmã Jane e revisita as lembranças, amores e sacrifícios que moldaram a vida das duas."
   }
 ]
