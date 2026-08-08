@@ -1304,5 +1304,33 @@
   {
     "id": "miss-austen", "title": "Miss Austen", "year": 2025, "channel": "BBC One", "platform": "BBC iPlayer", "country": "Reino Unido", "genres": ["Drama", "Histórico"], "status": "Finalizada", "rating": 6.4, "seasons": 1,
     "image": "Séries/Miss Austen/Capa.png", "page": "Séries/Miss Austen/index.html", "description": "Cassandra Austen procura cartas privadas da irmã Jane e revisita as lembranças, amores e sacrifícios que moldaram a vida das duas."
+  },
+  {
+    "id": "untamed", "title": "Untamed", "year": 2025, "channel": "Netflix", "platform": "Netflix", "country": "Estados Unidos", "genres": ["Crime", "Suspense", "Mistério"], "status": "Em andamento", "rating": 7.3, "seasons": 2,
+    "image": "Séries/Untamed/Capa.png", "page": "Séries/Untamed/index.html", "description": "Um agente especial do Serviço de Parques Nacionais investiga uma morte brutal e confronta segredos sombrios escondidos na vastidão de Yosemite."
+  },
+  {
+    "id": "matices", "title": "Matices", "year": 2025, "channel": "SkyShowtime", "platform": "SkyShowtime", "country": "Espanha", "genres": ["Drama", "Suspense"], "status": "Finalizada", "rating": 6.4, "seasons": 1,
+    "image": "Séries/Matices/Capa.png", "page": "Séries/Matices/index.html", "description": "Seis pacientes se reúnem em uma vinícola isolada para concluir um tratamento psiquiátrico, mas uma morte transforma todos em suspeitos."
+  },
+  {
+    "id": "teacup", "title": "Teacup", "year": 2024, "channel": "Peacock", "platform": "Peacock", "country": "Estados Unidos", "genres": ["Terror", "Suspense", "Ficção científica"], "status": "Finalizada", "rating": 5.7, "seasons": 1,
+    "image": "Séries/Teacup/Capa.png", "page": "Séries/Teacup/index.html", "description": "Moradores de uma área rural da Geórgia precisam se unir quando uma ameaça misteriosa os aprisiona e coloca suas vidas em risco."
+  },
+  {
+    "id": "furious", "title": "Furious", "year": 2026, "channel": "Hulu", "platform": "Hulu", "country": "Estados Unidos", "genres": ["Drama", "Crime", "Suspense"], "status": "Em andamento", "rating": 0, "seasons": 1,
+    "image": "Séries/Furious/Capa.png", "page": "Séries/Furious/index.html", "description": "Uma agente do FBI caça uma assassina em série misteriosa e calculista enquanto as trajetórias das duas confundem os limites entre justiça e vingança."
+  },
+  {
+    "id": "the-girlfriend", "title": "The Girlfriend", "year": 2025, "channel": "Prime Video", "platform": "Prime Video", "country": "Reino Unido", "genres": ["Drama", "Suspense"], "status": "Finalizada", "rating": 6.2, "seasons": 1,
+    "image": "Séries/The Girlfriend/Capa.png", "page": "Séries/The Girlfriend/index.html", "description": "Laura desconfia da nova namorada do filho e inicia uma disputa cada vez mais perigosa, na qual a verdade depende do ponto de vista."
+  },
+  {
+    "id": "every-year-after", "title": "Every Year After", "year": 2026, "channel": "Prime Video", "platform": "Prime Video", "country": "Canadá", "genres": ["Drama", "Romance"], "status": "Em andamento", "rating": 4.6, "seasons": 2,
+    "image": "Séries/Every Year After/Capa.png", "page": "Séries/Every Year After/index.html", "description": "Percy retorna ao lago onde passou seis verões inesquecíveis e reencontra Sam, seu primeiro amor, revivendo escolhas que mudaram suas vidas."
+  },
+  {
+    "id": "margos-got-money-troubles", "title": "Margo's Got Money Troubles", "year": 2026, "channel": "Apple TV", "platform": "Apple TV", "country": "Estados Unidos", "genres": ["Drama", "Comédia"], "status": "Em andamento", "rating": 6.6, "seasons": 1,
+    "image": "Séries/Margo's Got Money Troubles/Capa.png", "page": "Séries/Margo's Got Money Troubles/index.html", "description": "Uma jovem mãe sem dinheiro transforma as lições de luta livre do pai em uma estratégia improvável para conquistar independência financeira."
   }
 ]
