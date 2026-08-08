@@ -1332,5 +1332,17 @@
   {
     "id": "margos-got-money-troubles", "title": "Margo's Got Money Troubles", "year": 2026, "channel": "Apple TV", "platform": "Apple TV", "country": "Estados Unidos", "genres": ["Drama", "Comédia"], "status": "Em andamento", "rating": 6.6, "seasons": 1,
     "image": "Séries/Margo's Got Money Troubles/Capa.png", "page": "Séries/Margo's Got Money Troubles/index.html", "description": "Uma jovem mãe sem dinheiro transforma as lições de luta livre do pai em uma estratégia improvável para conquistar independência financeira."
+  },
+  {
+    "id": "the-100", "title": "The 100", "year": 2014, "channel": "The CW", "platform": "Netflix", "country": "Estados Unidos", "genres": ["Ação", "Aventura", "Ficção científica"], "status": "Finalizada", "rating": 7.7, "seasons": 7,
+    "image": "Séries/The 100/Capa.png", "page": "Séries/The 100/index.html", "description": "Quase um século após uma guerra nuclear, cem jovens prisioneiros são enviados de uma estação espacial à Terra para descobrir se o planeta voltou a ser habitável."
+  },
+  {
+    "id": "the-five-star-weekend", "title": "The Five Star Weekend", "year": 2026, "channel": "Peacock", "platform": "Peacock", "country": "Estados Unidos", "genres": ["Drama"], "status": "Finalizada", "rating": 6.2, "seasons": 1,
+    "image": "Séries/The Five Star Weekend/Capa.png", "page": "Séries/The Five Star Weekend/index.html", "description": "Após uma perda devastadora, uma famosa autora reúne amigas de diferentes fases da vida para um fim de semana em Nantucket, onde segredos e conflitos vêm à tona."
+  },
+  {
+    "id": "yoh-christmas", "title": "Yoh! Christmas", "year": 2023, "channel": "Netflix", "platform": "Netflix", "country": "África do Sul", "genres": ["Comédia", "Romance"], "status": "Finalizada", "rating": 0, "seasons": 1,
+    "image": "Séries/Yoh! Christmas/Capa.png", "page": "Séries/Yoh! Christmas/index.html", "description": "Solteira e pressionada pela família, Thando inventa que tem namorado e ganha apenas 24 dias para encontrar alguém e levar para o Natal."
   }
 ]
