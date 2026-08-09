@@ -1344,5 +1344,29 @@
   {
     "id": "yoh-christmas", "title": "Yoh! Christmas", "year": 2023, "channel": "Netflix", "platform": "Netflix", "country": "África do Sul", "genres": ["Comédia", "Romance"], "status": "Finalizada", "rating": 0, "seasons": 1,
     "image": "Séries/Yoh! Christmas/Capa.png", "page": "Séries/Yoh! Christmas/index.html", "description": "Solteira e pressionada pela família, Thando inventa que tem namorado e ganha apenas 24 dias para encontrar alguém e levar para o Natal."
+  },
+  {
+    "id": "the-witcher-blood-origin", "title": "The Witcher: Blood Origin", "year": 2022, "channel": "Netflix", "platform": "Netflix", "country": "Estados Unidos", "genres": ["Drama", "Ação", "Fantasia"], "status": "Finalizada", "rating": 5.4, "seasons": 1,
+    "image": "Séries/The Witcher Blood Origin/Capa.png", "page": "Séries/The Witcher Blood Origin/index.html", "description": "Em um mundo élfico 1.200 anos antes de Geralt, sete guerreiros se unem contra um império e testemunham a criação do primeiro protótipo de bruxo."
+  },
+  {
+    "id": "the-man-who-fell-to-earth", "title": "The Man Who Fell to Earth", "year": 2022, "channel": "Showtime", "platform": "Paramount+", "country": "Estados Unidos", "genres": ["Drama", "Ficção científica"], "status": "Finalizada", "rating": 7.3, "seasons": 1,
+    "image": "Séries/The Man Who Fell to Earth/Capa.png", "page": "Séries/The Man Who Fell to Earth/index.html", "description": "Um alienígena chega à Terra em um momento decisivo para a evolução humana e precisa confrontar o próprio passado para determinar o futuro do planeta."
+  },
+  {
+    "id": "star-trek-discovery", "title": "Star Trek: Discovery", "year": 2017, "channel": "Paramount+", "platform": "Paramount+", "country": "Estados Unidos", "genres": ["Drama", "Aventura", "Ficção científica"], "status": "Finalizada", "rating": 7.3, "seasons": 5,
+    "image": "Séries/Star Trek Discovery/Capa.png", "page": "Séries/Star Trek Discovery/index.html", "description": "Michael Burnham e a tripulação da U.S.S. Discovery atravessam conflitos galácticos, novos mundos e eras distantes para proteger o futuro da Federação."
+  },
+  {
+    "id": "the-mandalorian", "title": "The Mandalorian", "year": 2019, "channel": "Disney+", "platform": "Disney+", "country": "Estados Unidos", "genres": ["Ação", "Aventura", "Ficção científica"], "status": "Finalizada", "rating": 8.5, "seasons": 3,
+    "image": "Séries/The Mandalorian/Capa.png", "page": "Séries/The Mandalorian/index.html", "description": "Após a queda do Império, um caçador de recompensas solitário cruza os confins da galáxia protegendo Grogu e enfrentando inimigos da Nova República."
+  },
+  {
+    "id": "orphan-black", "title": "Orphan Black", "year": 2013, "channel": "Space", "platform": "Netflix", "country": "Canadá", "genres": ["Drama", "Ficção científica", "Suspense"], "status": "Finalizada", "rating": 8.6, "seasons": 5,
+    "image": "Séries/Orphan Black/Capa.png", "page": "Séries/Orphan Black/index.html", "description": "Após testemunhar o suicídio de uma mulher idêntica a ela, Sarah assume sua identidade e descobre que faz parte de uma perigosa conspiração envolvendo clones."
+  },
+  {
+    "id": "lost-girl", "title": "Lost Girl", "year": 2010, "channel": "Showcase", "platform": "Showcase", "country": "Canadá", "genres": ["Drama", "Fantasia", "Terror"], "status": "Finalizada", "rating": 7.9, "seasons": 5,
+    "image": "Séries/Lost Girl/Capa.png", "page": "Séries/Lost Girl/index.html", "description": "Bo descobre ser uma súcubo e passa a investigar o mundo secreto dos Fae enquanto busca respostas sobre sua origem ao lado de sua amiga Kenzi."
   }
 ]
