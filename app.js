@@ -382,4 +382,4 @@ window.addEventListener('seriesloner-ranking-change',event=>{
     completeRankingScores=seriesScores;renderCompleteSeriesRanking();
   }
 });
-import('./auth-shell.js');
+import('./auth-shell.js?v=ratings-1');

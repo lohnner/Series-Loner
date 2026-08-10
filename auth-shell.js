@@ -1,6 +1,6 @@
 import { initializeApp, getApps } from 'https://www.gstatic.com/firebasejs/12.1.0/firebase-app.js';
 import { getAuth, GoogleAuthProvider, createUserWithEmailAndPassword, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile, onAuthStateChanged } from 'https://www.gstatic.com/firebasejs/12.1.0/firebase-auth.js';
-import { startCloudSync, stopCloudSync, saveCloudProfile } from './cloud-data.js';
+import { startCloudSync, stopCloudSync, saveCloudProfile } from './cloud-data.js?v=ratings-1';
 
 const firebaseConfig={apiKey:'AIzaSyCgZgwPUo5Ehp5JIdprYfjhIb5VlyJ2RcM',authDomain:'games-loner.firebaseapp.com',projectId:'games-loner',storageBucket:'games-loner.firebasestorage.app',messagingSenderId:'243629336740',appId:'1:243629336740:web:841224ffe9661397781e31'};
 const auth=getAuth(getApps()[0]||initializeApp(firebaseConfig));
@@ -44,12 +44,16 @@ if(seriesHero){
 }
 let ratingPanel=null;
 if(seriesHero&&seriesSlug){
-  ratingPanel=document.createElement('div');ratingPanel.className='series-rating';ratingPanel.innerHTML='<span class="series-rating-label"><strong>Sua avaliação</strong><small>Entre para votar de 1 a 5 estrelas</small></span><span class="rating-stars" role="radiogroup" aria-label="Avaliação da série"></span>';
+  ratingPanel=document.createElement('div');ratingPanel.className='series-rating';ratingPanel.innerHTML='<span class="series-rating-label"><strong data-series-average>Sem avaliações</strong><small>Entre para votar de 1 a 5 estrelas</small></span><span class="rating-stars" role="radiogroup" aria-label="Avaliação da série"></span>';
   const stars=ratingPanel.querySelector('.rating-stars');
   for(let value=1;value<=5;value++){const star=document.createElement('button');star.type='button';star.className='rating-star';star.dataset.value=value;star.setAttribute('role','radio');star.setAttribute('aria-label',`${value} ${value===1?'estrela':'estrelas'}`);star.textContent='★';star.addEventListener('click',()=>{const user=window.seriesLonerUser;if(!user){openModal('login');return}localStorage.setItem(`series-loner-rating-${user.uid}-${seriesSlug}`,String(value));renderSeriesRating(user)});stars.appendChild(star)}
   const watchButton=seriesHero.querySelector('.watchlist-button');seriesHero.insertBefore(ratingPanel,watchButton||null);
 }
 function renderSeriesRating(user){if(!ratingPanel)return;const value=user?Number(localStorage.getItem(`series-loner-rating-${user.uid}-${seriesSlug}`)||0):0;ratingPanel.querySelectorAll('.rating-star').forEach(star=>{const starValue=Number(star.dataset.value);star.classList.toggle('active',starValue<=value);star.setAttribute('aria-checked',String(starValue===value))});const hint=ratingPanel.querySelector('.series-rating-label small');hint.textContent=user?(value?`Você deu ${value} ${value===1?'estrela':'estrelas'}. Clique para alterar.`:'Escolha de 1 a 5 estrelas'):'Entre para votar de 1 a 5 estrelas'}
+
+function renderSeriesAverage(seriesRatings){if(!ratingPanel)return;const rating=seriesRatings?.[seriesSlug],average=Number(rating?.average)||0,count=Number(rating?.count)||0;ratingPanel.querySelector('[data-series-average]').textContent=count?`★ ${average.toFixed(1)} de 5 · ${count} ${count===1?'avaliação':'avaliações'}`:'Sem avaliações'}
+window.addEventListener('seriesloner-ratings-change',event=>renderSeriesAverage(event.detail.seriesRatings));
+if(window.seriesLonerRatings)renderSeriesAverage(window.seriesLonerRatings);
 
 window.addEventListener('seriesloner-auth-change',event=>renderSeriesRating(event.detail.user));
 

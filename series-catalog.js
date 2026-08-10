@@ -12,7 +12,7 @@
   if(!main||!grid)return;
   document.title=pageLetter?`Séries com ${pageLetter} — Séries Loner`:'Catálogo de Séries — Séries Loner';
   document.querySelector('meta[name="description"]')?.setAttribute('content',pageLetter?`Séries cadastradas com a letra ${pageLetter} no Séries Loner.`:'Pesquise e filtre todo o catálogo do Séries Loner por plataforma, gênero, ano, status e país.');
-  all.forEach(item=>{item.description=item.description||'';item.popularity=0});
+  all.forEach(item=>{item.description=item.description||'';item.popularity=0;item.rating=0;item.ratingCount=0});
   let hasSearched=Boolean(pageLetter);const initialRandom=[...all].sort(()=>Math.random()-.5).slice(0,5);
   const values=key=>[...new Set(all.map(item=>item[key]).filter(Boolean))].sort((a,b)=>String(a).localeCompare(String(b),'pt-BR'));
   const genres=[...new Set(all.flatMap(item=>item.genres))].sort((a,b)=>a.localeCompare(b,'pt-BR'));
@@ -38,7 +38,8 @@
   const storageKey=id=>({american:'series-loner-progress-v1',hotd:'series-loner-house-dragon-v1','big-bang':'series-loner-big-bang-v1',acolyte:'series-loner-acolyte-v1',ark:'series-loner-the-ark-v1'}[id]||`series-loner-${id}-v1`);
   const channelPage=channel=>`Canais/${String(channel).normalize('NFD').replace(/[\u0300-\u036f]/g,'').replaceAll('&','-and-').replaceAll('+','-plus-').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'')}/index.html`;
   const progress=item=>{try{const value=JSON.parse(localStorage.getItem(storageKey(item.id))||'{}');return Math.round(((value.watched||[]).length/(Number(document.querySelector(`#${CSS.escape(item.id)}-catalog-progress`)?.dataset.total)||1))*100)}catch{return 0}};
-  const card=(item,compact=false)=>`<article class="catalog-card ${compact?'featured-card':''}" data-id="${item.id}"><a class="catalog-poster" href="${encodeURI(item.page)}"><img src="${encodeURI(item.image)}" alt="Capa de ${item.title}" loading="lazy"><span>${item.status}</span></a><div class="catalog-info"><small>${item.year} · <a class="catalog-channel-link" href="${channelPage(item.channel||item.platform)}">${item.channel||item.platform}</a></small><h2><a href="${encodeURI(item.page)}">${item.title}</a></h2><p>${item.genres.join(' · ')}</p><div class="catalog-card-meta"><span>★ ${item.rating||'—'}</span><span>${item.seasons} temporada${item.seasons===1?'':'s'}</span><span>${item.country}</span></div></div></article>`;
+  const ratingKey=item=>({american:'series',ark:'the-ark',dune:'dune-prophecy'}[item.id]||item.id);
+  const card=(item,compact=false)=>`<article class="catalog-card ${compact?'featured-card':''}" data-id="${item.id}"><a class="catalog-poster" href="${encodeURI(item.page)}"><img src="${encodeURI(item.image)}" alt="Capa de ${item.title}" loading="lazy"><span>${item.status}</span></a><div class="catalog-info"><small>${item.year} · <a class="catalog-channel-link" href="${channelPage(item.channel||item.platform)}">${item.channel||item.platform}</a></small><h2><a href="${encodeURI(item.page)}">${item.title}</a></h2><p>${item.genres.join(' · ')}</p><div class="catalog-card-meta"><span title="${item.ratingCount?`${item.ratingCount} avaliação${item.ratingCount===1?'':'ões'} dos usuários`:'Ainda sem avaliações'}">★ ${item.rating?item.rating.toFixed(1):'—'}</span><span>${item.seasons} temporada${item.seasons===1?'':'s'}</span><span>${item.country}</span></div></div></article>`;
   function filtered(){if(!hasSearched)return initialRandom;let result=all.filter(item=>{
     if(state.letter&&normalize(item.title).charAt(0)!==normalize(state.letter))return false;
     if(state.search&&!normalize(item.title).includes(normalize(state.search)))return false;
@@ -62,6 +63,9 @@
   document.getElementById('clear-filters').addEventListener('click',()=>{Object.assign(state,{search:'',platform:'',decade:'',status:'',country:'',genres:[],channels:[],sort:'az',limit:5});hasSearched=Boolean(pageLetter);search.value='';controls.querySelectorAll('select').forEach(select=>select.value=select.id==='filter-sort'?'az':'');controls.querySelectorAll('.genre-filter input,.channel-filter input').forEach(input=>input.checked=false);render()});
   more.addEventListener('click',()=>{state.limit+=20;render()});window.addEventListener('scroll',()=>top.classList.toggle('show',scrollY>500),{passive:true});
   window.addEventListener('seriesloner-ranking-change',event=>{all.forEach(item=>item.popularity=Number(event.detail.seriesScores[storageKey(item.id)]||0));if(state.sort==='popular')render()});
+  const applyRatings=seriesRatings=>{all.forEach(item=>{const rating=seriesRatings?.[ratingKey(item)];item.rating=Number(rating?.average)||0;item.ratingCount=Number(rating?.count)||0});render()};
+  window.addEventListener('seriesloner-ratings-change',event=>applyRatings(event.detail.seriesRatings));
+  if(window.seriesLonerRatings)applyRatings(window.seriesLonerRatings);
   if(matchMedia('(max-width:600px)').matches)controls.querySelector('.catalog-filters').removeAttribute('open');
   if(!pageLetter)state.limit=5;render();await import('./app.js?v=library-52');
 })().catch(error=>{console.error(error);const grid=document.querySelector('.catalog-grid');if(grid)grid.innerHTML='<div class="catalog-empty"><strong>Não foi possível carregar o catálogo.</strong><p>Atualize a página e tente novamente.</p></div>'});
