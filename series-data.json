@@ -1368,5 +1368,25 @@
   {
     "id": "lost-girl", "title": "Lost Girl", "year": 2010, "channel": "Showcase", "platform": "Showcase", "country": "Canadá", "genres": ["Drama", "Fantasia", "Terror"], "status": "Finalizada", "rating": 7.9, "seasons": 5,
     "image": "Séries/Lost Girl/Capa.png", "page": "Séries/Lost Girl/index.html", "description": "Bo descobre ser uma súcubo e passa a investigar o mundo secreto dos Fae enquanto busca respostas sobre sua origem ao lado de sua amiga Kenzi."
+  },
+  {
+    "id": "chernobyl", "title": "Chernobyl", "year": 2019, "channel": "HBO", "platform": "HBO Max", "country": "Estados Unidos", "genres": ["Drama", "História"], "status": "Finalizada", "rating": 9.3, "seasons": 1,
+    "image": "Séries/Chernobyl/Capa.png", "page": "Séries/Chernobyl/index.html", "description": "A explosão da usina nuclear de Chernobyl desencadeia uma catástrofe sem precedentes, enquanto cientistas e autoridades enfrentam as consequências e lutam para revelar a verdade."
+  },
+  {
+    "id": "succession", "title": "Succession", "year": 2018, "channel": "HBO", "platform": "HBO Max", "country": "Estados Unidos", "genres": ["Drama", "Família"], "status": "Finalizada", "rating": 8.9, "seasons": 4,
+    "image": "Séries/Succession/Capa.png", "page": "Séries/Succession/index.html", "description": "Os filhos do poderoso magnata Logan Roy disputam o controle do império de mídia da família, em uma guerra de lealdade, dinheiro e poder."
+  },
+  {
+    "id": "sherlock", "title": "Sherlock", "year": 2010, "channel": "BBC One", "platform": "BBC One", "country": "Reino Unido", "genres": ["Drama", "Crime", "Mistério"], "status": "Finalizada", "rating": 9.1, "seasons": 4,
+    "image": "Séries/Sherlock/Capa.png", "page": "Séries/Sherlock/index.html", "description": "Sherlock Holmes e o Dr. John Watson solucionam crimes complexos na Londres contemporânea usando inteligência, observação e métodos pouco convencionais."
+  },
+  {
+    "id": "mad-men", "title": "Mad Men", "year": 2007, "channel": "AMC", "platform": "AMC", "country": "Estados Unidos", "genres": ["Drama"], "status": "Finalizada", "rating": 8.7, "seasons": 7,
+    "image": "Séries/Mad Men/Capa.png", "page": "Séries/Mad Men/index.html", "description": "Na Nova York dos anos 1960, o brilhante publicitário Don Draper tenta manter o sucesso profissional enquanto enfrenta conflitos pessoais e um mundo em transformação."
+  },
+  {
+    "id": "the-crown", "title": "The Crown", "year": 2016, "channel": "Netflix", "platform": "Netflix", "country": "Reino Unido", "genres": ["Drama", "História"], "status": "Finalizada", "rating": 8.6, "seasons": 6,
+    "image": "Séries/The Crown/Capa.png", "page": "Séries/The Crown/index.html", "description": "A vida da rainha Elizabeth II atravessa décadas de mudanças políticas, crises familiares e decisões que moldaram a monarquia britânica."
   }
 ]
