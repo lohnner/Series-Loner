@@ -1388,5 +1388,33 @@
   {
     "id": "the-crown", "title": "The Crown", "year": 2016, "channel": "Netflix", "platform": "Netflix", "country": "Reino Unido", "genres": ["Drama", "História"], "status": "Finalizada", "rating": 8.6, "seasons": 6,
     "image": "Séries/The Crown/Capa.png", "page": "Séries/The Crown/index.html", "description": "A vida da rainha Elizabeth II atravessa décadas de mudanças políticas, crises familiares e decisões que moldaram a monarquia britânica."
+  },
+  {
+    "id": "el-tiempo-que-te-doy", "title": "El Tiempo Que Te Doy", "year": 2021, "channel": "Netflix", "platform": "Netflix", "country": "Espanha", "genres": ["Drama", "Romance"], "status": "Finalizada", "rating": 0, "seasons": 1,
+    "image": "Séries/El Tiempo Que Te Doy/Capa.png", "page": "Séries/El Tiempo Que Te Doy/index.html", "description": "Após o fim de um longo relacionamento, Lina tenta reconstruir a vida enquanto reduz, a cada dia, o tempo dedicado às lembranças de seu primeiro amor."
+  },
+  {
+    "id": "gavin-and-stacey", "title": "Gavin & Stacey", "year": 2007, "channel": "BBC One", "platform": "BBC iPlayer", "country": "Reino Unido", "genres": ["Comédia", "Drama", "Romance"], "status": "Finalizada", "rating": 0, "seasons": 3,
+    "image": "Séries/Gavin & Stacey/Capa.png", "page": "Séries/Gavin & Stacey/index.html", "description": "Um rapaz de Essex e uma jovem do País de Gales transformam meses de conversas ao telefone em um romance que aproxima duas famílias muito diferentes."
+  },
+  {
+    "id": "welcome-to-eden", "title": "Welcome to Eden", "year": 2022, "channel": "Netflix", "platform": "Netflix", "country": "Espanha", "genres": ["Drama", "Ação", "Suspense"], "status": "Finalizada", "rating": 0, "seasons": 2,
+    "image": "Séries/Welcome to Eden/Capa.png", "page": "Séries/Welcome to Eden/index.html", "description": "Um grupo de jovens influentes recebe um convite para uma festa exclusiva em uma ilha paradisíaca, mas descobre que o Éden esconde segredos perigosos."
+  },
+  {
+    "id": "rules-of-engagement", "title": "Rules of Engagement", "year": 2007, "channel": "CBS", "platform": "CBS", "country": "Estados Unidos", "genres": ["Comédia", "Romance"], "status": "Finalizada", "rating": 0, "seasons": 7,
+    "image": "Séries/Rules of Engagement/Capa.png", "page": "Séries/Rules of Engagement/index.html", "description": "Dois casais e um amigo solteiro encaram, com muito humor, as diferentes fases dos relacionamentos, do namoro ao casamento."
+  },
+  {
+    "id": "him-and-her", "title": "Him and Her", "year": 2010, "channel": "BBC Three", "platform": "BBC iPlayer", "country": "Reino Unido", "genres": ["Comédia"], "status": "Finalizada", "rating": 0, "seasons": 4,
+    "image": "Séries/Him and Her/Capa.png", "page": "Séries/Him and Her/index.html", "description": "Steve e Becky vivem um romance preguiçoso, bagunçado e muito real, quase sempre confinados ao apartamento e cercados por visitantes inconvenientes."
+  },
+  {
+    "id": "my-mad-fat-diary", "title": "My Mad Fat Diary", "year": 2013, "channel": "E4", "platform": "Channel 4", "country": "Reino Unido", "genres": ["Drama", "Comédia", "Romance"], "status": "Finalizada", "rating": 0, "seasons": 3,
+    "image": "Séries/My Mad Fat Diary/Capa.png", "page": "Séries/My Mad Fat Diary/index.html", "description": "Após deixar um hospital psiquiátrico, Rae tenta retomar a adolescência, reencontrar os amigos e lidar com inseguranças, saúde mental e primeiro amor."
+  },
+  {
+    "id": "bless-this-mess", "title": "Bless This Mess", "year": 2019, "channel": "ABC", "platform": "ABC", "country": "Estados Unidos", "genres": ["Comédia"], "status": "Finalizada", "rating": 0, "seasons": 2,
+    "image": "Séries/Bless This Mess/Capa.png", "page": "Séries/Bless This Mess/index.html", "description": "Recém-casados deixam Nova York para buscar uma vida simples em uma fazenda no Nebraska, mas descobrem que o campo é muito mais complicado do que imaginavam."
   }
 ]
