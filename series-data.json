@@ -1416,5 +1416,21 @@
   {
     "id": "bless-this-mess", "title": "Bless This Mess", "year": 2019, "channel": "ABC", "platform": "ABC", "country": "Estados Unidos", "genres": ["Comédia"], "status": "Finalizada", "rating": 0, "seasons": 2,
     "image": "Séries/Bless This Mess/Capa.png", "page": "Séries/Bless This Mess/index.html", "description": "Recém-casados deixam Nova York para buscar uma vida simples em uma fazenda no Nebraska, mas descobrem que o campo é muito mais complicado do que imaginavam."
+  },
+  {
+    "id": "las-azules", "title": "Las Azules", "year": 2024, "channel": "Apple TV", "platform": "Apple TV", "country": "México", "genres": ["Drama", "Crime"], "status": "Em andamento", "rating": 0, "seasons": 2,
+    "image": "Séries/Las Azules/Capa.png", "page": "Séries/Las Azules/index.html", "description": "Em 1970, quatro mulheres desafiam as regras conservadoras do México ao entrar para a primeira força policial feminina e investigar secretamente um assassino em série."
+  },
+  {
+    "id": "me", "title": "Me", "year": 2024, "channel": "Apple TV", "platform": "Apple TV", "country": "Estados Unidos", "genres": ["Ação", "Família", "Ficção científica"], "status": "Finalizada", "rating": 0, "seasons": 1,
+    "image": "Séries/Me/Capa.png", "page": "Séries/Me/index.html", "description": "Ben, um garoto de 12 anos, enfrenta os desafios de uma nova família e da escola enquanto descobre que possui poderes capazes de transformar sua identidade."
+  },
+  {
+    "id": "baby-bandito", "title": "Baby Bandito", "year": 2024, "channel": "Netflix", "platform": "Netflix", "country": "Chile", "genres": ["Drama", "Crime", "Suspense"], "status": "Finalizada", "rating": 0, "seasons": 2,
+    "image": "Séries/Baby Bandito/Capa.png", "page": "Séries/Baby Bandito/index.html", "description": "Depois de realizar o maior assalto da história do Chile, o skatista Kevin e sua equipe veem o dinheiro, o amor impulsivo e as redes sociais ameaçarem tudo."
+  },
+  {
+    "id": "tracker", "title": "Tracker", "year": 2024, "channel": "CBS", "platform": "CBS", "country": "Estados Unidos", "genres": ["Drama", "Ação", "Crime"], "status": "Em andamento", "rating": 0, "seasons": 4,
+    "image": "Séries/Tracker/Capa.png", "page": "Séries/Tracker/index.html", "description": "Colter Shaw percorre os Estados Unidos como caçador de recompensas, usando suas habilidades de rastreamento para encontrar pessoas e solucionar mistérios."
   }
 ]
