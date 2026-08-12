@@ -1432,5 +1432,25 @@
   {
     "id": "tracker", "title": "Tracker", "year": 2024, "channel": "CBS", "platform": "CBS", "country": "Estados Unidos", "genres": ["Drama", "Ação", "Crime"], "status": "Em andamento", "rating": 0, "seasons": 4,
     "image": "Séries/Tracker/Capa.png", "page": "Séries/Tracker/index.html", "description": "Colter Shaw percorre os Estados Unidos como caçador de recompensas, usando suas habilidades de rastreamento para encontrar pessoas e solucionar mistérios."
+  },
+  {
+    "id": "briganti", "title": "Briganti", "year": 2024, "channel": "Netflix", "platform": "Netflix", "country": "Itália", "genres": ["Drama", "Ação", "História"], "status": "Finalizada", "rating": 5.4, "seasons": 1,
+    "image": "Séries/Briganti/Capa.png", "page": "Séries/Briganti/index.html", "description": "No sul da Itália, uma mulher foge de sua aldeia e se junta a um grupo de foras da lei que luta para recuperar o ouro roubado e devolver a esperança aos camponeses."
+  },
+  {
+    "id": "revelations", "title": "Revelations", "year": 2005, "channel": "NBC", "platform": "NBC", "country": "Estados Unidos", "genres": ["Drama", "Mistério", "Suspense"], "status": "Finalizada", "rating": 6.3, "seasons": 1,
+    "image": "Séries/Revelations/Capa.png", "page": "Séries/Revelations/index.html", "description": "Um astrofísico cético e uma freira investigam sinais que podem anunciar o fim do mundo conforme as profecias do Livro do Apocalipse."
+  },
+  {
+    "id": "true-blood", "title": "True Blood", "year": 2008, "channel": "HBO", "platform": "HBO Max", "country": "Estados Unidos", "genres": ["Drama", "Romance", "Sobrenatural"], "status": "Finalizada", "rating": 7.9, "seasons": 7,
+    "image": "Séries/True Blood/Capa.png", "page": "Séries/True Blood/index.html", "description": "Em Bon Temps, a telepata Sookie Stackhouse se envolve com vampiros e outras criaturas sobrenaturais em uma sociedade que tenta conviver com os mortos-vivos."
+  },
+  {
+    "id": "homeland", "title": "Homeland", "year": 2011, "channel": "Showtime", "platform": "Paramount+", "country": "Estados Unidos", "genres": ["Drama", "Suspense", "Espionagem"], "status": "Finalizada", "rating": 8.2, "seasons": 8,
+    "image": "Séries/Homeland/Capa.png", "page": "Séries/Homeland/index.html", "description": "A agente da CIA Carrie Mathison suspeita que um fuzileiro resgatado após anos em cativeiro tenha sido convertido pelo inimigo e represente uma ameaça ao país."
+  },
+  {
+    "id": "harpers-island", "title": "Harper's Island", "year": 2009, "channel": "CBS", "platform": "CBS", "country": "Estados Unidos", "genres": ["Drama", "Mistério", "Terror"], "status": "Finalizada", "rating": 7.4, "seasons": 1,
+    "image": "Séries/Harper's Island/Capa.png", "page": "Séries/Harper's Island/index.html", "description": "Familiares e amigos viajam para uma ilha isolada a fim de celebrar um casamento, mas uma série de assassinatos transforma a reunião em uma luta pela sobrevivência."
   }
 ]
