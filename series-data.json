@@ -1452,5 +1452,25 @@
   {
     "id": "harpers-island", "title": "Harper's Island", "year": 2009, "channel": "CBS", "platform": "CBS", "country": "Estados Unidos", "genres": ["Drama", "Mistério", "Terror"], "status": "Finalizada", "rating": 7.4, "seasons": 1,
     "image": "Séries/Harper's Island/Capa.png", "page": "Séries/Harper's Island/index.html", "description": "Familiares e amigos viajam para uma ilha isolada a fim de celebrar um casamento, mas uma série de assassinatos transforma a reunião em uma luta pela sobrevivência."
+  },
+  {
+    "id": "my-brilliant-career", "title": "My Brilliant Career", "year": 2026, "channel": "Netflix", "platform": "Netflix", "country": "Austrália", "genres": ["Drama", "Romance", "História"], "status": "Em andamento", "rating": 0, "seasons": 1,
+    "image": "Séries/My Brilliant Career/Capa.png", "page": "Séries/My Brilliant Career/index.html", "description": "Na Austrália de 1900, a jovem Sybylla desafia as convenções e a pressão para se casar enquanto luta para conquistar independência e realizar o sonho de ser escritora."
+  },
+  {
+    "id": "person-of-interest", "title": "Person of Interest", "year": 2011, "channel": "CBS", "platform": "CBS", "country": "Estados Unidos", "genres": ["Drama", "Ação", "Ficção científica"], "status": "Finalizada", "rating": 8.7, "seasons": 5,
+    "image": "Séries/Person of Interest/Capa.png", "page": "Séries/Person of Interest/index.html", "description": "Um ex-agente da CIA e um bilionário recluso usam uma inteligência artificial para identificar pessoas envolvidas em crimes antes que eles aconteçam."
+  },
+  {
+    "id": "fringe", "title": "Fringe", "year": 2008, "channel": "FOX", "platform": "FOX", "country": "Estados Unidos", "genres": ["Drama", "Ação", "Ficção científica"], "status": "Finalizada", "rating": 8.6, "seasons": 5,
+    "image": "Séries/Fringe/Capa.png", "page": "Séries/Fringe/index.html", "description": "A agente do FBI Olivia Dunham se une ao cientista Walter Bishop e ao filho dele para investigar fenômenos inexplicáveis ligados a uma conspiração de alcance surpreendente."
+  },
+  {
+    "id": "longmire", "title": "Longmire", "year": 2012, "channel": "A&E", "platform": "Netflix", "country": "Estados Unidos", "genres": ["Drama", "Crime", "Faroeste"], "status": "Finalizada", "rating": 8.3, "seasons": 6,
+    "image": "Séries/Longmire/Capa.png", "page": "Séries/Longmire/index.html", "description": "O xerife Walt Longmire investiga crimes no interior do Wyoming enquanto enfrenta o luto, disputas políticas e tensões com a reserva Cheyenne."
+  },
+  {
+    "id": "sons-of-anarchy", "title": "Sons of Anarchy", "year": 2008, "channel": "FX", "platform": "FX", "country": "Estados Unidos", "genres": ["Drama", "Ação", "Crime"], "status": "Finalizada", "rating": 8.6, "seasons": 7,
+    "image": "Séries/Sons of Anarchy/Capa.png", "page": "Séries/Sons of Anarchy/index.html", "description": "Jax Teller começa a questionar os rumos do clube de motociclistas fora da lei de sua família enquanto tenta proteger a cidade de Charming e seu próprio legado."
   }
 ]
