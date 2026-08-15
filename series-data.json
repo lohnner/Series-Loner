@@ -95,8 +95,8 @@
         "id":  "silo",
         "title":  "Silo",
         "year":  2023,
-        "channel":  "Apple TV+",
-        "platform":  "Apple TV+",
+        "channel":  "Apple TV",
+        "platform":  "Apple TV",
         "country":  "Estados Unidos",
         "genres":  [
                        "Drama",
@@ -2547,8 +2547,8 @@
         "id":  "severance",
         "title":  "Severance",
         "year":  2022,
-        "channel":  "Apple TV+",
-        "platform":  "Apple TV+",
+        "channel":  "Apple TV",
+        "platform":  "Apple TV",
         "country":  "Estados Unidos",
         "genres":  [
                        "Drama",
