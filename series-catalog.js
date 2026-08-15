@@ -1,6 +1,6 @@
 (async()=>{
   window.SeriesCatalog=true;
-  const response=await fetch('series-data.json?v=60');
+  const response=await fetch('series-data.json?v=61');
   const all=await response.json();
   const normalize=value=>String(value||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase();
   const params=new URLSearchParams(location.search),pageLetter=(document.body.dataset.catalogLetter||params.get('letter')||'').toUpperCase();
