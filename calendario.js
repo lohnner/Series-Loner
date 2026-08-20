@@ -1,5 +1,5 @@
 const calendarShows=[];
-const calendarCatalogReady=fetch('series-data.json?v=calendar-catalog-1').then(response=>{
+const calendarCatalogReady=fetch('series-data.json?v=calendar-catalog-2').then(response=>{
   if(!response.ok)throw new Error('catalog');
   return response.json();
 }).then(series=>{
